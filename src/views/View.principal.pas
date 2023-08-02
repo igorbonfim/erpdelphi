@@ -15,6 +15,13 @@ type
     pnlRodape: TPanel;
     pnlConteudo: TPanel;
     pnlLogo: TPanel;
+    pnlLineTopo: TPanel;
+    pnlConteudoLogo: TPanel;
+    lblTituloEmpresa: TLabel;
+    lblDescricaoEmpresa: TLabel;
+    pnlVersao: TPanel;
+    lblVersao: TLabel;
+    Label1: TLabel;
     procedure btnFecharClick(Sender: TObject);
   private
     { Private declarations }
