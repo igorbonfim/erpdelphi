@@ -1,6 +1,7 @@
 object ViewPrincipal: TViewPrincipal
   Left = 0
   Top = 0
+  ActiveControl = btnFechar
   Align = alClient
   BorderStyle = bsNone
   Caption = 'Principal'
@@ -2390,23 +2391,112 @@ object ViewPrincipal: TViewPrincipal
     TabOrder = 2
     object pnlRodape: TPanel
       Left = 0
-      Top = 403
+      Top = 424
       Width = 578
-      Height = 62
+      Height = 41
       Align = alBottom
       BevelOuter = bvNone
       Color = 5395026
       ParentBackground = False
       TabOrder = 0
+      object pnlLicenciado: TPanel
+        AlignWithMargins = True
+        Left = 268
+        Top = 0
+        Width = 300
+        Height = 41
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 10
+        Margins.Bottom = 0
+        Align = alRight
+        BevelOuter = bvNone
+        TabOrder = 0
+        ExplicitLeft = 393
+        ExplicitHeight = 62
+        object pnlLineLicenca: TPanel
+          AlignWithMargins = True
+          Left = 0
+          Top = 10
+          Width = 2
+          Height = 21
+          Margins.Left = 0
+          Margins.Top = 10
+          Margins.Right = 0
+          Margins.Bottom = 10
+          Align = alLeft
+          BevelOuter = bvNone
+          Caption = 'pnlLineLicenca'
+          Color = 1031129
+          ParentBackground = False
+          TabOrder = 0
+          ExplicitTop = 0
+          ExplicitHeight = 62
+        end
+        object pnlConteudoLicenca: TPanel
+          Left = 2
+          Top = 0
+          Width = 298
+          Height = 41
+          Align = alClient
+          BevelOuter = bvNone
+          TabOrder = 1
+          ExplicitLeft = 112
+          ExplicitTop = 8
+          ExplicitWidth = 185
+          object lblLicenciado: TLabel
+            Left = 0
+            Top = 17
+            Width = 298
+            Height = 24
+            Margins.Left = 0
+            Margins.Top = 6
+            Margins.Right = 5
+            Margins.Bottom = 0
+            Align = alClient
+            Alignment = taRightJustify
+            Caption = 'EMPRESA XYZ LTDA'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semilight'
+            Font.Style = []
+            ParentFont = False
+            ExplicitLeft = 162
+            ExplicitWidth = 136
+            ExplicitHeight = 21
+          end
+          object lblTituloLicenciado: TLabel
+            Left = 0
+            Top = 0
+            Width = 298
+            Height = 17
+            Margins.Top = 0
+            Margins.Bottom = 0
+            Align = alTop
+            Alignment = taRightJustify
+            Caption = 'Licenciado para'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -13
+            Font.Name = 'Segoe UI Light'
+            Font.Style = []
+            ParentFont = False
+            ExplicitLeft = 213
+            ExplicitWidth = 85
+          end
+        end
+      end
     end
     object pnlConteudo: TPanel
       Left = 0
       Top = 0
       Width = 578
-      Height = 403
+      Height = 424
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitHeight = 403
     end
   end
 end
