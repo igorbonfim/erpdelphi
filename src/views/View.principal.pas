@@ -4,12 +4,11 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons;
 
 type
   TViewPrincipal = class(TForm)
     pnlTopo: TPanel;
-    btnFechar: TButton;
     pnlMenu: TPanel;
     pnlBackPrincipal: TPanel;
     pnlRodape: TPanel;
@@ -34,7 +33,17 @@ type
     pnlConteudoLicenca: TPanel;
     lblLicenciado: TLabel;
     lblTituloLicenciado: TLabel;
-    procedure btnFecharClick(Sender: TObject);
+    pnlSair: TPanel;
+    pnlShapeMenu: TPanel;
+    ShapeMenu: TShape;
+    pblDadosMenu: TPanel;
+    btnClientes: TSpeedButton;
+    btnCaixa: TSpeedButton;
+    btnFornecedores: TSpeedButton;
+    btnProdutos: TSpeedButton;
+    btnConfig: TSpeedButton;
+    btnSair: TSpeedButton;
+    procedure btnSairClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,7 +57,7 @@ implementation
 
 {$R *.dfm}
 
-procedure TViewPrincipal.btnFecharClick(Sender: TObject);
+procedure TViewPrincipal.btnSairClick(Sender: TObject);
 begin
   Application.Terminate;
 end;
