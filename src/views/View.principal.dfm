@@ -2128,6 +2128,7 @@ object ViewPrincipal: TViewPrincipal
     FFFFD08000000000010BFFFFFFFFFFFFFFFFF41000000000082FFFFFFFFFFFFF
     FFFFFC8A00000000513FFFFFFFFFFFFFFFFFFF809000000901FFFFFFFFFF}
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object pnlTopo: TPanel
@@ -2452,6 +2453,7 @@ object ViewPrincipal: TViewPrincipal
         Font.Style = []
         Margin = 5
         ParentFont = False
+        OnClick = btnClientesClick
         ExplicitLeft = 6
       end
       object btnCaixa: TSpeedButton
@@ -2473,6 +2475,7 @@ object ViewPrincipal: TViewPrincipal
         Font.Style = []
         Margin = 5
         ParentFont = False
+        OnClick = btnCaixaClick
         ExplicitLeft = 0
         ExplicitTop = 100
       end
@@ -2495,6 +2498,7 @@ object ViewPrincipal: TViewPrincipal
         Font.Style = []
         Margin = 5
         ParentFont = False
+        OnClick = btnFornecedoresClick
         ExplicitLeft = 6
         ExplicitTop = 155
       end
@@ -2517,6 +2521,7 @@ object ViewPrincipal: TViewPrincipal
         Font.Style = []
         Margin = 5
         ParentFont = False
+        OnClick = btnProdutosClick
         ExplicitLeft = 27
         ExplicitTop = 165
       end
@@ -2539,6 +2544,7 @@ object ViewPrincipal: TViewPrincipal
         Font.Style = []
         Margin = 5
         ParentFont = False
+        OnClick = btnConfigClick
         ExplicitLeft = 6
         ExplicitTop = 345
       end

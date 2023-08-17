@@ -44,7 +44,14 @@ type
     btnConfig: TSpeedButton;
     btnSair: TSpeedButton;
     procedure btnSairClick(Sender: TObject);
+    procedure btnClientesClick(Sender: TObject);
+    procedure btnCaixaClick(Sender: TObject);
+    procedure btnFornecedoresClick(Sender: TObject);
+    procedure btnProdutosClick(Sender: TObject);
+    procedure btnConfigClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
+    procedure GetLineMenu(Sender: TObject);
     { Private declarations }
   public
     { Public declarations }
@@ -57,9 +64,48 @@ implementation
 
 {$R *.dfm}
 
+procedure TViewPrincipal.btnCaixaClick(Sender: TObject);
+begin
+  GetLineMenu(Sender);
+end;
+
+procedure TViewPrincipal.btnClientesClick(Sender: TObject);
+begin
+  GetLineMenu(Sender);
+end;
+
+procedure TViewPrincipal.btnConfigClick(Sender: TObject);
+begin
+  GetLineMenu(Sender);
+end;
+
+procedure TViewPrincipal.btnFornecedoresClick(Sender: TObject);
+begin
+  GetLineMenu(Sender);
+end;
+
+procedure TViewPrincipal.btnProdutosClick(Sender: TObject);
+begin
+  GetLineMenu(Sender);
+end;
+
 procedure TViewPrincipal.btnSairClick(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TViewPrincipal.FormShow(Sender: TObject);
+begin
+  GetLineMenu(btnClientes);
+end;
+
+procedure TViewPrincipal.GetLineMenu(Sender: TObject);
+begin
+  ShapeMenu.Left    := 0;
+  ShapeMenu.Top     := 0;
+  ShapeMenu.Height  := TSpeedButton(Sender).Height;
+  ShapeMenu.Top     := TSpeedButton(Sender).Top;
+  pnlShapeMenu.Repaint;
 end;
 
 end.
