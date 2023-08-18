@@ -87,7 +87,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_ExeOutput>.\install</DCC_ExeOutput>
-        <Icon_MainIcon>C:\Users\SUPORTE 01\Downloads\1562691-computer-light-studio-technology_107056.ico</Icon_MainIcon>
+        <Icon_MainIcon>ERPCurso_Icon.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>

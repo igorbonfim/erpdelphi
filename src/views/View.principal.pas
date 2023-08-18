@@ -4,7 +4,9 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.Imaging.pngimage, System.Actions, Vcl.ActnList, System.ImageList,
+  Vcl.ImgList;
 
 type
   TViewPrincipal = class(TForm)
@@ -24,7 +26,7 @@ type
     pnlUsuario: TPanel;
     pnlLineUsuario: TPanel;
     pnlImagemUsuario: TPanel;
-    imgUsuario: TImage;
+    imgUserBranca: TImage;
     pnlDadosUsuarios: TPanel;
     lblUsuario: TLabel;
     lblPerfil: TLabel;
@@ -43,6 +45,9 @@ type
     btnProdutos: TSpeedButton;
     btnConfig: TSpeedButton;
     btnSair: TSpeedButton;
+    imgUserLaranja: TImage;
+    imgBackground: TImage;
+    ImageList_36: TImageList;
     procedure btnSairClick(Sender: TObject);
     procedure btnClientesClick(Sender: TObject);
     procedure btnCaixaClick(Sender: TObject);
@@ -50,6 +55,10 @@ type
     procedure btnProdutosClick(Sender: TObject);
     procedure btnConfigClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure lblTituloEmpresaMouseEnter(Sender: TObject);
+    procedure lblTituloEmpresaMouseLeave(Sender: TObject);
+    procedure imgUserBrancaMouseEnter(Sender: TObject);
+    procedure imgUserLaranjaMouseLeave(Sender: TObject);
   private
     procedure GetLineMenu(Sender: TObject);
     { Private declarations }
@@ -106,6 +115,28 @@ begin
   ShapeMenu.Height  := TSpeedButton(Sender).Height;
   ShapeMenu.Top     := TSpeedButton(Sender).Top;
   pnlShapeMenu.Repaint;
+end;
+
+procedure TViewPrincipal.imgUserBrancaMouseEnter(Sender: TObject);
+begin
+  imgUserBranca.Visible := false;
+  imgUserLaranja.Visible := true;
+end;
+
+procedure TViewPrincipal.imgUserLaranjaMouseLeave(Sender: TObject);
+begin
+  imgUserBranca.Visible := true;
+  imgUserLaranja.Visible := false;
+end;
+
+procedure TViewPrincipal.lblTituloEmpresaMouseEnter(Sender: TObject);
+begin
+  lblTituloEmpresa.Font.Color := $000FBBD9;
+end;
+
+procedure TViewPrincipal.lblTituloEmpresaMouseLeave(Sender: TObject);
+begin
+  lblTituloEmpresa.Font.Color := clWhite;
 end;
 
 end.
