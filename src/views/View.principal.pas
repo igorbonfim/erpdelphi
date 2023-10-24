@@ -73,6 +73,8 @@ implementation
 
 {$R *.dfm}
 
+uses Provider.constants;
+
 procedure TViewPrincipal.btnCaixaClick(Sender: TObject);
 begin
   GetLineMenu(Sender);
@@ -106,6 +108,7 @@ end;
 procedure TViewPrincipal.FormShow(Sender: TObject);
 begin
   GetLineMenu(btnClientes);
+  lblLicenciado.Caption := sRAZAO_FILIAL;
 end;
 
 procedure TViewPrincipal.GetLineMenu(Sender: TObject);
