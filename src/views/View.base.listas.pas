@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, View.base, Vcl.ExtCtrls,
-  Vcl.Imaging.pngimage, Vcl.Buttons, Vcl.StdCtrls, Vcl.WinXPanels;
+  Vcl.Imaging.pngimage, Vcl.Buttons, Vcl.StdCtrls, Vcl.WinXPanels, Vcl.WinXCtrls,
+  Data.DB, Vcl.Grids, Vcl.DBGrids;
 
 type
   TViewBaseListas = class(TViewBase)
@@ -25,9 +26,15 @@ type
     cpLista: TCardPanel;
     card_pesquisa: TCard;
     card_cadastro: TCard;
+    pnlTituloPesquisa: TPanel;
+    lblTituloPesquisa: TLabel;
+    edtPesquisa: TSearchBox;
+    dgbDados: TDBGrid;
+    dsDados: TDataSource;
     procedure btnSairClick(Sender: TObject);
     procedure pnlTopoMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,6 +52,12 @@ procedure TViewBaseListas.btnSairClick(Sender: TObject);
 begin
   inherited;
   Self.Close;
+end;
+
+procedure TViewBaseListas.FormShow(Sender: TObject);
+begin
+  inherited;
+  cpLista.ActiveCard := card_pesquisa;
 end;
 
 procedure TViewBaseListas.pnlTopoMouseDown(Sender: TObject;

@@ -4,6 +4,7 @@ inherited ViewBaseListas: TViewBaseListas
   ClientHeight = 545
   ClientWidth = 787
   Position = poMainFormCenter
+  OnShow = FormShow
   ExplicitWidth = 787
   ExplicitHeight = 545
   TextHeight = 13
@@ -201,7 +202,7 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Name = 'Segoe UI Semibold'
       Font.Style = [fsBold]
       ParentFont = False
-      ExplicitLeft = 713
+      ExplicitTop = -13
     end
     object btnEditar: TSpeedButton
       AlignWithMargins = True
@@ -308,7 +309,7 @@ inherited ViewBaseListas: TViewBaseListas
       Margins.Right = 1
       Margins.Bottom = 0
       Align = alClient
-      ActiveCard = card_cadastro
+      ActiveCard = card_pesquisa
       BevelOuter = bvNone
       Caption = 'cpLista'
       Color = clWhite
@@ -325,6 +326,74 @@ inherited ViewBaseListas: TViewBaseListas
         TabOrder = 0
         ExplicitWidth = 185
         ExplicitHeight = 41
+        object pnlTituloPesquisa: TPanel
+          Left = 0
+          Top = 0
+          Width = 785
+          Height = 113
+          Align = alTop
+          BevelOuter = bvNone
+          Color = 15461355
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 8816262
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 0
+          ExplicitLeft = -1
+          ExplicitTop = 3
+          object lblTituloPesquisa: TLabel
+            Left = 5
+            Top = 16
+            Width = 101
+            Height = 37
+            Caption = 'Pesquisa'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = 8816262
+            Font.Height = -27
+            Font.Name = 'Segoe UI Semilight'
+            Font.Style = []
+            ParentFont = False
+          end
+          object edtPesquisa: TSearchBox
+            Left = 5
+            Top = 57
+            Width = 768
+            Height = 36
+            BevelInner = bvNone
+            Font.Charset = ANSI_CHARSET
+            Font.Color = 8816262
+            Font.Height = -20
+            Font.Name = 'Segoe UI Semilight'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            TextHint = 'Digite aqui sua pesquisa'
+          end
+        end
+        object dgbDados: TDBGrid
+          AlignWithMargins = True
+          Left = 5
+          Top = 118
+          Width = 775
+          Height = 341
+          Margins.Left = 5
+          Margins.Top = 5
+          Margins.Right = 5
+          Margins.Bottom = 5
+          Align = alClient
+          BorderStyle = bsNone
+          DataSource = dsDados
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+          TabOrder = 1
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'Tahoma'
+          TitleFont.Style = []
+        end
       end
       object card_cadastro: TCard
         Left = 0
@@ -338,5 +407,9 @@ inherited ViewBaseListas: TViewBaseListas
         ExplicitHeight = 41
       end
     end
+  end
+  object dsDados: TDataSource
+    Left = 289
+    Top = 233
   end
 end
