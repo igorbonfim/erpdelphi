@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, View.base, Vcl.ExtCtrls,
-  Vcl.Imaging.pngimage, Vcl.Buttons, Vcl.StdCtrls;
+  Vcl.Imaging.pngimage, Vcl.Buttons, Vcl.StdCtrls, Vcl.WinXPanels;
 
 type
   TViewBaseListas = class(TViewBase)
@@ -16,6 +16,15 @@ type
     pnlFechar: TPanel;
     btnSair: TSpeedButton;
     lblTitulo: TLabel;
+    btnCancelar: TSpeedButton;
+    btnEditar: TSpeedButton;
+    btnNovo: TSpeedButton;
+    btnSalvar: TSpeedButton;
+    btnExcluir: TSpeedButton;
+    pnlBackground: TPanel;
+    cpLista: TCardPanel;
+    card_pesquisa: TCard;
+    card_cadastro: TCard;
     procedure btnSairClick(Sender: TObject);
     procedure pnlTopoMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);

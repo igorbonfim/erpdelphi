@@ -1,14 +1,16 @@
 inherited ViewBaseListas: TViewBaseListas
   BorderStyle = bsNone
   Caption = 'ViewBaseListas'
-  ClientHeight = 506
-  ClientWidth = 746
+  ClientHeight = 545
+  ClientWidth = 787
   Position = poMainFormCenter
+  ExplicitWidth = 787
+  ExplicitHeight = 545
   TextHeight = 13
   object pnlTopo: TPanel
     Left = 0
     Top = 0
-    Width = 746
+    Width = 787
     Height = 41
     Align = alTop
     BevelOuter = bvNone
@@ -20,8 +22,8 @@ inherited ViewBaseListas: TViewBaseListas
       AlignWithMargins = True
       Left = 40
       Top = 3
-      Width = 86
-      Height = 31
+      Width = 644
+      Height = 35
       Margins.Left = 5
       Align = alClient
       Caption = 'lblTitulo'
@@ -32,6 +34,8 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Style = [fsBold]
       ParentFont = False
       OnMouseDown = pnlTopoMouseDown
+      ExplicitWidth = 86
+      ExplicitHeight = 31
     end
     object pnlIcone: TPanel
       Left = 0
@@ -45,7 +49,6 @@ inherited ViewBaseListas: TViewBaseListas
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitHeight = 35
       object imgIcon: TImage
         AlignWithMargins = True
         Left = 3
@@ -142,7 +145,7 @@ inherited ViewBaseListas: TViewBaseListas
       end
     end
     object pnlFechar: TPanel
-      Left = 646
+      Left = 687
       Top = 0
       Width = 100
       Height = 41
@@ -172,13 +175,168 @@ inherited ViewBaseListas: TViewBaseListas
   end
   object pnlRodape: TPanel
     Left = 0
-    Top = 465
-    Width = 746
-    Height = 41
+    Top = 505
+    Width = 787
+    Height = 40
     Align = alBottom
     BevelOuter = bvNone
     Color = 7500402
     ParentBackground = False
     TabOrder = 1
+    ExplicitLeft = -3
+    object btnCancelar: TSpeedButton
+      AlignWithMargins = True
+      Left = 481
+      Top = 3
+      Width = 97
+      Height = 34
+      Cursor = crHandPoint
+      Align = alRight
+      GroupIndex = 1
+      Caption = 'Cancelar'
+      Flat = True
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -20
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ExplicitLeft = 713
+    end
+    object btnEditar: TSpeedButton
+      AlignWithMargins = True
+      Left = 378
+      Top = 3
+      Width = 97
+      Height = 34
+      Cursor = crHandPoint
+      Align = alRight
+      GroupIndex = 1
+      Caption = 'Editar'
+      Flat = True
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -20
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ExplicitLeft = 720
+      ExplicitTop = -5
+    end
+    object btnNovo: TSpeedButton
+      AlignWithMargins = True
+      Left = 275
+      Top = 3
+      Width = 97
+      Height = 34
+      Cursor = crHandPoint
+      Align = alRight
+      GroupIndex = 1
+      Down = True
+      Caption = 'Novo'
+      Flat = True
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -20
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ExplicitLeft = 720
+      ExplicitTop = -5
+    end
+    object btnSalvar: TSpeedButton
+      AlignWithMargins = True
+      Left = 584
+      Top = 3
+      Width = 97
+      Height = 34
+      Cursor = crHandPoint
+      Align = alRight
+      GroupIndex = 1
+      Caption = 'Salvar'
+      Flat = True
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -20
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ExplicitLeft = 690
+    end
+    object btnExcluir: TSpeedButton
+      AlignWithMargins = True
+      Left = 687
+      Top = 3
+      Width = 97
+      Height = 34
+      Cursor = crHandPoint
+      Align = alRight
+      GroupIndex = 1
+      Caption = 'Excluir'
+      Flat = True
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -20
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ExplicitLeft = 704
+    end
+  end
+  object pnlBackground: TPanel
+    Left = 0
+    Top = 41
+    Width = 787
+    Height = 464
+    Align = alClient
+    BevelOuter = bvNone
+    Color = 7500402
+    ParentBackground = False
+    TabOrder = 2
+    ExplicitLeft = 200
+    ExplicitTop = 168
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object cpLista: TCardPanel
+      AlignWithMargins = True
+      Left = 1
+      Top = 0
+      Width = 785
+      Height = 464
+      Margins.Left = 1
+      Margins.Top = 0
+      Margins.Right = 1
+      Margins.Bottom = 0
+      Align = alClient
+      ActiveCard = card_cadastro
+      BevelOuter = bvNone
+      Caption = 'cpLista'
+      Color = clWhite
+      ParentBackground = False
+      TabOrder = 0
+      ExplicitWidth = 783
+      object card_pesquisa: TCard
+        Left = 0
+        Top = 0
+        Width = 785
+        Height = 464
+        Caption = 'card_pesquisa'
+        CardIndex = 0
+        TabOrder = 0
+        ExplicitWidth = 185
+        ExplicitHeight = 41
+      end
+      object card_cadastro: TCard
+        Left = 0
+        Top = 0
+        Width = 785
+        Height = 464
+        Caption = 'card_cadastro'
+        CardIndex = 1
+        TabOrder = 1
+        ExplicitWidth = 185
+        ExplicitHeight = 41
+      end
+    end
   end
 end
