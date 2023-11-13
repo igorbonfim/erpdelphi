@@ -73,7 +73,7 @@ implementation
 
 {$R *.dfm}
 
-uses Provider.constants;
+uses Provider.constants, View.clientes;
 
 procedure TViewPrincipal.btnCaixaClick(Sender: TObject);
 begin
@@ -83,6 +83,13 @@ end;
 procedure TViewPrincipal.btnClientesClick(Sender: TObject);
 begin
   GetLineMenu(Sender);
+  ViewClientes := TViewClientes.Create(Self);
+
+  try
+    ViewClientes.ShowModal;
+  finally
+    FreeAndNil(ViewClientes);
+  end;
 end;
 
 procedure TViewPrincipal.btnConfigClick(Sender: TObject);
