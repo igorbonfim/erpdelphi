@@ -13,23 +13,25 @@ type
     pnlTituloCadCliente: TPanel;
     lblTituloCadastro: TLabel;
     Label1: TLabel;
-    DBEdit1: TDBEdit;
+    edtCodigo: TDBEdit;
     Label2: TLabel;
-    DBEdit2: TDBEdit;
+    edtRazaoSocial: TDBEdit;
     Label3: TLabel;
-    DBEdit3: TDBEdit;
+    edtFantasia: TDBEdit;
     Label4: TLabel;
-    DBEdit4: TDBEdit;
+    edtCnpjCpf: TDBEdit;
     Label5: TLabel;
-    DBEdit5: TDBEdit;
+    edtTelefone: TDBEdit;
     Label6: TLabel;
-    DBEdit6: TDBEdit;
+    edtIERG: TDBEdit;
     Label7: TLabel;
-    DBEdit7: TDBEdit;
+    edtObservacao: TDBEdit;
     procedure FormShow(Sender: TObject);
     procedure btnEditarClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,24 +50,51 @@ uses Service.cadastro;
 
 { TViewClientes }
 
+procedure TViewClientes.btnCancelarClick(Sender: TObject);
+begin
+  inherited;
+  if ServiceCadastro.QRY_pessoas.State in dsEditModes then
+    ServiceCadastro.QRY_pessoas.Cancel;
+  cpLista.ActiveCard := card_pesquisa;
+end;
+
 procedure TViewClientes.btnEditarClick(Sender: TObject);
 begin
   inherited;
   cpLista.ActiveCard := card_cadastro;
+  edtCnpjCpf.SetFocus;
+  ServiceCadastro.QRY_pessoas.Edit;
+end;
+
+procedure TViewClientes.btnExcluirClick(Sender: TObject);
+begin
+  inherited;
+  if ServiceCadastro.QRY_pessoas.RecordCount > 0 then
+  begin
+    ServiceCadastro.QRY_pessoas.Delete;
+    ShowMessage('Cliente excluído com sucesso!');
+    cpLista.ActiveCard := card_pesquisa;
+  end;
 end;
 
 procedure TViewClientes.btnNovoClick(Sender: TObject);
 begin
   inherited;
   cpLista.ActiveCard := card_cadastro;
+  edtCnpjCpf.SetFocus;
+  ServiceCadastro.QRY_pessoas.Insert;
 end;
 
 procedure TViewClientes.btnSalvarClick(Sender: TObject);
 begin
   inherited;
-  ServiceCadastro.QRY_pessoas.Edit;
-  ServiceCadastro.QRY_pessoas.Post;
-  cpLista.ActiveCard := card_pesquisa;
+  if ServiceCadastro.QRY_pessoas.State in dsEditModes then
+  begin
+    ServiceCadastro.QRY_pessoasTIPOPESSOA.AsInteger := 1;
+    ServiceCadastro.QRY_pessoas.Post;
+    ShowMessage('Cliente cadastrado com sucesso!');
+    cpLista.ActiveCard := card_pesquisa;
+  end;
 end;
 
 procedure TViewClientes.FormShow(Sender: TObject);

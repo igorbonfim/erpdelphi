@@ -1,13 +1,13 @@
 object ServiceCadastro: TServiceCadastro
-  OldCreateOrder = False
-  Height = 196
-  Width = 264
+  Height = 245
+  Width = 330
+  PixelsPerInch = 120
   object QRY_pessoas: TFDQuery
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PESSOAS WHERE CODIGO = :CODIGO')
-    Left = 32
-    Top = 16
+    Left = 40
+    Top = 20
     ParamData = <
       item
         Name = 'CODIGO'
@@ -15,6 +15,7 @@ object ServiceCadastro: TServiceCadastro
         ParamType = ptInput
       end>
     object QRY_pessoasCODIGO: TIntegerField
+      AutoGenerateValue = arAutoInc
       FieldName = 'CODIGO'
       Origin = 'CODIGO'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
@@ -59,8 +60,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM ENDERECO WHERE CODIGO = :CODIGO')
-    Left = 112
-    Top = 16
+    Left = 140
+    Top = 20
     ParamData = <
       item
         Name = 'CODIGO'
