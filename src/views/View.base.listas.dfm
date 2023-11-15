@@ -1,17 +1,17 @@
 inherited ViewBaseListas: TViewBaseListas
   BorderStyle = bsNone
   Caption = 'ViewBaseListas'
-  ClientHeight = 545
-  ClientWidth = 787
+  ClientHeight = 550
+  ClientWidth = 1024
   Position = poMainFormCenter
   OnShow = FormShow
-  ExplicitWidth = 787
-  ExplicitHeight = 545
+  ExplicitWidth = 1024
+  ExplicitHeight = 550
   TextHeight = 13
   object pnlTopo: TPanel
     Left = 0
     Top = 0
-    Width = 787
+    Width = 1024
     Height = 41
     Align = alTop
     BevelOuter = bvNone
@@ -19,11 +19,12 @@ inherited ViewBaseListas: TViewBaseListas
     ParentBackground = False
     TabOrder = 0
     OnMouseDown = pnlTopoMouseDown
+    ExplicitWidth = 787
     object lblTitulo: TLabel
       AlignWithMargins = True
       Left = 40
       Top = 3
-      Width = 644
+      Width = 881
       Height = 35
       Margins.Left = 5
       Align = alClient
@@ -146,13 +147,14 @@ inherited ViewBaseListas: TViewBaseListas
       end
     end
     object pnlFechar: TPanel
-      Left = 687
+      Left = 924
       Top = 0
       Width = 100
       Height = 41
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitLeft = 687
       object btnSair: TSpeedButton
         AlignWithMargins = True
         Left = 3
@@ -176,18 +178,19 @@ inherited ViewBaseListas: TViewBaseListas
   end
   object pnlRodape: TPanel
     Left = 0
-    Top = 505
-    Width = 787
+    Top = 510
+    Width = 1024
     Height = 40
     Align = alBottom
     BevelOuter = bvNone
     Color = 7500402
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = -3
+    ExplicitTop = 505
+    ExplicitWidth = 787
     object btnCancelar: TSpeedButton
       AlignWithMargins = True
-      Left = 481
+      Left = 718
       Top = 3
       Width = 97
       Height = 34
@@ -202,11 +205,12 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Name = 'Segoe UI Semibold'
       Font.Style = [fsBold]
       ParentFont = False
+      ExplicitLeft = 481
       ExplicitTop = -13
     end
     object btnEditar: TSpeedButton
       AlignWithMargins = True
-      Left = 378
+      Left = 615
       Top = 3
       Width = 97
       Height = 34
@@ -226,7 +230,7 @@ inherited ViewBaseListas: TViewBaseListas
     end
     object btnNovo: TSpeedButton
       AlignWithMargins = True
-      Left = 275
+      Left = 512
       Top = 3
       Width = 97
       Height = 34
@@ -247,7 +251,7 @@ inherited ViewBaseListas: TViewBaseListas
     end
     object btnSalvar: TSpeedButton
       AlignWithMargins = True
-      Left = 584
+      Left = 821
       Top = 3
       Width = 97
       Height = 34
@@ -266,7 +270,7 @@ inherited ViewBaseListas: TViewBaseListas
     end
     object btnExcluir: TSpeedButton
       AlignWithMargins = True
-      Left = 687
+      Left = 924
       Top = 3
       Width = 97
       Height = 34
@@ -287,23 +291,21 @@ inherited ViewBaseListas: TViewBaseListas
   object pnlBackground: TPanel
     Left = 0
     Top = 41
-    Width = 787
-    Height = 464
+    Width = 1024
+    Height = 469
     Align = alClient
     BevelOuter = bvNone
     Color = 7500402
     ParentBackground = False
     TabOrder = 2
-    ExplicitLeft = 200
-    ExplicitTop = 168
-    ExplicitWidth = 185
-    ExplicitHeight = 41
+    ExplicitWidth = 787
+    ExplicitHeight = 464
     object cpLista: TCardPanel
       AlignWithMargins = True
       Left = 1
       Top = 0
-      Width = 785
-      Height = 464
+      Width = 1022
+      Height = 469
       Margins.Left = 1
       Margins.Top = 0
       Margins.Right = 1
@@ -315,21 +317,22 @@ inherited ViewBaseListas: TViewBaseListas
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 783
+      ExplicitWidth = 785
+      ExplicitHeight = 464
       object card_pesquisa: TCard
         Left = 0
         Top = 0
-        Width = 785
-        Height = 464
+        Width = 1022
+        Height = 469
         Caption = 'card_pesquisa'
         CardIndex = 0
         TabOrder = 0
-        ExplicitWidth = 185
-        ExplicitHeight = 41
+        ExplicitWidth = 785
+        ExplicitHeight = 464
         object pnlTituloPesquisa: TPanel
           Left = 0
           Top = 0
-          Width = 785
+          Width = 1022
           Height = 113
           Align = alTop
           BevelOuter = bvNone
@@ -342,8 +345,7 @@ inherited ViewBaseListas: TViewBaseListas
           ParentBackground = False
           ParentFont = False
           TabOrder = 0
-          ExplicitLeft = -1
-          ExplicitTop = 3
+          ExplicitWidth = 785
           object lblTituloPesquisa: TLabel
             Left = 5
             Top = 16
@@ -377,8 +379,8 @@ inherited ViewBaseListas: TViewBaseListas
           AlignWithMargins = True
           Left = 5
           Top = 118
-          Width = 775
-          Height = 341
+          Width = 1012
+          Height = 346
           Margins.Left = 5
           Margins.Top = 5
           Margins.Right = 5
@@ -398,8 +400,8 @@ inherited ViewBaseListas: TViewBaseListas
       object card_cadastro: TCard
         Left = 0
         Top = 0
-        Width = 785
-        Height = 464
+        Width = 1022
+        Height = 469
         Caption = 'card_cadastro'
         CardIndex = 1
         TabOrder = 1
