@@ -75,6 +75,7 @@ inherited ViewClientes: TViewClientes
   end
   inherited pnlBackground: TPanel
     inherited cpLista: TCardPanel
+      ActiveCard = card_cadastro
       inherited card_pesquisa: TCard
         inherited dgbDados: TDBGrid
           Columns = <
@@ -119,8 +120,8 @@ inherited ViewClientes: TViewClientes
         ExplicitWidth = 1022
         ExplicitHeight = 469
         object Label1: TLabel
-          Left = 17
-          Top = 121
+          Left = 16
+          Top = 124
           Width = 65
           Height = 28
           Caption = 'C'#243'digo'
@@ -133,8 +134,8 @@ inherited ViewClientes: TViewClientes
           ParentFont = False
         end
         object Label2: TLabel
-          Left = 254
-          Top = 121
+          Left = 253
+          Top = 124
           Width = 109
           Height = 28
           Caption = 'Raz'#227'o social'
@@ -147,8 +148,8 @@ inherited ViewClientes: TViewClientes
           ParentFont = False
         end
         object Label3: TLabel
-          Left = 662
-          Top = 121
+          Left = 661
+          Top = 124
           Width = 132
           Height = 28
           Caption = 'Nome fantasia'
@@ -161,8 +162,8 @@ inherited ViewClientes: TViewClientes
           ParentFont = False
         end
         object Label4: TLabel
-          Left = 99
-          Top = 121
+          Left = 98
+          Top = 124
           Width = 100
           Height = 28
           Caption = 'CNPJ / CPF'
@@ -220,7 +221,7 @@ inherited ViewClientes: TViewClientes
           Left = 0
           Top = 0
           Width = 1022
-          Height = 113
+          Height = 80
           Align = alTop
           BevelOuter = bvNone
           Color = 15461355
@@ -247,8 +248,8 @@ inherited ViewClientes: TViewClientes
           end
         end
         object edtCodigo: TDBEdit
-          Left = 17
-          Top = 151
+          Left = 16
+          Top = 154
           Width = 76
           Height = 21
           DataField = 'CODIGO'
@@ -257,8 +258,8 @@ inherited ViewClientes: TViewClientes
           TabOrder = 1
         end
         object edtRazaoSocial: TDBEdit
-          Left = 254
-          Top = 151
+          Left = 253
+          Top = 154
           Width = 400
           Height = 21
           CharCase = ecUpperCase
@@ -267,8 +268,8 @@ inherited ViewClientes: TViewClientes
           TabOrder = 2
         end
         object edtFantasia: TDBEdit
-          Left = 662
-          Top = 151
+          Left = 661
+          Top = 154
           Width = 350
           Height = 21
           CharCase = ecUpperCase
@@ -277,8 +278,8 @@ inherited ViewClientes: TViewClientes
           TabOrder = 3
         end
         object edtCnpjCpf: TDBEdit
-          Left = 99
-          Top = 151
+          Left = 98
+          Top = 154
           Width = 146
           Height = 21
           CharCase = ecUpperCase
