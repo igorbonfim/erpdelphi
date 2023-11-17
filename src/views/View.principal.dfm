@@ -4,8 +4,8 @@ object ViewPrincipal: TViewPrincipal
   Align = alClient
   BorderStyle = bsNone
   Caption = 'Principal'
-  ClientHeight = 535
-  ClientWidth = 788
+  ClientHeight = 550
+  ClientWidth = 1024
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -2132,7 +2132,7 @@ object ViewPrincipal: TViewPrincipal
   object pnlTopo: TPanel
     Left = 0
     Top = 0
-    Width = 788
+    Width = 1024
     Height = 70
     Align = alTop
     BevelOuter = bvNone
@@ -2261,7 +2261,7 @@ object ViewPrincipal: TViewPrincipal
       end
     end
     object pnlUsuario: TPanel
-      Left = 568
+      Left = 804
       Top = 0
       Width = 220
       Height = 70
@@ -2441,7 +2441,7 @@ object ViewPrincipal: TViewPrincipal
     Left = 0
     Top = 70
     Width = 210
-    Height = 465
+    Height = 480
     Align = alLeft
     BevelOuter = bvNone
     Color = 5395026
@@ -2449,7 +2449,7 @@ object ViewPrincipal: TViewPrincipal
     TabOrder = 1
     object pnlSair: TPanel
       Left = 0
-      Top = 424
+      Top = 439
       Width = 210
       Height = 41
       Align = alBottom
@@ -2482,7 +2482,7 @@ object ViewPrincipal: TViewPrincipal
       Left = 0
       Top = 0
       Width = 4
-      Height = 424
+      Height = 439
       Align = alLeft
       BevelOuter = bvNone
       Color = 5395026
@@ -2499,7 +2499,7 @@ object ViewPrincipal: TViewPrincipal
       Left = 4
       Top = 0
       Width = 206
-      Height = 424
+      Height = 439
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 2
@@ -3446,15 +3446,15 @@ object ViewPrincipal: TViewPrincipal
   object pnlBackPrincipal: TPanel
     Left = 210
     Top = 70
-    Width = 578
-    Height = 465
+    Width = 814
+    Height = 480
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 2
     object pnlRodape: TPanel
       Left = 0
-      Top = 424
-      Width = 578
+      Top = 439
+      Width = 814
       Height = 41
       Align = alBottom
       BevelOuter = bvNone
@@ -3463,7 +3463,7 @@ object ViewPrincipal: TViewPrincipal
       TabOrder = 0
       object pnlLicenciado: TPanel
         AlignWithMargins = True
-        Left = 268
+        Left = 504
         Top = 0
         Width = 300
         Height = 41
@@ -3545,8 +3545,8 @@ object ViewPrincipal: TViewPrincipal
     object pnlConteudo: TPanel
       Left = 0
       Top = 0
-      Width = 578
-      Height = 424
+      Width = 814
+      Height = 439
       Align = alClient
       BevelOuter = bvNone
       Color = clWhite
@@ -3555,8 +3555,8 @@ object ViewPrincipal: TViewPrincipal
       object imgBackground: TImage
         Left = 0
         Top = 0
-        Width = 578
-        Height = 424
+        Width = 814
+        Height = 439
         Align = alClient
         Center = True
         ParentShowHint = False

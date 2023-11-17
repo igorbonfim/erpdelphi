@@ -1,13 +1,12 @@
 object ServiceCadastro: TServiceCadastro
-  Height = 245
-  Width = 330
-  PixelsPerInch = 120
+  Height = 196
+  Width = 264
   object QRY_pessoas: TFDQuery
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PESSOAS WHERE CODIGO = :CODIGO')
-    Left = 40
-    Top = 20
+    Left = 32
+    Top = 16
     ParamData = <
       item
         Name = 'CODIGO'
@@ -60,8 +59,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM ENDERECO WHERE CODIGO = :CODIGO')
-    Left = 140
-    Top = 20
+    Left = 152
+    Top = 16
     ParamData = <
       item
         Name = 'CODIGO'

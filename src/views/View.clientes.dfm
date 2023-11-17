@@ -75,7 +75,6 @@ inherited ViewClientes: TViewClientes
   end
   inherited pnlBackground: TPanel
     inherited cpLista: TCardPanel
-      ActiveCard = card_cadastro
       inherited card_pesquisa: TCard
         inherited dgbDados: TDBGrid
           Columns = <
@@ -251,7 +250,7 @@ inherited ViewClientes: TViewClientes
           Left = 17
           Top = 151
           Width = 76
-          Height = 25
+          Height = 21
           DataField = 'CODIGO'
           DataSource = dsDados
           ReadOnly = True
@@ -322,7 +321,7 @@ inherited ViewClientes: TViewClientes
   end
   inherited dsDados: TDataSource
     DataSet = ServiceCadastro.QRY_pessoas
-    Left = 761
+    Left = 873
     Top = 65
   end
 end

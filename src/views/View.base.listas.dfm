@@ -19,7 +19,6 @@ inherited ViewBaseListas: TViewBaseListas
     ParentBackground = False
     TabOrder = 0
     OnMouseDown = pnlTopoMouseDown
-    ExplicitWidth = 787
     object lblTitulo: TLabel
       AlignWithMargins = True
       Left = 40
@@ -154,7 +153,6 @@ inherited ViewBaseListas: TViewBaseListas
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitLeft = 687
       object btnSair: TSpeedButton
         AlignWithMargins = True
         Left = 3
@@ -186,8 +184,6 @@ inherited ViewBaseListas: TViewBaseListas
     Color = 7500402
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 505
-    ExplicitWidth = 787
     object btnCancelar: TSpeedButton
       AlignWithMargins = True
       Left = 718
@@ -298,8 +294,6 @@ inherited ViewBaseListas: TViewBaseListas
     Color = 7500402
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 787
-    ExplicitHeight = 464
     object cpLista: TCardPanel
       AlignWithMargins = True
       Left = 1
@@ -317,8 +311,6 @@ inherited ViewBaseListas: TViewBaseListas
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 785
-      ExplicitHeight = 464
       object card_pesquisa: TCard
         Left = 0
         Top = 0
@@ -327,8 +319,6 @@ inherited ViewBaseListas: TViewBaseListas
         Caption = 'card_pesquisa'
         CardIndex = 0
         TabOrder = 0
-        ExplicitWidth = 785
-        ExplicitHeight = 464
         object pnlTituloPesquisa: TPanel
           Left = 0
           Top = 0
@@ -345,7 +335,6 @@ inherited ViewBaseListas: TViewBaseListas
           ParentBackground = False
           ParentFont = False
           TabOrder = 0
-          ExplicitWidth = 785
           object lblTituloPesquisa: TLabel
             Left = 5
             Top = 16
