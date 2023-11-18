@@ -86,6 +86,7 @@ begin
 
   ViewClientes := TViewClientes.Create(Self);
   try
+    ViewClientes.Tag := 1;
     ViewClientes.ShowModal;
   finally
     FreeAndNil(ViewClientes);
@@ -103,6 +104,7 @@ begin
 
   ViewFornecedores := TViewFornecedores.Create(Self);
   try
+    ViewFornecedores.Tag := 2;
     ViewFornecedores.ShowModal;
   finally
     FreeAndNil(ViewFornecedores);
@@ -122,7 +124,7 @@ end;
 procedure TViewPrincipal.FormShow(Sender: TObject);
 begin
   GetLineMenu(btnClientes);
-  lblLicenciado.Caption := sRAZAO_FILIAL;
+  lblLicenciado.Caption := sRAZAO_FILIAL;  
 end;
 
 procedure TViewPrincipal.GetLineMenu(Sender: TObject);

@@ -201,6 +201,7 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Name = 'Segoe UI Semibold'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = btnCancelarClick
       ExplicitLeft = 481
       ExplicitTop = -13
     end
@@ -221,6 +222,7 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Name = 'Segoe UI Semibold'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = btnEditarClick
       ExplicitLeft = 720
       ExplicitTop = -5
     end
@@ -242,6 +244,7 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Name = 'Segoe UI Semibold'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = btnNovoClick
       ExplicitLeft = 720
       ExplicitTop = -5
     end
@@ -262,6 +265,7 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Name = 'Segoe UI Semibold'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = btnSalvarClick
       ExplicitLeft = 690
     end
     object btnExcluir: TSpeedButton
@@ -281,6 +285,7 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Name = 'Segoe UI Semibold'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = btnExcluirClick
       ExplicitLeft = 704
     end
   end
@@ -311,6 +316,7 @@ inherited ViewBaseListas: TViewBaseListas
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
+      OnCardChange = cpListaCardChange
       object card_pesquisa: TCard
         Left = 0
         Top = 0
@@ -394,8 +400,6 @@ inherited ViewBaseListas: TViewBaseListas
         Caption = 'card_cadastro'
         CardIndex = 1
         TabOrder = 1
-        ExplicitWidth = 185
-        ExplicitHeight = 41
       end
     end
   end

@@ -117,8 +117,6 @@ inherited ViewClientes: TViewClientes
         end
       end
       inherited card_cadastro: TCard
-        ExplicitWidth = 1022
-        ExplicitHeight = 469
         object Label1: TLabel
           Left = 16
           Top = 124

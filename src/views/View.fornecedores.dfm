@@ -53,23 +53,6 @@ inherited ViewFornecedores: TViewFornecedores
       end
     end
   end
-  inherited pnlRodape: TPanel
-    inherited btnCancelar: TSpeedButton
-      OnClick = btnCancelarClick
-    end
-    inherited btnEditar: TSpeedButton
-      OnClick = btnEditarClick
-    end
-    inherited btnNovo: TSpeedButton
-      OnClick = btnNovoClick
-    end
-    inherited btnSalvar: TSpeedButton
-      OnClick = btnSalvarClick
-    end
-    inherited btnExcluir: TSpeedButton
-      OnClick = btnExcluirClick
-    end
-  end
   inherited pnlBackground: TPanel
     inherited cpLista: TCardPanel
       ActiveCard = card_cadastro
@@ -106,8 +89,6 @@ inherited ViewFornecedores: TViewFornecedores
         end
       end
       inherited card_cadastro: TCard
-        ExplicitWidth = 1022
-        ExplicitHeight = 469
         object Label1: TLabel
           Left = 16
           Top = 124
