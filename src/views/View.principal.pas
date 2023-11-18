@@ -73,7 +73,7 @@ implementation
 
 {$R *.dfm}
 
-uses Provider.constants, View.clientes, View.fornecedores;
+uses Provider.constants, View.clientes, View.fornecedores, Provider.conversao;
 
 procedure TViewPrincipal.btnCaixaClick(Sender: TObject);
 begin
@@ -86,7 +86,7 @@ begin
 
   ViewClientes := TViewClientes.Create(Self);
   try
-    ViewClientes.Tag := 1;
+    ViewClientes.Tag := PessoasToInt(tpCliente);
     ViewClientes.ShowModal;
   finally
     FreeAndNil(ViewClientes);
@@ -104,7 +104,7 @@ begin
 
   ViewFornecedores := TViewFornecedores.Create(Self);
   try
-    ViewFornecedores.Tag := 2;
+    ViewFornecedores.Tag := PessoasToInt(tpFornecedores);
     ViewFornecedores.ShowModal;
   finally
     FreeAndNil(ViewFornecedores);

@@ -133,6 +133,7 @@
             <Form>ViewFornecedores</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\providers\Provider.conversao.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
