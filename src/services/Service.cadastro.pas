@@ -28,6 +28,23 @@ type
     QRY_enderecosBAIRRO: TStringField;
     QRY_enderecosOBSERVACAO: TStringField;
     QRY_enderecosNUMERO: TStringField;
+    QRY_produto1: TFDQuery;
+    QRY_produto2: TFDQuery;
+    QRY_produto1CODIGO: TIntegerField;
+    QRY_produto1NOMECOMPLETO: TStringField;
+    QRY_produto1NOMEPOPULAR: TStringField;
+    QRY_produto1CODIGOBARRA: TStringField;
+    QRY_produto1REFERENCIA: TStringField;
+    QRY_produto1GRUPO: TIntegerField;
+    QRY_produto1SUBGRUPO: TIntegerField;
+    QRY_produto2CODIGO: TIntegerField;
+    QRY_produto2CODIGO_PRODUTO: TIntegerField;
+    QRY_produto2FILIAL: TIntegerField;
+    QRY_produto2CUSTOINICIAL: TFMTBCDField;
+    QRY_produto2VENDAVISTA: TFMTBCDField;
+    QRY_produto2VENDAPRAZO: TFMTBCDField;
+    QRY_produto2SIT_TRIBUTARIA: TIntegerField;
+    QRY_produto2NCM: TIntegerField;
   private
     { Private declarations }
   public

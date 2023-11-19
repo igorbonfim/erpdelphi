@@ -1,12 +1,13 @@
 object ServiceCadastro: TServiceCadastro
-  Height = 196
-  Width = 264
+  Height = 245
+  Width = 330
+  PixelsPerInch = 120
   object QRY_pessoas: TFDQuery
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PESSOAS WHERE CODIGO = :CODIGO')
-    Left = 32
-    Top = 16
+    Left = 40
+    Top = 20
     ParamData = <
       item
         Name = 'CODIGO'
@@ -59,8 +60,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM ENDERECO WHERE CODIGO = :CODIGO')
-    Left = 152
-    Top = 16
+    Left = 190
+    Top = 20
     ParamData = <
       item
         Name = 'CODIGO'
@@ -105,6 +106,113 @@ object ServiceCadastro: TServiceCadastro
     object QRY_enderecosNUMERO: TStringField
       FieldName = 'NUMERO'
       Origin = 'NUMERO'
+    end
+  end
+  object QRY_produto1: TFDQuery
+    Connection = ServiceConexao.FDConn
+    SQL.Strings = (
+      'SELECT * FROM PRODUTO WHERE CODIGO = :CODIGO')
+    Left = 40
+    Top = 136
+    ParamData = <
+      item
+        Name = 'CODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+    object QRY_produto1CODIGO: TIntegerField
+      AutoGenerateValue = arAutoInc
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODIGO'
+      Origin = 'CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QRY_produto1NOMECOMPLETO: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'NOMECOMPLETO'
+      Origin = 'NOMECOMPLETO'
+      Size = 100
+    end
+    object QRY_produto1NOMEPOPULAR: TStringField
+      DisplayLabel = 'Nome reduzido'
+      FieldName = 'NOMEPOPULAR'
+      Origin = 'NOMEPOPULAR'
+      Size = 100
+    end
+    object QRY_produto1CODIGOBARRA: TStringField
+      FieldName = 'CODIGOBARRA'
+      Origin = 'CODIGOBARRA'
+      Size = 50
+    end
+    object QRY_produto1REFERENCIA: TStringField
+      FieldName = 'REFERENCIA'
+      Origin = 'REFERENCIA'
+      Size = 50
+    end
+    object QRY_produto1GRUPO: TIntegerField
+      FieldName = 'GRUPO'
+      Origin = 'GRUPO'
+    end
+    object QRY_produto1SUBGRUPO: TIntegerField
+      FieldName = 'SUBGRUPO'
+      Origin = 'SUBGRUPO'
+    end
+  end
+  object QRY_produto2: TFDQuery
+    Connection = ServiceConexao.FDConn
+    SQL.Strings = (
+      'SELECT * FROM PRODUTO_DETALHE WHERE CODIGO = :CODIGO')
+    Left = 184
+    Top = 136
+    ParamData = <
+      item
+        Name = 'CODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+    object QRY_produto2CODIGO: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'CODIGO'
+      Origin = 'CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QRY_produto2CODIGO_PRODUTO: TIntegerField
+      FieldName = 'CODIGO_PRODUTO'
+      Origin = 'CODIGO_PRODUTO'
+    end
+    object QRY_produto2FILIAL: TIntegerField
+      FieldName = 'FILIAL'
+      Origin = 'FILIAL'
+    end
+    object QRY_produto2CUSTOINICIAL: TFMTBCDField
+      FieldName = 'CUSTOINICIAL'
+      Origin = 'CUSTOINICIAL'
+      Precision = 18
+      Size = 2
+    end
+    object QRY_produto2VENDAVISTA: TFMTBCDField
+      FieldName = 'VENDAVISTA'
+      Origin = 'VENDAVISTA'
+      Precision = 18
+      Size = 2
+    end
+    object QRY_produto2VENDAPRAZO: TFMTBCDField
+      FieldName = 'VENDAPRAZO'
+      Origin = 'VENDAPRAZO'
+      Precision = 18
+      Size = 2
+    end
+    object QRY_produto2SIT_TRIBUTARIA: TIntegerField
+      FieldName = 'SIT_TRIBUTARIA'
+      Origin = 'SIT_TRIBUTARIA'
+    end
+    object QRY_produto2NCM: TIntegerField
+      FieldName = 'NCM'
+      Origin = 'NCM'
     end
   end
 end
