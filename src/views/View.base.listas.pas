@@ -115,26 +115,35 @@ end;
 procedure TViewBaseListas.btnSalvarClick(Sender: TObject);
 begin
   inherited;
-  if ServiceCadastro.QRY_pessoas.State in dsEditModes then
+
+  if dsDados.DataSet.State in dsEditModes then
   begin
-    ServiceCadastro.QRY_pessoasTIPOPESSOA.AsInteger := Self.Tag;
-    ServiceCadastro.QRY_pessoas.Post;
 
-    case Self.Tag of
-      1:
-      begin
-        ShowMessage('Cliente gravado com sucesso!');
-      end;
+    if Self.Tag > 0 then
+    begin
+      ServiceCadastro.QRY_pessoasTIPOPESSOA.AsInteger := Self.Tag;
+      ServiceCadastro.QRY_pessoas.Post;
 
-      2:
-      begin
-        ShowMessage('Fornecedor gravado com sucesso!');
-      end;
+      case Self.Tag of
+        1:
+        begin
+          ShowMessage('Cliente gravado com sucesso!');
+        end;
 
-      3:
-      begin
-        ShowMessage('Funcionário gravado com sucesso!');
+        2:
+        begin
+          ShowMessage('Fornecedor gravado com sucesso!');
+        end;
+
+        3:
+        begin
+          ShowMessage('Funcionário gravado com sucesso!');
+        end;
       end;
+    end
+    else begin
+      dsDados.DataSet.Post;
+      ShowMessage('Dados gravados com sucesso!');
     end;
 
     cpLista.ActiveCard := card_pesquisa;
