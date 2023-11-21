@@ -11,6 +11,7 @@ uses
 type
   TViewProdutos = class(TViewBaseListas)
     dsProdutoDetalhe: TDataSource;
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -24,6 +25,12 @@ implementation
 
 {$R *.dfm}
 
-uses Service.cadastro;
+uses Service.cadastro, Provider.constants;
+
+procedure TViewProdutos.FormShow(Sender: TObject);
+begin
+  inherited;
+  GetProdutos;
+end;
 
 end.

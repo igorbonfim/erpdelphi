@@ -159,6 +159,11 @@ object ServiceCadastro: TServiceCadastro
       FieldName = 'SUBGRUPO'
       Origin = 'SUBGRUPO'
     end
+    object QRY_produto1NCM: TStringField
+      FieldName = 'NCM'
+      Origin = 'NCM'
+      Size = 10
+    end
   end
   object QRY_produto2: TFDQuery
     Connection = ServiceConexao.FDConn
@@ -209,10 +214,6 @@ object ServiceCadastro: TServiceCadastro
     object QRY_produto2SIT_TRIBUTARIA: TIntegerField
       FieldName = 'SIT_TRIBUTARIA'
       Origin = 'SIT_TRIBUTARIA'
-    end
-    object QRY_produto2NCM: TIntegerField
-      FieldName = 'NCM'
-      Origin = 'NCM'
     end
   end
 end

@@ -73,7 +73,8 @@ implementation
 
 {$R *.dfm}
 
-uses Provider.constants, View.clientes, View.fornecedores, Provider.conversao;
+uses Provider.constants, View.clientes, View.fornecedores, Provider.conversao,
+  View.produtos;
 
 procedure TViewPrincipal.btnCaixaClick(Sender: TObject);
 begin
@@ -114,6 +115,13 @@ end;
 procedure TViewPrincipal.btnProdutosClick(Sender: TObject);
 begin
   GetLineMenu(Sender);
+
+  ViewProdutos := TViewProdutos.Create(Self);
+  try
+    ViewProdutos.ShowModal;
+  finally
+    FreeAndNil(ViewProdutos);
+  end;
 end;
 
 procedure TViewPrincipal.btnSairClick(Sender: TObject);
