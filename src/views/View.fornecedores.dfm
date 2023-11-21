@@ -219,11 +219,12 @@ inherited ViewFornecedores: TViewFornecedores
         end
         object edtCodigo: TDBEdit
           Left = 16
-          Top = 154
+          Top = 153
           Width = 76
           Height = 21
           DataField = 'CODIGO'
           DataSource = dsDados
+          Enabled = False
           ReadOnly = True
           TabOrder = 1
         end

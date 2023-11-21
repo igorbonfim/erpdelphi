@@ -29,6 +29,7 @@ type
     edtNCM: TDBEdit;
     procedure FormShow(Sender: TObject);
     procedure dsDadosDataChange(Sender: TObject; Field: TField);
+    procedure btnNovoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,6 +44,13 @@ implementation
 {$R *.dfm}
 
 uses Service.cadastro, Provider.constants;
+
+procedure TViewProdutos.btnNovoClick(Sender: TObject);
+begin
+  inherited;
+  ServiceCadastro.QRY_produto1GRUPO.AsInteger := 1;
+  ServiceCadastro.QRY_produto1SUBGRUPO.AsInteger := 1;
+end;
 
 procedure TViewProdutos.dsDadosDataChange(Sender: TObject; Field: TField);
 begin

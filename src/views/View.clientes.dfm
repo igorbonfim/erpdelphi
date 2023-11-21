@@ -56,23 +56,6 @@ inherited ViewClientes: TViewClientes
       end
     end
   end
-  inherited pnlRodape: TPanel
-    inherited btnCancelar: TSpeedButton
-      OnClick = btnCancelarClick
-    end
-    inherited btnEditar: TSpeedButton
-      OnClick = btnEditarClick
-    end
-    inherited btnNovo: TSpeedButton
-      OnClick = btnNovoClick
-    end
-    inherited btnSalvar: TSpeedButton
-      OnClick = btnSalvarClick
-    end
-    inherited btnExcluir: TSpeedButton
-      OnClick = btnExcluirClick
-    end
-  end
   inherited pnlBackground: TPanel
     inherited cpLista: TCardPanel
       ActiveCard = card_cadastro
@@ -252,6 +235,7 @@ inherited ViewClientes: TViewClientes
           Height = 21
           DataField = 'CODIGO'
           DataSource = dsDados
+          Enabled = False
           ReadOnly = True
           TabOrder = 1
         end

@@ -3,8 +3,6 @@ inherited ViewProdutos: TViewProdutos
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
-      Width = 881
-      Height = 35
       Caption = 'Produtos'
       ExplicitWidth = 95
     end
@@ -205,7 +203,7 @@ inherited ViewProdutos: TViewProdutos
         end
       end
       inherited card_cadastro: TCard
-        ExplicitLeft = -2
+        ExplicitLeft = -1
         ExplicitTop = -3
         object Label1: TLabel
           Left = 16
@@ -329,6 +327,7 @@ inherited ViewProdutos: TViewProdutos
           Height = 25
           DataField = 'CODIGO'
           DataSource = dsDados
+          Enabled = False
           TabOrder = 1
         end
         object edtNome: TDBEdit
@@ -336,6 +335,7 @@ inherited ViewProdutos: TViewProdutos
           Top = 130
           Width = 400
           Height = 25
+          CharCase = ecUpperCase
           DataField = 'NOMECOMPLETO'
           DataSource = dsDados
           TabOrder = 2
@@ -345,6 +345,7 @@ inherited ViewProdutos: TViewProdutos
           Top = 130
           Width = 400
           Height = 25
+          CharCase = ecUpperCase
           DataField = 'NOMEPOPULAR'
           DataSource = dsDados
           TabOrder = 3
@@ -354,6 +355,7 @@ inherited ViewProdutos: TViewProdutos
           Top = 235
           Width = 155
           Height = 25
+          CharCase = ecUpperCase
           DataField = 'CODIGOBARRA'
           DataSource = dsDados
           TabOrder = 4
@@ -363,6 +365,7 @@ inherited ViewProdutos: TViewProdutos
           Top = 235
           Width = 200
           Height = 25
+          CharCase = ecUpperCase
           DataField = 'REFERENCIA'
           DataSource = dsDados
           TabOrder = 5
@@ -372,6 +375,7 @@ inherited ViewProdutos: TViewProdutos
           Top = 235
           Width = 153
           Height = 25
+          CharCase = ecUpperCase
           DataField = 'NCM'
           DataSource = dsDados
           TabOrder = 6

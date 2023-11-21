@@ -60,7 +60,7 @@ procedure TViewBaseListas.btnCancelarClick(Sender: TObject);
 begin
   inherited;
   if dsDados.DataSet.State in dsEditModes then
-    ServiceCadastro.QRY_pessoas.Cancel;
+   dsDados.DataSet.Cancel;
   cpLista.ActiveCard := card_pesquisa;
 end;
 
