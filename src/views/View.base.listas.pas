@@ -59,7 +59,7 @@ uses Service.cadastro, Provider.constants;
 procedure TViewBaseListas.btnCancelarClick(Sender: TObject);
 begin
   inherited;
-  if ServiceCadastro.QRY_pessoas.State in dsEditModes then
+  if dsDados.DataSet.State in dsEditModes then
     ServiceCadastro.QRY_pessoas.Cancel;
   cpLista.ActiveCard := card_pesquisa;
 end;
@@ -68,31 +68,37 @@ procedure TViewBaseListas.btnEditarClick(Sender: TObject);
 begin
   inherited;
   cpLista.ActiveCard := card_cadastro;
-  ServiceCadastro.QRY_pessoas.Edit;
+  dsDados.DataSet.Edit;
 end;
 
 procedure TViewBaseListas.btnExcluirClick(Sender: TObject);
 begin
   inherited;
-  if ServiceCadastro.QRY_pessoas.RecordCount > 0 then
+  if dsDados.DataSet.RecordCount > 0 then
   begin
-    ServiceCadastro.QRY_pessoas.Delete;
+    dsDados.DataSet.Delete;
 
-    case Self.Tag of
-      1:
-      begin
-        ShowMessage('Cliente excluído com sucesso!');
-      end;
+    if Self.Tag > 0 then
+    begin
+      case Self.Tag of
+        1:
+        begin
+          ShowMessage('Cliente excluído com sucesso!');
+        end;
 
-      2:
-      begin
-        ShowMessage('Fornecedor excluído com sucesso!');
-      end;
+        2:
+        begin
+          ShowMessage('Fornecedor excluído com sucesso!');
+        end;
 
-      3:
-      begin
-        ShowMessage('Funcionário excluído com sucesso!');
+        3:
+        begin
+          ShowMessage('Funcionário excluído com sucesso!');
+        end;
       end;
+    end
+    else begin
+      ShowMessage('Dados excluídos com sucesso');
     end;
 
     cpLista.ActiveCard := card_pesquisa;
@@ -103,7 +109,7 @@ procedure TViewBaseListas.btnNovoClick(Sender: TObject);
 begin
   inherited;
   cpLista.ActiveCard := card_cadastro;
-  ServiceCadastro.QRY_pessoas.Insert;
+  dsDados.DataSet.Insert;
 end;
 
 procedure TViewBaseListas.btnSairClick(Sender: TObject);

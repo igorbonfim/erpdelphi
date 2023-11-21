@@ -82,6 +82,7 @@ inherited ViewProdutos: TViewProdutos
   end
   inherited pnlBackground: TPanel
     inherited cpLista: TCardPanel
+      ActiveCard = card_cadastro
       inherited card_pesquisa: TCard
         inherited dgbDados: TDBGrid
           Height = 196
@@ -203,15 +204,190 @@ inherited ViewProdutos: TViewProdutos
           end
         end
       end
+      inherited card_cadastro: TCard
+        ExplicitLeft = -2
+        ExplicitTop = -3
+        object Label1: TLabel
+          Left = 16
+          Top = 96
+          Width = 65
+          Height = 28
+          Caption = 'C'#243'digo'
+          FocusControl = edtCodigoProduto
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -20
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label2: TLabel
+          Left = 94
+          Top = 96
+          Width = 56
+          Height = 28
+          Caption = 'Nome'
+          FocusControl = edtNome
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -20
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label3: TLabel
+          Left = 500
+          Top = 96
+          Width = 142
+          Height = 28
+          Caption = 'Nome reduzido'
+          FocusControl = edtNomePopular
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -20
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label4: TLabel
+          Left = 16
+          Top = 199
+          Width = 155
+          Height = 28
+          Caption = 'C'#243'digo de Barras'
+          FocusControl = edtCodBarras
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -20
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label5: TLabel
+          Left = 180
+          Top = 199
+          Width = 94
+          Height = 28
+          Caption = 'Refer'#234'ncia'
+          FocusControl = edtReferencia
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -20
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label6: TLabel
+          Left = 386
+          Top = 199
+          Width = 45
+          Height = 28
+          Caption = 'NCM'
+          FocusControl = edtNCM
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -20
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object pnlTituloCadProduto: TPanel
+          Left = 0
+          Top = 0
+          Width = 1022
+          Height = 80
+          Align = alTop
+          BevelOuter = bvNone
+          Color = 15461355
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 8816262
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 0
+          ExplicitTop = 8
+          object lblTituloCadastroProduto: TLabel
+            Left = 17
+            Top = 16
+            Width = 243
+            Height = 37
+            Caption = 'Cadastro de Produto'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = 8816262
+            Font.Height = -27
+            Font.Name = 'Segoe UI Semilight'
+            Font.Style = []
+            ParentFont = False
+          end
+        end
+        object edtCodigoProduto: TDBEdit
+          Left = 16
+          Top = 130
+          Width = 73
+          Height = 25
+          DataField = 'CODIGO'
+          DataSource = dsDados
+          TabOrder = 1
+        end
+        object edtNome: TDBEdit
+          Left = 94
+          Top = 130
+          Width = 400
+          Height = 25
+          DataField = 'NOMECOMPLETO'
+          DataSource = dsDados
+          TabOrder = 2
+        end
+        object edtNomePopular: TDBEdit
+          Left = 500
+          Top = 130
+          Width = 400
+          Height = 25
+          DataField = 'NOMEPOPULAR'
+          DataSource = dsDados
+          TabOrder = 3
+        end
+        object edtCodBarras: TDBEdit
+          Left = 16
+          Top = 235
+          Width = 155
+          Height = 25
+          DataField = 'CODIGOBARRA'
+          DataSource = dsDados
+          TabOrder = 4
+        end
+        object edtReferencia: TDBEdit
+          Left = 180
+          Top = 235
+          Width = 200
+          Height = 25
+          DataField = 'REFERENCIA'
+          DataSource = dsDados
+          TabOrder = 5
+        end
+        object edtNCM: TDBEdit
+          Left = 386
+          Top = 235
+          Width = 153
+          Height = 25
+          DataField = 'NCM'
+          DataSource = dsDados
+          TabOrder = 6
+        end
+      end
     end
   end
   inherited dsDados: TDataSource
     DataSet = ServiceCadastro.QRY_produto1
     OnDataChange = dsDadosDataChange
+    Left = 793
+    Top = 57
   end
   object dsProdutoDetalhe: TDataSource
     DataSet = ServiceCadastro.QRY_produto2
-    Left = 433
-    Top = 233
+    Left = 929
+    Top = 57
   end
 end
