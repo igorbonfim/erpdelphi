@@ -1,13 +1,12 @@
 object ServiceCadastro: TServiceCadastro
-  Height = 245
-  Width = 330
-  PixelsPerInch = 120
+  Height = 257
+  Width = 293
   object QRY_pessoas: TFDQuery
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PESSOAS WHERE CODIGO = :CODIGO')
-    Left = 40
-    Top = 20
+    Left = 32
+    Top = 16
     ParamData = <
       item
         Name = 'CODIGO'
@@ -60,8 +59,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM ENDERECO WHERE CODIGO = :CODIGO')
-    Left = 190
-    Top = 20
+    Left = 152
+    Top = 16
     ParamData = <
       item
         Name = 'CODIGO'
@@ -112,8 +111,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PRODUTO WHERE CODIGO = :CODIGO')
-    Left = 40
-    Top = 136
+    Left = 32
+    Top = 109
     ParamData = <
       item
         Name = 'CODIGO'
@@ -169,8 +168,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PRODUTO_DETALHE WHERE CODIGO = :CODIGO')
-    Left = 184
-    Top = 136
+    Left = 147
+    Top = 109
     ParamData = <
       item
         Name = 'CODIGO'
@@ -196,24 +195,33 @@ object ServiceCadastro: TServiceCadastro
     object QRY_produto2CUSTOINICIAL: TFMTBCDField
       FieldName = 'CUSTOINICIAL'
       Origin = 'CUSTOINICIAL'
+      currency = True
       Precision = 18
       Size = 2
     end
     object QRY_produto2VENDAVISTA: TFMTBCDField
       FieldName = 'VENDAVISTA'
       Origin = 'VENDAVISTA'
+      currency = True
       Precision = 18
       Size = 2
     end
     object QRY_produto2VENDAPRAZO: TFMTBCDField
       FieldName = 'VENDAPRAZO'
       Origin = 'VENDAPRAZO'
+      currency = True
       Precision = 18
       Size = 2
     end
     object QRY_produto2SIT_TRIBUTARIA: TIntegerField
       FieldName = 'SIT_TRIBUTARIA'
       Origin = 'SIT_TRIBUTARIA'
+    end
+    object QRY_produto2ESTOQUE: TFMTBCDField
+      FieldName = 'ESTOQUE'
+      Origin = 'ESTOQUE'
+      Precision = 18
+      Size = 2
     end
   end
 end

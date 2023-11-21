@@ -45,6 +45,7 @@ type
     QRY_produto2VENDAPRAZO: TFMTBCDField;
     QRY_produto2SIT_TRIBUTARIA: TIntegerField;
     QRY_produto1NCM: TStringField;
+    QRY_produto2ESTOQUE: TFMTBCDField;
   private
     { Private declarations }
   public

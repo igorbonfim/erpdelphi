@@ -76,6 +76,7 @@ inherited ViewProdutos: TViewProdutos
           4AE3A314DE8BD47F2956955DBB76B97C3E9F5B966537BDECCE64329E5C2EE7A1
           DFFC79311FBBAEB0681ACFCC49FA9646DF4A5152A7F818FD4ED3BA926E6F6FCF
           FC058F7C26649D742F590000000049454E44AE426082}
+        ExplicitHeight = 41
       end
     end
   end
@@ -83,6 +84,7 @@ inherited ViewProdutos: TViewProdutos
     inherited cpLista: TCardPanel
       inherited card_pesquisa: TCard
         inherited dgbDados: TDBGrid
+          Height = 196
           Columns = <
             item
               Expanded = False
@@ -133,11 +135,79 @@ inherited ViewProdutos: TViewProdutos
               Visible = True
             end>
         end
+        object pnlDetalhe: TPanel
+          Left = 0
+          Top = 319
+          Width = 1022
+          Height = 150
+          Align = alBottom
+          BevelOuter = bvNone
+          TabOrder = 2
+          object dgbDetalhe: TDBGrid
+            AlignWithMargins = True
+            Left = 5
+            Top = 5
+            Width = 1012
+            Height = 140
+            Margins.Left = 5
+            Margins.Top = 5
+            Margins.Right = 5
+            Margins.Bottom = 5
+            Align = alClient
+            BorderStyle = bsNone
+            DataSource = dsProdutoDetalhe
+            Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+            TabOrder = 0
+            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Color = clWindowText
+            TitleFont.Height = -11
+            TitleFont.Name = 'Tahoma'
+            TitleFont.Style = []
+            Columns = <
+              item
+                Expanded = False
+                FieldName = 'FILIAL'
+                Title.Caption = 'Filial'
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'CUSTOINICIAL'
+                Title.Caption = 'Pre'#231'o de Custo'
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'VENDAVISTA'
+                Title.Caption = 'Venda a vista'
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'VENDAPRAZO'
+                Title.Caption = 'Venda a prazo'
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'SIT_TRIBUTARIA'
+                Title.Caption = 'Situa'#231#227'o tribut'#225'ria'
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ESTOQUE'
+                Title.Caption = 'Estoque'
+                Visible = True
+              end>
+          end
+        end
       end
     end
   end
   inherited dsDados: TDataSource
     DataSet = ServiceCadastro.QRY_produto1
+    OnDataChange = dsDadosDataChange
   end
   object dsProdutoDetalhe: TDataSource
     DataSet = ServiceCadastro.QRY_produto2
