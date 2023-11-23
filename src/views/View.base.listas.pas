@@ -42,9 +42,11 @@ type
     procedure btnExcluirClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
   private
+    FTela: string;
     { Private declarations }
   public
     { Public declarations }
+    property Tela: string read FTela write FTela;
   end;
 
 var
@@ -54,7 +56,7 @@ implementation
 
 {$R *.dfm}
 
-uses Service.cadastro, Provider.constants;
+uses Service.cadastro, Provider.constants, Provider.conversao;
 
 procedure TViewBaseListas.btnCancelarClick(Sender: TObject);
 begin
@@ -98,7 +100,17 @@ begin
       end;
     end
     else begin
-      ShowMessage('Dados excluídos com sucesso');
+      if FTela = TelasToStr(tpProdutos) then
+        ShowMessage('Produto excluído com sucesso');
+
+      if FTela = TelasToStr(tpCaixa) then
+        ShowMessage('Caixa excluído com sucesso');
+
+      if FTela = TelasToStr(tpGrupo) then
+        ShowMessage('Grupo excluído com sucesso');
+
+      if FTela = TelasToStr(tpSubgrupo) then
+        ShowMessage('Subgrupo excluído com sucesso');
     end;
 
     cpLista.ActiveCard := card_pesquisa;
@@ -149,7 +161,18 @@ begin
     end
     else begin
       dsDados.DataSet.Post;
-      ShowMessage('Dados gravados com sucesso!');
+
+      if FTela = TelasToStr(tpProdutos) then
+        ShowMessage('Produto gravado com sucesso');
+
+      if FTela = TelasToStr(tpCaixa) then
+        ShowMessage('Caixa gravado com sucesso');
+
+      if FTela = TelasToStr(tpGrupo) then
+        ShowMessage('Grupo gravado com sucesso');
+
+      if FTela = TelasToStr(tpSubgrupo) then
+        ShowMessage('Subgrupo gravado com sucesso');
     end;
 
     cpLista.ActiveCard := card_pesquisa;

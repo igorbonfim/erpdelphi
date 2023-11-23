@@ -23,8 +23,8 @@ inherited ViewBaseListas: TViewBaseListas
       AlignWithMargins = True
       Left = 40
       Top = 3
-      Width = 881
-      Height = 35
+      Width = 86
+      Height = 31
       Margins.Left = 5
       Align = alClient
       Caption = 'lblTitulo'
@@ -35,8 +35,6 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Style = [fsBold]
       ParentFont = False
       OnMouseDown = pnlTopoMouseDown
-      ExplicitWidth = 86
-      ExplicitHeight = 31
     end
     object pnlIcone: TPanel
       Left = 0
