@@ -3,6 +3,7 @@ inherited ViewMensagens: TViewMensagens
   Caption = 'Mensagens'
   ClientHeight = 150
   ClientWidth = 782
+  Position = poMainFormCenter
   ExplicitWidth = 782
   ExplicitHeight = 150
   TextHeight = 13
@@ -376,6 +377,8 @@ inherited ViewMensagens: TViewMensagens
         Font.Name = 'Segoe UI Semibold'
         Font.Style = [fsBold]
         ParentFont = False
+        Visible = False
+        OnClick = btnOkClick
         ExplicitLeft = 496
         ExplicitHeight = 41
       end
@@ -393,6 +396,8 @@ inherited ViewMensagens: TViewMensagens
         Font.Name = 'Segoe UI Semibold'
         Font.Style = [fsBold]
         ParentFont = False
+        Visible = False
+        OnClick = btnSimClick
         ExplicitLeft = 267
         ExplicitTop = 3
         ExplicitHeight = 41
@@ -411,6 +416,8 @@ inherited ViewMensagens: TViewMensagens
         Font.Name = 'Segoe UI Semibold'
         Font.Style = [fsBold]
         ParentFont = False
+        Visible = False
+        OnClick = btnNaoClick
         ExplicitLeft = 496
         ExplicitHeight = 41
       end

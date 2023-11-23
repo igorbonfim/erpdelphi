@@ -24,6 +24,9 @@ type
     imgAlert: TImage;
     imgInformation: TImage;
     imgErro: TImage;
+    procedure btnSimClick(Sender: TObject);
+    procedure btnNaoClick(Sender: TObject);
+    procedure btnOkClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,6 +42,24 @@ implementation
 {$R *.dfm}
 
 { TViewMensagens }
+
+procedure TViewMensagens.btnNaoClick(Sender: TObject);
+begin
+  inherited;
+  Self.ModalResult := mrNo;
+end;
+
+procedure TViewMensagens.btnOkClick(Sender: TObject);
+begin
+  inherited;
+  Self.ModalResult := mrOk;
+end;
+
+procedure TViewMensagens.btnSimClick(Sender: TObject);
+begin
+  inherited;
+  Self.ModalResult := mrYes;
+end;
 
 class function TViewMensagens.Mensagem(Texto, Titulo: String; Tipo: Char;
   Botoes: array of TMyButtons): Boolean;
@@ -87,6 +108,8 @@ begin
         view.imgInformation.Visible := true;
       end;
     end;
+
+    view.ShowModal;
 
   finally
     if view <> nil then
