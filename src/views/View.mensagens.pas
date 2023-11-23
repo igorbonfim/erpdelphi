@@ -41,6 +41,8 @@ implementation
 
 {$R *.dfm}
 
+uses View.fundo;
+
 { TViewMensagens }
 
 procedure TViewMensagens.btnNaoClick(Sender: TObject);
@@ -109,11 +111,21 @@ begin
       end;
     end;
 
+    ViewFundo.Show;
     view.ShowModal;
+
+    case (view.ModalResult) of
+      mrYes, mrOk: Result := true;
+      else
+        Result := false;
+    end;
 
   finally
     if view <> nil then
+    begin
+      ViewFundo.Hide;
       FreeAndNil(view);
+    end;
   end;
 end;
 

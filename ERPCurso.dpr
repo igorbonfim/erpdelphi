@@ -12,7 +12,8 @@ uses
   View.fornecedores in 'src\views\View.fornecedores.pas' {ViewFornecedores},
   Provider.conversao in 'src\providers\Provider.conversao.pas',
   View.produtos in 'src\views\View.produtos.pas' {ViewProdutos},
-  View.mensagens in 'src\views\View.mensagens.pas' {ViewMensagens};
+  View.mensagens in 'src\views\View.mensagens.pas' {ViewMensagens},
+  View.fundo in 'src\views\View.fundo.pas' {ViewFundo};
 
 {$R *.res}
 
@@ -24,5 +25,6 @@ begin
   Application.CreateForm(TServiceCadastro, ServiceCadastro);
   Application.CreateForm(TViewProdutos, ViewProdutos);
   Application.CreateForm(TViewMensagens, ViewMensagens);
+  Application.CreateForm(TViewFundo, ViewFundo);
   Application.Run;
 end.
