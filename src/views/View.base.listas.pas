@@ -56,7 +56,7 @@ implementation
 
 {$R *.dfm}
 
-uses Service.cadastro, Provider.constants, Provider.conversao;
+uses Service.cadastro, Provider.constants, Provider.conversao, View.mensagens;
 
 procedure TViewBaseListas.btnCancelarClick(Sender: TObject);
 begin
@@ -85,32 +85,32 @@ begin
       case Self.Tag of
         1:
         begin
-          ShowMessage('Cliente excluído com sucesso!');
+          TViewMensagens.Mensagem('Cliente excluído com sucesso!', 'Excluir', 'E', [mbOk]);
         end;
 
         2:
         begin
-          ShowMessage('Fornecedor excluído com sucesso!');
+          TViewMensagens.Mensagem('Fornecedor excluído com sucesso!', 'Excluir', 'E', [mbOk]);
         end;
 
         3:
         begin
-          ShowMessage('Funcionário excluído com sucesso!');
+          TViewMensagens.Mensagem('Funcionário excluído com sucesso!', 'Excluir', 'E', [mbOk]);
         end;
       end;
     end
     else begin
       if FTela = TelasToStr(tpProdutos) then
-        ShowMessage('Produto excluído com sucesso');
+        TViewMensagens.Mensagem('Produto excluído com sucesso!', 'Excluir', 'E', [mbOk]);
 
       if FTela = TelasToStr(tpCaixa) then
-        ShowMessage('Caixa excluído com sucesso');
+        TViewMensagens.Mensagem('Caixa excluído com sucesso!', 'Excluir', 'E', [mbOk]);
 
       if FTela = TelasToStr(tpGrupo) then
-        ShowMessage('Grupo excluído com sucesso');
+        TViewMensagens.Mensagem('Grupo excluído com sucesso!', 'Excluir', 'E', [mbOk]);
 
       if FTela = TelasToStr(tpSubgrupo) then
-        ShowMessage('Subgrupo excluído com sucesso');
+        TViewMensagens.Mensagem('Subgrupo excluído com sucesso!', 'Excluir', 'E', [mbOk]);
     end;
 
     cpLista.ActiveCard := card_pesquisa;
@@ -145,17 +145,17 @@ begin
       case Self.Tag of
         1:
         begin
-          ShowMessage('Cliente gravado com sucesso!');
+          TViewMensagens.Mensagem('Cliente gravado com sucesso!', 'Salvar', 'I', [mbOk]);
         end;
 
         2:
         begin
-          ShowMessage('Fornecedor gravado com sucesso!');
+          TViewMensagens.Mensagem('Fornecedor gravado com sucesso!', 'Salvar', 'I', [mbOk]);
         end;
 
         3:
         begin
-          ShowMessage('Funcionário gravado com sucesso!');
+          TViewMensagens.Mensagem('Funcionário gravado com sucesso!', 'Salvar', 'I', [mbOk]);
         end;
       end;
     end
@@ -163,16 +163,16 @@ begin
       dsDados.DataSet.Post;
 
       if FTela = TelasToStr(tpProdutos) then
-        ShowMessage('Produto gravado com sucesso');
+        TViewMensagens.Mensagem('Produto gravado com sucesso!', 'Salvar', 'I', [mbOk]);
 
       if FTela = TelasToStr(tpCaixa) then
-        ShowMessage('Caixa gravado com sucesso');
+        TViewMensagens.Mensagem('Caixa gravado com sucesso!', 'Salvar', 'I', [mbOk]);
 
       if FTela = TelasToStr(tpGrupo) then
-        ShowMessage('Grupo gravado com sucesso');
+        TViewMensagens.Mensagem('Grupo gravado com sucesso!', 'Salvar', 'I', [mbOk]);
 
       if FTela = TelasToStr(tpSubgrupo) then
-        ShowMessage('Subgrupo gravado com sucesso');
+        TViewMensagens.Mensagem('Subgrupo gravado com sucesso!', 'Salvar', 'I', [mbOk]);
     end;
 
     cpLista.ActiveCard := card_pesquisa;

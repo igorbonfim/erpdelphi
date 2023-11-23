@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, View.base, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Vcl.Buttons;
+  Vcl.Buttons, Vcl.Imaging.pngimage;
 
 type
   TMyButtons = (mbSim, mbNao, mbOk);
@@ -21,6 +21,9 @@ type
     btnOk: TSpeedButton;
     btnSim: TSpeedButton;
     btnNao: TSpeedButton;
+    imgAlert: TImage;
+    imgInformation: TImage;
+    imgErro: TImage;
   private
     { Private declarations }
   public
@@ -72,6 +75,16 @@ begin
           view.btnOk.Visible := true;
         end;
 
+      end;
+    end;
+
+    case Tipo of
+      'I': view.imgInformation.Visible := true;
+      'E': view.imgErro.Visible        := true;
+      'A': view.imgAlert.Visible       := true;
+
+      else begin
+        view.imgInformation.Visible := true;
       end;
     end;
 
