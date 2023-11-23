@@ -78,7 +78,6 @@ begin
   inherited;
   if dsDados.DataSet.RecordCount > 0 then
   begin
-    dsDados.DataSet.Delete;
 
     if Self.Tag > 0 then
     begin
@@ -88,7 +87,7 @@ begin
           if TViewMensagens.Mensagem('Deseja mesmo excluir esse cliente?', 'Exclusão', 'A', [mbSim, mbNao]) then
           begin
             dsDados.DataSet.Delete;
-            TViewMensagens.Mensagem('Cliente excluído com sucesso!', 'Sucesso', 'I', [mbOk]);
+            TViewMensagens.Mensagem('Cliente excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
           end;
         end;
 
@@ -97,7 +96,7 @@ begin
           if TViewMensagens.Mensagem('Deseja mesmo excluir esse fornecedor?', 'Exclusão', 'A', [mbSim, mbNao]) then
           begin
             dsDados.DataSet.Delete;
-            TViewMensagens.Mensagem('Fornecedor excluído com sucesso!', 'Sucesso', 'I', [mbOk]);
+            TViewMensagens.Mensagem('Fornecedor excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
           end;
         end;
 
@@ -106,7 +105,7 @@ begin
           if TViewMensagens.Mensagem('Deseja mesmo excluir esse funcionário?', 'Exclusão', 'A', [mbSim, mbNao]) then
           begin
             dsDados.DataSet.Delete;
-            TViewMensagens.Mensagem('Funcionário excluído com sucesso!', 'Sucesso', 'I', [mbOk]);
+            TViewMensagens.Mensagem('Funcionário excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
           end;
         end;
       end;
@@ -117,7 +116,7 @@ begin
         if TViewMensagens.Mensagem('Deseja mesmo excluir esse produto?', 'Exclusão', 'A', [mbSim, mbNao]) then
         begin
           dsDados.DataSet.Delete;
-          TViewMensagens.Mensagem('Produto excluído com sucesso!', 'Sucesso', 'I', [mbOk]);
+          TViewMensagens.Mensagem('Produto excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
         end;
       end;
 
@@ -126,7 +125,7 @@ begin
         if TViewMensagens.Mensagem('Deseja mesmo excluir esse caixa?', 'Exclusão', 'A', [mbSim, mbNao]) then
         begin
           dsDados.DataSet.Delete;
-          TViewMensagens.Mensagem('Caixa excluído com sucesso!', 'Sucesso', 'I', [mbOk]);
+          TViewMensagens.Mensagem('Caixa excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
         end;
       end;
 
@@ -135,7 +134,7 @@ begin
         if TViewMensagens.Mensagem('Deseja mesmo excluir esse grupo?', 'Exclusão', 'A', [mbSim, mbNao]) then
         begin
           dsDados.DataSet.Delete;
-          TViewMensagens.Mensagem('Grupo excluído com sucesso!', 'Sucesso', 'I', [mbOk]);
+          TViewMensagens.Mensagem('Grupo excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
         end;
       end;
 
@@ -144,7 +143,7 @@ begin
         if TViewMensagens.Mensagem('Deseja mesmo excluir esse subgrupo?', 'Exclusão', 'A', [mbSim, mbNao]) then
         begin
           dsDados.DataSet.Delete;
-          TViewMensagens.Mensagem('Subgrupo excluído com sucesso!', 'Sucesso', 'I', [mbOk]);
+          TViewMensagens.Mensagem('Subgrupo excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
         end;
       end;
     end;
