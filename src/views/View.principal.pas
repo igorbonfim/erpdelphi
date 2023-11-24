@@ -118,7 +118,7 @@ begin
 
   ViewProdutos := TViewProdutos.Create(Self);
   try
-    ViewProdutos.Tela := TelasToStr(tpProdutos);
+    ViewProdutos.Tela := tpProdutos;
     ViewProdutos.ShowModal;
   finally
     FreeAndNil(ViewProdutos);

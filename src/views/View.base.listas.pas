@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, View.base, Vcl.ExtCtrls,
   Vcl.Imaging.pngimage, Vcl.Buttons, Vcl.StdCtrls, Vcl.WinXPanels, Vcl.WinXCtrls,
-  Data.DB, Vcl.Grids, Vcl.DBGrids;
+  Data.DB, Vcl.Grids, Vcl.DBGrids, Provider.conversao;
 
 type
   TViewBaseListas = class(TViewBase)
@@ -42,11 +42,13 @@ type
     procedure btnExcluirClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
   private
-    FTela: string;
+    FTela: TPCTelas;
+    procedure GetMensagemInsercao;
+    procedure GetMensagemExclusao;
     { Private declarations }
   public
     { Public declarations }
-    property Tela: string read FTela write FTela;
+    property Tela: TPCTelas read FTela write FTela;
   end;
 
 var
@@ -56,7 +58,7 @@ implementation
 
 {$R *.dfm}
 
-uses Service.cadastro, Provider.constants, Provider.conversao, View.mensagens;
+uses Service.cadastro, Provider.constants, View.mensagens;
 
 procedure TViewBaseListas.btnCancelarClick(Sender: TObject);
 begin
@@ -78,76 +80,7 @@ begin
   inherited;
   if dsDados.DataSet.RecordCount > 0 then
   begin
-
-    if Self.Tag > 0 then
-    begin
-      case Self.Tag of
-        1:
-        begin
-          if TViewMensagens.Mensagem('Deseja mesmo excluir esse cliente?', 'Exclusão', 'A', [mbSim, mbNao]) then
-          begin
-            dsDados.DataSet.Delete;
-            TViewMensagens.Mensagem('Cliente excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
-          end;
-        end;
-
-        2:
-        begin
-          if TViewMensagens.Mensagem('Deseja mesmo excluir esse fornecedor?', 'Exclusão', 'A', [mbSim, mbNao]) then
-          begin
-            dsDados.DataSet.Delete;
-            TViewMensagens.Mensagem('Fornecedor excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
-          end;
-        end;
-
-        3:
-        begin
-          if TViewMensagens.Mensagem('Deseja mesmo excluir esse funcionário?', 'Exclusão', 'A', [mbSim, mbNao]) then
-          begin
-            dsDados.DataSet.Delete;
-            TViewMensagens.Mensagem('Funcionário excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
-          end;
-        end;
-      end;
-    end
-    else begin
-      if FTela = TelasToStr(tpProdutos) then
-      begin
-        if TViewMensagens.Mensagem('Deseja mesmo excluir esse produto?', 'Exclusão', 'A', [mbSim, mbNao]) then
-        begin
-          dsDados.DataSet.Delete;
-          TViewMensagens.Mensagem('Produto excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
-        end;
-      end;
-
-      if FTela = TelasToStr(tpCaixa) then
-      begin
-        if TViewMensagens.Mensagem('Deseja mesmo excluir esse caixa?', 'Exclusão', 'A', [mbSim, mbNao]) then
-        begin
-          dsDados.DataSet.Delete;
-          TViewMensagens.Mensagem('Caixa excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
-        end;
-      end;
-
-      if FTela = TelasToStr(tpGrupo) then
-      begin
-        if TViewMensagens.Mensagem('Deseja mesmo excluir esse grupo?', 'Exclusão', 'A', [mbSim, mbNao]) then
-        begin
-          dsDados.DataSet.Delete;
-          TViewMensagens.Mensagem('Grupo excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
-        end;
-      end;
-
-      if FTela = TelasToStr(tpSubgrupo) then
-      begin
-        if TViewMensagens.Mensagem('Deseja mesmo excluir esse subgrupo?', 'Exclusão', 'A', [mbSim, mbNao]) then
-        begin
-          dsDados.DataSet.Delete;
-          TViewMensagens.Mensagem('Subgrupo excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
-        end;
-      end;
-    end;
-
+    GetMensagemExclusao;
     cpLista.ActiveCard := card_pesquisa;
   end;
 end;
@@ -171,45 +104,7 @@ begin
 
   if dsDados.DataSet.State in dsEditModes then
   begin
-
-    if Self.Tag > 0 then
-    begin
-      ServiceCadastro.QRY_pessoasTIPOPESSOA.AsInteger := Self.Tag;
-      ServiceCadastro.QRY_pessoas.Post;
-
-      case Self.Tag of
-        1:
-        begin
-          TViewMensagens.Mensagem('Cliente gravado com sucesso!', 'Salvar', 'I', [mbOk]);
-        end;
-
-        2:
-        begin
-          TViewMensagens.Mensagem('Fornecedor gravado com sucesso!', 'Salvar', 'I', [mbOk]);
-        end;
-
-        3:
-        begin
-          TViewMensagens.Mensagem('Funcionário gravado com sucesso!', 'Salvar', 'I', [mbOk]);
-        end;
-      end;
-    end
-    else begin
-      dsDados.DataSet.Post;
-
-      if FTela = TelasToStr(tpProdutos) then
-        TViewMensagens.Mensagem('Produto gravado com sucesso!', 'Salvar', 'I', [mbOk]);
-
-      if FTela = TelasToStr(tpCaixa) then
-        TViewMensagens.Mensagem('Caixa gravado com sucesso!', 'Salvar', 'I', [mbOk]);
-
-      if FTela = TelasToStr(tpGrupo) then
-        TViewMensagens.Mensagem('Grupo gravado com sucesso!', 'Salvar', 'I', [mbOk]);
-
-      if FTela = TelasToStr(tpSubgrupo) then
-        TViewMensagens.Mensagem('Subgrupo gravado com sucesso!', 'Salvar', 'I', [mbOk]);
-    end;
-
+    GetMensagemInsercao;
     cpLista.ActiveCard := card_pesquisa;
   end;
 end;
@@ -237,6 +132,107 @@ begin
   inherited;
   ReleaseCapture;
   Perform(wm_SysCommand, sc_DragMove, 0);
+end;
+
+procedure TViewBaseListas.GetMensagemInsercao;
+begin
+  if Self.Tag > 0 then
+  begin
+    ServiceCadastro.QRY_pessoasTIPOPESSOA.AsInteger := Self.Tag;
+    ServiceCadastro.QRY_pessoas.Post;
+
+    case Self.Tag of
+      1: TViewMensagens.Mensagem('Cliente gravado com sucesso!', 'Salvar', 'I', [mbOk]);
+      2: TViewMensagens.Mensagem('Fornecedor gravado com sucesso!', 'Salvar', 'I', [mbOk]);
+      3: TViewMensagens.Mensagem('Funcionário gravado com sucesso!', 'Salvar', 'I', [mbOk]);
+    end;
+  end
+  else begin
+    dsDados.DataSet.Post;
+
+    case FTela of
+      tpProdutos: TViewMensagens.Mensagem('Produto gravado com sucesso!', 'Salvar', 'I', [mbOk]);
+      tpCaixa: TViewMensagens.Mensagem('Caixa gravado com sucesso!', 'Salvar', 'I', [mbOk]);
+      tpGrupo: TViewMensagens.Mensagem('Grupo gravado com sucesso!', 'Salvar', 'I', [mbOk]);
+      tpSubgrupo: TViewMensagens.Mensagem('Subgrupo gravado com sucesso!', 'Salvar', 'I', [mbOk]);
+    end;
+
+  end;
+end;
+
+procedure TViewBaseListas.GetMensagemExclusao;
+begin
+  if Self.Tag > 0 then
+  begin
+    case Self.Tag of
+      1:
+      begin
+        if TViewMensagens.Mensagem('Deseja mesmo excluir esse cliente?', 'Exclusão', 'A', [mbSim, mbNao]) then
+        begin
+          dsDados.DataSet.Delete;
+          TViewMensagens.Mensagem('Cliente excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
+        end;
+      end;
+
+      2:
+      begin
+        if TViewMensagens.Mensagem('Deseja mesmo excluir esse fornecedor?', 'Exclusão', 'A', [mbSim, mbNao]) then
+        begin
+          dsDados.DataSet.Delete;
+          TViewMensagens.Mensagem('Fornecedor excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
+        end;
+      end;
+
+      3:
+      begin
+        if TViewMensagens.Mensagem('Deseja mesmo excluir esse funcionário?', 'Exclusão', 'A', [mbSim, mbNao]) then
+        begin
+          dsDados.DataSet.Delete;
+          TViewMensagens.Mensagem('Funcionário excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
+        end;
+      end;
+    end;
+  end
+  else begin
+
+    case Tela of
+      tpProdutos:
+      begin
+        if TViewMensagens.Mensagem('Deseja mesmo excluir esse produto?', 'Exclusão', 'A', [mbSim, mbNao]) then
+        begin
+          dsDados.DataSet.Delete;
+          TViewMensagens.Mensagem('Produto excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
+        end;
+      end;
+
+      tpCaixa:
+      begin
+        if TViewMensagens.Mensagem('Deseja mesmo excluir esse caixa?', 'Exclusão', 'A', [mbSim, mbNao]) then
+        begin
+          dsDados.DataSet.Delete;
+          TViewMensagens.Mensagem('Caixa excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
+        end;
+      end;
+
+      tpGrupo:
+      begin
+        if TViewMensagens.Mensagem('Deseja mesmo excluir esse grupo?', 'Exclusão', 'A', [mbSim, mbNao]) then
+        begin
+          dsDados.DataSet.Delete;
+          TViewMensagens.Mensagem('Grupo excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
+        end;
+      end;
+
+      tpSubgrupo:
+      begin
+        if TViewMensagens.Mensagem('Deseja mesmo excluir esse subgrupo?', 'Exclusão', 'A', [mbSim, mbNao]) then
+        begin
+          dsDados.DataSet.Delete;
+          TViewMensagens.Mensagem('Subgrupo excluído com sucesso!', 'Sucesso', 'E', [mbOk]);
+        end;
+      end;
+    end;
+  end;
 end;
 
 end.
