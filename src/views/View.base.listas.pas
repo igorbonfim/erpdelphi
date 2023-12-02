@@ -195,7 +195,7 @@ begin
   end
   else begin
 
-    case Tela of
+    case FTela of
       tpProdutos:
       begin
         if TViewMensagens.Mensagem('Deseja mesmo excluir esse produto?', 'Exclusão', 'A', [mbSim, mbNao]) then

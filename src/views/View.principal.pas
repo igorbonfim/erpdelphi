@@ -87,6 +87,9 @@ begin
 
   ViewClientes := TViewClientes.Create(Self);
   try
+    ViewClientes.Top  := Round(pnlTopo.Height + ((pnlConteudo.Height - ViewClientes.Height) / 2));
+    ViewClientes.Left := Round(pnlMenu.Width + ((pnlConteudo.Width - ViewClientes.Width) / 2));
+
     ViewClientes.Tag := PessoasToInt(tpCliente);
     ViewClientes.ShowModal;
   finally
@@ -105,6 +108,9 @@ begin
 
   ViewFornecedores := TViewFornecedores.Create(Self);
   try
+    ViewFornecedores.Top  := Round(pnlTopo.Height + ((pnlConteudo.Height - ViewFornecedores.Height) / 2));
+    ViewFornecedores.Left := Round(pnlMenu.Width + ((pnlConteudo.Width - ViewFornecedores.Width) / 2));
+
     ViewFornecedores.Tag := PessoasToInt(tpFornecedores);
     ViewFornecedores.ShowModal;
   finally
@@ -118,6 +124,9 @@ begin
 
   ViewProdutos := TViewProdutos.Create(Self);
   try
+    ViewProdutos.Top  := Round(pnlTopo.Height + ((pnlConteudo.Height - ViewProdutos.Height) / 2));
+    ViewProdutos.Left := Round(pnlMenu.Width + ((pnlConteudo.Width - ViewProdutos.Width) / 2));
+
     ViewProdutos.Tela := tpProdutos;
     ViewProdutos.ShowModal;
   finally
