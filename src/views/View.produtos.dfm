@@ -3,6 +3,8 @@ inherited ViewProdutos: TViewProdutos
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
+      Width = 881
+      Height = 35
       Caption = 'Produtos'
       ExplicitWidth = 95
     end
@@ -250,14 +252,14 @@ inherited ViewProdutos: TViewProdutos
         object Label4: TLabel
           Left = 16
           Top = 199
-          Width = 155
+          Width = 160
           Height = 28
           Caption = 'C'#243'digo de Barras'
           FocusControl = edtCodBarras
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
           Font.Height = -20
-          Font.Name = 'Segoe UI Semibold'
+          Font.Name = 'Segoe UI Semilight'
           Font.Style = [fsBold]
           ParentFont = False
         end
@@ -289,6 +291,78 @@ inherited ViewProdutos: TViewProdutos
           Font.Style = [fsBold]
           ParentFont = False
         end
+        object Label7: TLabel
+          Left = 16
+          Top = 279
+          Width = 315
+          Height = 41
+          Caption = 'DETALHE DO PRODUTO'
+          Color = 15461355
+          FocusControl = edtCodBarras
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clGray
+          Font.Height = -30
+          Font.Name = 'Segoe UI Semilight'
+          Font.Style = []
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblCustoInicial: TLabel
+          Left = 16
+          Top = 317
+          Width = 112
+          Height = 28
+          Caption = 'Custo inicial'
+          FocusControl = edtCodBarras
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -20
+          Font.Name = 'Segoe UI Semilight'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object lblVendaVista: TLabel
+          Left = 134
+          Top = 317
+          Width = 123
+          Height = 28
+          Caption = 'Venda a vista'
+          FocusControl = edtCodBarras
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -20
+          Font.Name = 'Segoe UI Semilight'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object lblVendaPrazo: TLabel
+          Left = 267
+          Top = 317
+          Width = 134
+          Height = 28
+          Caption = 'Venda a prazo'
+          FocusControl = edtCodBarras
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -20
+          Font.Name = 'Segoe UI Semilight'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object lblEstoque: TLabel
+          Left = 415
+          Top = 317
+          Width = 74
+          Height = 28
+          Caption = 'Estoque'
+          FocusControl = edtCodBarras
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -20
+          Font.Name = 'Segoe UI Semilight'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
         object pnlTituloCadProduto: TPanel
           Left = 0
           Top = 0
@@ -305,7 +379,7 @@ inherited ViewProdutos: TViewProdutos
           ParentBackground = False
           ParentFont = False
           TabOrder = 0
-          ExplicitTop = 8
+          ExplicitTop = 3
           object lblTituloCadastroProduto: TLabel
             Left = 17
             Top = 16
@@ -324,7 +398,7 @@ inherited ViewProdutos: TViewProdutos
           Left = 16
           Top = 130
           Width = 73
-          Height = 25
+          Height = 21
           DataField = 'CODIGO'
           DataSource = dsDados
           Enabled = False
@@ -334,7 +408,7 @@ inherited ViewProdutos: TViewProdutos
           Left = 94
           Top = 130
           Width = 400
-          Height = 25
+          Height = 21
           CharCase = ecUpperCase
           DataField = 'NOMECOMPLETO'
           DataSource = dsDados
@@ -344,7 +418,7 @@ inherited ViewProdutos: TViewProdutos
           Left = 500
           Top = 130
           Width = 400
-          Height = 25
+          Height = 21
           CharCase = ecUpperCase
           DataField = 'NOMEPOPULAR'
           DataSource = dsDados
@@ -354,7 +428,7 @@ inherited ViewProdutos: TViewProdutos
           Left = 16
           Top = 235
           Width = 155
-          Height = 25
+          Height = 21
           CharCase = ecUpperCase
           DataField = 'CODIGOBARRA'
           DataSource = dsDados
@@ -364,7 +438,7 @@ inherited ViewProdutos: TViewProdutos
           Left = 180
           Top = 235
           Width = 200
-          Height = 25
+          Height = 21
           CharCase = ecUpperCase
           DataField = 'REFERENCIA'
           DataSource = dsDados
@@ -374,11 +448,47 @@ inherited ViewProdutos: TViewProdutos
           Left = 386
           Top = 235
           Width = 153
-          Height = 25
+          Height = 21
           CharCase = ecUpperCase
           DataField = 'NCM'
           DataSource = dsDados
           TabOrder = 6
+        end
+        object DBEdit1: TDBEdit
+          Left = 17
+          Top = 348
+          Width = 111
+          Height = 21
+          DataField = 'CUSTOINICIAL'
+          DataSource = dsProdutoDetalhe
+          TabOrder = 7
+        end
+        object DBEdit2: TDBEdit
+          Left = 134
+          Top = 348
+          Width = 130
+          Height = 21
+          DataField = 'VENDAVISTA'
+          DataSource = dsProdutoDetalhe
+          TabOrder = 8
+        end
+        object DBEdit3: TDBEdit
+          Left = 267
+          Top = 348
+          Width = 143
+          Height = 21
+          DataField = 'VENDAPRAZO'
+          DataSource = dsProdutoDetalhe
+          TabOrder = 9
+        end
+        object DBEdit4: TDBEdit
+          Left = 415
+          Top = 348
+          Width = 97
+          Height = 21
+          DataField = 'ESTOQUE'
+          DataSource = dsProdutoDetalhe
+          TabOrder = 10
         end
       end
     end

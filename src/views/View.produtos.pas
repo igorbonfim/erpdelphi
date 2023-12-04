@@ -27,9 +27,20 @@ type
     edtReferencia: TDBEdit;
     Label6: TLabel;
     edtNCM: TDBEdit;
+    Label7: TLabel;
+    DBEdit1: TDBEdit;
+    lblCustoInicial: TLabel;
+    DBEdit2: TDBEdit;
+    lblVendaVista: TLabel;
+    DBEdit3: TDBEdit;
+    lblVendaPrazo: TLabel;
+    DBEdit4: TDBEdit;
+    lblEstoque: TLabel;
     procedure FormShow(Sender: TObject);
     procedure dsDadosDataChange(Sender: TObject; Field: TField);
     procedure btnNovoClick(Sender: TObject);
+    procedure btnEditarClick(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,11 +56,28 @@ implementation
 
 uses Service.cadastro, Provider.constants;
 
+procedure TViewProdutos.btnEditarClick(Sender: TObject);
+begin
+  inherited;
+  dsProdutoDetalhe.DataSet.Edit;
+end;
+
 procedure TViewProdutos.btnNovoClick(Sender: TObject);
 begin
   inherited;
   ServiceCadastro.QRY_produto1GRUPO.AsInteger := 1;
   ServiceCadastro.QRY_produto1SUBGRUPO.AsInteger := 1;
+  ServiceCadastro.QRY_produto2.Open;
+  ServiceCadastro.QRY_produto2.Insert;
+end;
+
+procedure TViewProdutos.btnSalvarClick(Sender: TObject);
+begin
+  inherited;
+  ServiceCadastro.QRY_produto2.Edit;
+  ServiceCadastro.QRY_produto2FILIAL.AsInteger := 1;
+  ServiceCadastro.QRY_produto2SIT_TRIBUTARIA.AsInteger := 1;
+  ServiceCadastro.QRY_produto2.Post;
 end;
 
 procedure TViewProdutos.dsDadosDataChange(Sender: TObject; Field: TField);
