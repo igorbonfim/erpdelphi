@@ -73,11 +73,11 @@ end;
 
 procedure TViewProdutos.btnSalvarClick(Sender: TObject);
 begin
-  inherited;
   ServiceCadastro.QRY_produto2.Edit;
   ServiceCadastro.QRY_produto2FILIAL.AsInteger := 1;
   ServiceCadastro.QRY_produto2SIT_TRIBUTARIA.AsInteger := 1;
   ServiceCadastro.QRY_produto2.Post;
+  inherited;
 end;
 
 procedure TViewProdutos.dsDadosDataChange(Sender: TObject; Field: TField);
