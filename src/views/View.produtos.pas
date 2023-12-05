@@ -74,7 +74,7 @@ end;
 procedure TViewProdutos.btnSalvarClick(Sender: TObject);
 begin
   ServiceCadastro.QRY_produto2.Edit;
-  ServiceCadastro.QRY_produto2FILIAL.AsInteger := 1;
+  ServiceCadastro.QRY_produto2FILIAL.AsInteger := iCOD_FILIAL;
   ServiceCadastro.QRY_produto2SIT_TRIBUTARIA.AsInteger := 1;
   ServiceCadastro.QRY_produto2.Post;
   inherited;

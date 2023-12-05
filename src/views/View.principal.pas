@@ -61,6 +61,7 @@ type
     procedure imgUserLaranjaMouseLeave(Sender: TObject);
   private
     procedure GetLineMenu(Sender: TObject);
+    function CentralizaFormulario(aForm: TForm): Boolean;
     { Private declarations }
   public
     { Public declarations }
@@ -87,8 +88,7 @@ begin
 
   ViewClientes := TViewClientes.Create(Self);
   try
-    ViewClientes.Top  := Round(pnlTopo.Height + ((pnlConteudo.Height - ViewClientes.Height) / 2));
-    ViewClientes.Left := Round(pnlMenu.Width + ((pnlConteudo.Width - ViewClientes.Width) / 2));
+    CentralizaFormulario(ViewClientes);
 
     ViewClientes.Tag := PessoasToInt(tpCliente);
     ViewClientes.ShowModal;
@@ -108,8 +108,7 @@ begin
 
   ViewFornecedores := TViewFornecedores.Create(Self);
   try
-    ViewFornecedores.Top  := Round(pnlTopo.Height + ((pnlConteudo.Height - ViewFornecedores.Height) / 2));
-    ViewFornecedores.Left := Round(pnlMenu.Width + ((pnlConteudo.Width - ViewFornecedores.Width) / 2));
+    CentralizaFormulario(ViewFornecedores);
 
     ViewFornecedores.Tag := PessoasToInt(tpFornecedores);
     ViewFornecedores.ShowModal;
@@ -124,8 +123,7 @@ begin
 
   ViewProdutos := TViewProdutos.Create(Self);
   try
-    ViewProdutos.Top  := Round(pnlTopo.Height + ((pnlConteudo.Height - ViewProdutos.Height) / 2));
-    ViewProdutos.Left := Round(pnlMenu.Width + ((pnlConteudo.Width - ViewProdutos.Width) / 2));
+    CentralizaFormulario(ViewProdutos);
 
     ViewProdutos.Tela := tpProdutos;
     ViewProdutos.ShowModal;
@@ -174,6 +172,13 @@ end;
 procedure TViewPrincipal.lblTituloEmpresaMouseLeave(Sender: TObject);
 begin
   lblTituloEmpresa.Font.Color := clWhite;
+end;
+
+function TViewPrincipal.CentralizaFormulario(aForm: TForm): Boolean;
+begin
+  aForm.Top  := Round(pnlTopo.Height + ((pnlConteudo.Height - aForm.Height) / 2));
+  aForm.Left := Round(pnlMenu.Width + ((pnlConteudo.Width - aForm.Width) / 2));
+  Result := true;
 end;
 
 end.
