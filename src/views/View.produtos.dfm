@@ -3,6 +3,7 @@ inherited ViewProdutos: TViewProdutos
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
+      Width = 95
       Caption = 'Produtos'
       ExplicitWidth = 95
     end
@@ -179,24 +180,28 @@ inherited ViewProdutos: TViewProdutos
                 Expanded = False
                 FieldName = 'VENDAVISTA'
                 Title.Caption = 'Venda a vista'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'VENDAPRAZO'
                 Title.Caption = 'Venda a prazo'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'SIT_TRIBUTARIA'
                 Title.Caption = 'Situa'#231#227'o tribut'#225'ria'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'ESTOQUE'
                 Title.Caption = 'Estoque'
+                Width = 64
                 Visible = True
               end>
           end

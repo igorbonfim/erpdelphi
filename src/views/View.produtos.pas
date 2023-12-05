@@ -83,7 +83,7 @@ end;
 procedure TViewProdutos.dsDadosDataChange(Sender: TObject; Field: TField);
 begin
   inherited;
-  GetProdutoDetalhe(ServiceCadastro.QRY_produto1CODIGO.AsInteger);
+  GetProdutoDetalhe(ServiceCadastro.QRY_produto1CODIGO.AsInteger, iCOD_FILIAL);
 end;
 
 procedure TViewProdutos.FormShow(Sender: TObject);

@@ -72,7 +72,7 @@ begin
     FDConn.Connected := true;
 
     QRY_filial.Close;
-    QRY_filial.Params[0].AsInteger := 2;
+    QRY_filial.Params[0].AsInteger := 1;
     QRY_filial.Open;
 
     iCOD_FILIAL := QRY_filialCODIGO.AsInteger;
