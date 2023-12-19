@@ -146,7 +146,8 @@ begin
       2: TViewMensagens.Mensagem('Fornecedor gravado com sucesso!', 'Salvar', 'I', [mbOk]);
       3: TViewMensagens.Mensagem('Funcionário gravado com sucesso!', 'Salvar', 'I', [mbOk]);
     end;
-  end
+  end;
+  {
   else begin
     dsDados.DataSet.Post;
 
@@ -157,7 +158,7 @@ begin
       tpSubgrupo: TViewMensagens.Mensagem('Subgrupo gravado com sucesso!', 'Salvar', 'I', [mbOk]);
     end;
 
-  end;
+  end; }
 end;
 
 procedure TViewBaseListas.GetMensagemExclusao;

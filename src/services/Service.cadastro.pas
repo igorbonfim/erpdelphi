@@ -46,6 +46,7 @@ type
     QRY_produto2SIT_TRIBUTARIA: TIntegerField;
     QRY_produto1NCM: TStringField;
     QRY_produto2ESTOQUE: TFMTBCDField;
+    procedure QRY_produto1AfterScroll(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -59,8 +60,13 @@ implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
-uses Service.conexao;
+uses Service.conexao, Provider.constants;
 
 {$R *.dfm}
+
+procedure TServiceCadastro.QRY_produto1AfterScroll(DataSet: TDataSet);
+begin
+  GetProdutoDetalhe(ServiceCadastro.QRY_produto1CODIGO.AsInteger, iCOD_FILIAL);
+end;
 
 end.

@@ -37,7 +37,6 @@ type
     DBEdit4: TDBEdit;
     lblEstoque: TLabel;
     procedure FormShow(Sender: TObject);
-    procedure dsDadosDataChange(Sender: TObject; Field: TField);
     procedure btnNovoClick(Sender: TObject);
     procedure btnEditarClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
@@ -54,7 +53,7 @@ implementation
 
 {$R *.dfm}
 
-uses Service.cadastro, Provider.constants;
+uses Service.cadastro, Provider.constants, View.mensagens;
 
 procedure TViewProdutos.btnEditarClick(Sender: TObject);
 begin
@@ -73,18 +72,13 @@ end;
 
 procedure TViewProdutos.btnSalvarClick(Sender: TObject);
 begin
-  ServiceCadastro.QRY_produto2.Edit;
+  inherited;
+  dsDados.DataSet.Post;
   ServiceCadastro.QRY_produto2CODIGO_PRODUTO.AsInteger := ServiceCadastro.QRY_produto1CODIGO.AsInteger;
   ServiceCadastro.QRY_produto2FILIAL.AsInteger := iCOD_FILIAL;
   ServiceCadastro.QRY_produto2SIT_TRIBUTARIA.AsInteger := 1;
   ServiceCadastro.QRY_produto2.Post;
-  inherited;
-end;
-
-procedure TViewProdutos.dsDadosDataChange(Sender: TObject; Field: TField);
-begin
-  inherited;
-  GetProdutoDetalhe(ServiceCadastro.QRY_produto1CODIGO.AsInteger, iCOD_FILIAL);
+  TViewMensagens.Mensagem('Produto gravado com sucesso!', 'Salvar', 'I', [mbOk]);
 end;
 
 procedure TViewProdutos.FormShow(Sender: TObject);

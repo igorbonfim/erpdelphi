@@ -1,8 +1,7 @@
 object ServiceConexao: TServiceConexao
   OnCreate = DataModuleCreate
-  Height = 398
-  Width = 474
-  PixelsPerInch = 120
+  Height = 318
+  Width = 379
   object FDConn: TFDConnection
     Params.Strings = (
       'Database=C:\Projetos\erpdelphi\dados\DADOS.FDB'
@@ -13,24 +12,24 @@ object ServiceConexao: TServiceConexao
       'Port=3050'
       'DriverID=FB')
     LoginPrompt = False
-    Left = 50
-    Top = 20
+    Left = 40
+    Top = 16
   end
   object WaitCursor: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 150
-    Top = 20
+    Left = 120
+    Top = 16
   end
   object FBDriverLink: TFDPhysFBDriverLink
-    Left = 240
-    Top = 20
+    Left = 192
+    Top = 16
   end
   object QRY_filial: TFDQuery
     Connection = FDConn
     SQL.Strings = (
       'SELECT * FROM FILIAL WHERE CODIGO = :CODIGO')
-    Left = 50
-    Top = 120
+    Left = 40
+    Top = 96
     ParamData = <
       item
         Name = 'CODIGO'

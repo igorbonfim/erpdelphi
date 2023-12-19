@@ -3,8 +3,10 @@ inherited ViewFornecedores: TViewFornecedores
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
+      Width = 881
+      Height = 35
       Caption = 'Fornecedores'
-      ExplicitWidth = 142
+      ExplicitWidth = 881
     end
     inherited pnlIcone: TPanel
       inherited imgIcon: TImage
