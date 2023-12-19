@@ -59,6 +59,9 @@ type
     procedure lblTituloEmpresaMouseLeave(Sender: TObject);
     procedure imgUserBrancaMouseEnter(Sender: TObject);
     procedure imgUserLaranjaMouseLeave(Sender: TObject);
+    procedure pnlTopoMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure pnlTopoDblClick(Sender: TObject);
   private
     procedure GetLineMenu(Sender: TObject);
     function CentralizaFormulario(aForm: TForm): Boolean;
@@ -172,6 +175,21 @@ end;
 procedure TViewPrincipal.lblTituloEmpresaMouseLeave(Sender: TObject);
 begin
   lblTituloEmpresa.Font.Color := clWhite;
+end;
+
+procedure TViewPrincipal.pnlTopoDblClick(Sender: TObject);
+begin
+  WindowState := TWindowState.wsMaximized;
+end;
+
+procedure TViewPrincipal.pnlTopoMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+const
+  sc_DragMove = $f012;
+begin
+  inherited;
+  ReleaseCapture;
+  Perform(wm_SysCommand, sc_DragMove, 0);
 end;
 
 function TViewPrincipal.CentralizaFormulario(aForm: TForm): Boolean;

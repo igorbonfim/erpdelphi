@@ -1,7 +1,6 @@
 object ViewPrincipal: TViewPrincipal
   Left = 0
   Top = 0
-  Align = alClient
   BorderStyle = bsNone
   Caption = 'Principal'
   ClientHeight = 550
@@ -2127,6 +2126,7 @@ object ViewPrincipal: TViewPrincipal
     FFFD1000000000000008BFFFFFFFFFFFFFFF4200000000000042FFFFFFFFFFFF
     FFFFD08000000000010BFFFFFFFFFFFFFFFFF41000000000082FFFFFFFFFFFFF
     FFFFFC8A00000000513FFFFFFFFFFFFFFFFFFF809000000901FFFFFFFFFF}
+  WindowState = wsMaximized
   OnShow = FormShow
   TextHeight = 13
   object pnlTopo: TPanel
@@ -2139,6 +2139,8 @@ object ViewPrincipal: TViewPrincipal
     Color = 5395026
     ParentBackground = False
     TabOrder = 0
+    OnDblClick = pnlTopoDblClick
+    OnMouseDown = pnlTopoMouseDown
     object pnlLogo: TPanel
       Left = 0
       Top = 0
