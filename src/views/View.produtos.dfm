@@ -3,7 +3,8 @@ inherited ViewProdutos: TViewProdutos
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
-      Width = 95
+      Width = 881
+      Height = 35
       Caption = 'Produtos'
       ExplicitWidth = 95
     end
@@ -180,28 +181,24 @@ inherited ViewProdutos: TViewProdutos
                 Expanded = False
                 FieldName = 'VENDAVISTA'
                 Title.Caption = 'Venda a vista'
-                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'VENDAPRAZO'
                 Title.Caption = 'Venda a prazo'
-                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'SIT_TRIBUTARIA'
                 Title.Caption = 'Situa'#231#227'o tribut'#225'ria'
-                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'ESTOQUE'
                 Title.Caption = 'Estoque'
-                Width = 64
                 Visible = True
               end>
           end
@@ -312,56 +309,56 @@ inherited ViewProdutos: TViewProdutos
         end
         object lblCustoInicial: TLabel
           Left = 16
-          Top = 317
-          Width = 112
-          Height = 28
+          Top = 323
+          Width = 102
+          Height = 23
           Caption = 'Custo inicial'
           FocusControl = edtCodBarras
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
-          Font.Height = -20
+          Font.Height = -17
           Font.Name = 'Segoe UI Semilight'
           Font.Style = [fsBold]
           ParentFont = False
         end
         object lblVendaVista: TLabel
           Left = 134
-          Top = 317
-          Width = 123
-          Height = 28
+          Top = 323
+          Width = 111
+          Height = 23
           Caption = 'Venda a vista'
           FocusControl = edtCodBarras
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
-          Font.Height = -20
+          Font.Height = -17
           Font.Name = 'Segoe UI Semilight'
           Font.Style = [fsBold]
           ParentFont = False
         end
         object lblVendaPrazo: TLabel
           Left = 267
-          Top = 317
-          Width = 134
-          Height = 28
+          Top = 323
+          Width = 121
+          Height = 23
           Caption = 'Venda a prazo'
           FocusControl = edtCodBarras
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
-          Font.Height = -20
+          Font.Height = -17
           Font.Name = 'Segoe UI Semilight'
           Font.Style = [fsBold]
           ParentFont = False
         end
         object lblEstoque: TLabel
           Left = 415
-          Top = 317
-          Width = 74
-          Height = 28
+          Top = 323
+          Width = 66
+          Height = 23
           Caption = 'Estoque'
           FocusControl = edtCodBarras
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
-          Font.Height = -20
+          Font.Height = -17
           Font.Name = 'Segoe UI Semilight'
           Font.Style = [fsBold]
           ParentFont = False
@@ -382,7 +379,6 @@ inherited ViewProdutos: TViewProdutos
           ParentBackground = False
           ParentFont = False
           TabOrder = 0
-          ExplicitTop = 3
           object lblTituloCadastroProduto: TLabel
             Left = 17
             Top = 16
@@ -459,7 +455,7 @@ inherited ViewProdutos: TViewProdutos
         end
         object DBEdit1: TDBEdit
           Left = 17
-          Top = 348
+          Top = 354
           Width = 111
           Height = 21
           DataField = 'CUSTOINICIAL'
@@ -468,7 +464,7 @@ inherited ViewProdutos: TViewProdutos
         end
         object DBEdit2: TDBEdit
           Left = 134
-          Top = 348
+          Top = 354
           Width = 130
           Height = 21
           DataField = 'VENDAVISTA'
@@ -477,7 +473,7 @@ inherited ViewProdutos: TViewProdutos
         end
         object DBEdit3: TDBEdit
           Left = 267
-          Top = 348
+          Top = 354
           Width = 143
           Height = 21
           DataField = 'VENDAPRAZO'
@@ -486,7 +482,7 @@ inherited ViewProdutos: TViewProdutos
         end
         object DBEdit4: TDBEdit
           Left = 415
-          Top = 348
+          Top = 354
           Width = 97
           Height = 21
           DataField = 'ESTOQUE'
