@@ -10,8 +10,6 @@ uses
 
 type
   TViewClientes = class(TViewBaseListas)
-    pnlTituloCadCliente: TPanel;
-    lblTituloCadastro: TLabel;
     Label1: TLabel;
     edtCodigo: TDBEdit;
     Label2: TLabel;

@@ -31,6 +31,9 @@ type
     edtPesquisa: TSearchBox;
     dgbDados: TDBGrid;
     dsDados: TDataSource;
+    pnlTituloCadastro: TPanel;
+    lblTituloCadastro: TLabel;
+    btnVoltarPesquisa: TSpeedButton;
     procedure btnSairClick(Sender: TObject);
     procedure pnlTopoMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
@@ -41,6 +44,7 @@ type
     procedure btnCancelarClick(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
+    procedure btnVoltarPesquisaClick(Sender: TObject);
   private
     FTela: TPCTelas;
     procedure GetMensagemInsercao;
@@ -109,12 +113,22 @@ begin
   end;
 end;
 
+procedure TViewBaseListas.btnVoltarPesquisaClick(Sender: TObject);
+begin
+  inherited;
+  cpLista.ActiveCard := card_pesquisa;
+end;
+
 procedure TViewBaseListas.cpListaCardChange(Sender: TObject; PrevCard,
   NextCard: TCard);
 begin
   inherited;
+  btnVoltarPesquisa.Visible := false;
   if cpLista.ActiveCard = card_cadastro then
+  begin
     SelectFirst;
+    btnVoltarPesquisa.Visible := true;
+  end;
 end;
 
 procedure TViewBaseListas.FormShow(Sender: TObject);

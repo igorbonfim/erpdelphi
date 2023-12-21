@@ -3,7 +3,6 @@ inherited ViewProdutos: TViewProdutos
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
-      Width = 95
       Caption = 'Produtos'
       ExplicitWidth = 95
     end
@@ -81,8 +80,11 @@ inherited ViewProdutos: TViewProdutos
   end
   inherited pnlBackground: TPanel
     inherited cpLista: TCardPanel
-      ActiveCard = card_cadastro
       inherited card_pesquisa: TCard
+        inherited pnlTituloPesquisa: TPanel
+          ExplicitLeft = 0
+          ExplicitTop = 0
+        end
         inherited dgbDados: TDBGrid
           Height = 196
           Columns = <
@@ -180,37 +182,33 @@ inherited ViewProdutos: TViewProdutos
                 Expanded = False
                 FieldName = 'VENDAVISTA'
                 Title.Caption = 'Venda a vista'
-                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'VENDAPRAZO'
                 Title.Caption = 'Venda a prazo'
-                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'SIT_TRIBUTARIA'
                 Title.Caption = 'Situa'#231#227'o tribut'#225'ria'
-                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'ESTOQUE'
                 Title.Caption = 'Estoque'
-                Width = 64
                 Visible = True
               end>
           end
         end
       end
       inherited card_cadastro: TCard
-        ExplicitLeft = -1
-        ExplicitTop = -3
-        object Label1: TLabel
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        object Label1: TLabel [0]
           Left = 16
           Top = 96
           Width = 65
@@ -224,7 +222,7 @@ inherited ViewProdutos: TViewProdutos
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label2: TLabel
+        object Label2: TLabel [1]
           Left = 94
           Top = 96
           Width = 56
@@ -238,7 +236,7 @@ inherited ViewProdutos: TViewProdutos
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label3: TLabel
+        object Label3: TLabel [2]
           Left = 500
           Top = 96
           Width = 142
@@ -252,7 +250,7 @@ inherited ViewProdutos: TViewProdutos
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label4: TLabel
+        object Label4: TLabel [3]
           Left = 16
           Top = 199
           Width = 160
@@ -266,7 +264,7 @@ inherited ViewProdutos: TViewProdutos
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label5: TLabel
+        object Label5: TLabel [4]
           Left = 180
           Top = 199
           Width = 94
@@ -280,7 +278,7 @@ inherited ViewProdutos: TViewProdutos
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label6: TLabel
+        object Label6: TLabel [5]
           Left = 386
           Top = 199
           Width = 45
@@ -294,7 +292,7 @@ inherited ViewProdutos: TViewProdutos
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label7: TLabel
+        object Label7: TLabel [6]
           Left = 16
           Top = 279
           Width = 315
@@ -310,7 +308,7 @@ inherited ViewProdutos: TViewProdutos
           ParentColor = False
           ParentFont = False
         end
-        object lblCustoInicial: TLabel
+        object lblCustoInicial: TLabel [7]
           Left = 16
           Top = 323
           Width = 102
@@ -324,7 +322,7 @@ inherited ViewProdutos: TViewProdutos
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object lblVendaVista: TLabel
+        object lblVendaVista: TLabel [8]
           Left = 134
           Top = 323
           Width = 111
@@ -338,7 +336,7 @@ inherited ViewProdutos: TViewProdutos
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object lblVendaPrazo: TLabel
+        object lblVendaPrazo: TLabel [9]
           Left = 267
           Top = 323
           Width = 121
@@ -352,7 +350,7 @@ inherited ViewProdutos: TViewProdutos
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object lblEstoque: TLabel
+        object lblEstoque: TLabel [10]
           Left = 415
           Top = 323
           Width = 66
@@ -366,34 +364,14 @@ inherited ViewProdutos: TViewProdutos
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object pnlTituloCadProduto: TPanel
-          Left = 0
-          Top = 0
-          Width = 1022
-          Height = 80
-          Align = alTop
-          BevelOuter = bvNone
-          Color = 15461355
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 8816262
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentBackground = False
-          ParentFont = False
-          TabOrder = 0
-          object lblTituloCadastroProduto: TLabel
-            Left = 17
-            Top = 16
+        inherited pnlTituloCadastro: TPanel
+          TabOrder = 10
+          inherited lblTituloCadastro: TLabel
             Width = 243
-            Height = 37
             Caption = 'Cadastro de Produto'
-            Font.Charset = ANSI_CHARSET
-            Font.Color = 8816262
-            Font.Height = -27
-            Font.Name = 'Segoe UI Semilight'
-            Font.Style = []
-            ParentFont = False
+            ExplicitLeft = 3
+            ExplicitTop = 10
+            ExplicitWidth = 243
           end
         end
         object edtCodigoProduto: TDBEdit
@@ -404,7 +382,7 @@ inherited ViewProdutos: TViewProdutos
           DataField = 'CODIGO'
           DataSource = dsDados
           Enabled = False
-          TabOrder = 1
+          TabOrder = 0
         end
         object edtNome: TDBEdit
           Left = 94
@@ -414,7 +392,7 @@ inherited ViewProdutos: TViewProdutos
           CharCase = ecUpperCase
           DataField = 'NOMECOMPLETO'
           DataSource = dsDados
-          TabOrder = 2
+          TabOrder = 1
         end
         object edtNomePopular: TDBEdit
           Left = 500
@@ -424,7 +402,7 @@ inherited ViewProdutos: TViewProdutos
           CharCase = ecUpperCase
           DataField = 'NOMEPOPULAR'
           DataSource = dsDados
-          TabOrder = 3
+          TabOrder = 2
         end
         object edtCodBarras: TDBEdit
           Left = 16
@@ -434,7 +412,7 @@ inherited ViewProdutos: TViewProdutos
           CharCase = ecUpperCase
           DataField = 'CODIGOBARRA'
           DataSource = dsDados
-          TabOrder = 4
+          TabOrder = 3
         end
         object edtReferencia: TDBEdit
           Left = 180
@@ -444,7 +422,7 @@ inherited ViewProdutos: TViewProdutos
           CharCase = ecUpperCase
           DataField = 'REFERENCIA'
           DataSource = dsDados
-          TabOrder = 5
+          TabOrder = 4
         end
         object edtNCM: TDBEdit
           Left = 386
@@ -454,7 +432,7 @@ inherited ViewProdutos: TViewProdutos
           CharCase = ecUpperCase
           DataField = 'NCM'
           DataSource = dsDados
-          TabOrder = 6
+          TabOrder = 5
         end
         object DBEdit1: TDBEdit
           Left = 17
@@ -463,7 +441,7 @@ inherited ViewProdutos: TViewProdutos
           Height = 21
           DataField = 'CUSTOINICIAL'
           DataSource = dsProdutoDetalhe
-          TabOrder = 7
+          TabOrder = 6
         end
         object DBEdit2: TDBEdit
           Left = 134
@@ -472,7 +450,7 @@ inherited ViewProdutos: TViewProdutos
           Height = 21
           DataField = 'VENDAVISTA'
           DataSource = dsProdutoDetalhe
-          TabOrder = 8
+          TabOrder = 7
         end
         object DBEdit3: TDBEdit
           Left = 267
@@ -481,7 +459,7 @@ inherited ViewProdutos: TViewProdutos
           Height = 21
           DataField = 'VENDAPRAZO'
           DataSource = dsProdutoDetalhe
-          TabOrder = 9
+          TabOrder = 8
         end
         object DBEdit4: TDBEdit
           Left = 415
@@ -490,7 +468,7 @@ inherited ViewProdutos: TViewProdutos
           Height = 21
           DataField = 'ESTOQUE'
           DataSource = dsProdutoDetalhe
-          TabOrder = 10
+          TabOrder = 9
         end
       end
     end

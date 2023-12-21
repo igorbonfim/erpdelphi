@@ -59,8 +59,11 @@ inherited ViewClientes: TViewClientes
   end
   inherited pnlBackground: TPanel
     inherited cpLista: TCardPanel
-      ActiveCard = card_cadastro
       inherited card_pesquisa: TCard
+        inherited pnlTituloPesquisa: TPanel
+          ExplicitLeft = 0
+          ExplicitTop = 0
+        end
         inherited dgbDados: TDBGrid
           Columns = <
             item
@@ -101,7 +104,7 @@ inherited ViewClientes: TViewClientes
         end
       end
       inherited card_cadastro: TCard
-        object Label1: TLabel
+        object Label1: TLabel [0]
           Left = 16
           Top = 124
           Width = 65
@@ -115,7 +118,7 @@ inherited ViewClientes: TViewClientes
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label2: TLabel
+        object Label2: TLabel [1]
           Left = 253
           Top = 124
           Width = 109
@@ -129,7 +132,7 @@ inherited ViewClientes: TViewClientes
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label3: TLabel
+        object Label3: TLabel [2]
           Left = 661
           Top = 124
           Width = 132
@@ -143,7 +146,7 @@ inherited ViewClientes: TViewClientes
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label4: TLabel
+        object Label4: TLabel [3]
           Left = 98
           Top = 124
           Width = 100
@@ -157,7 +160,7 @@ inherited ViewClientes: TViewClientes
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label5: TLabel
+        object Label5: TLabel [4]
           Left = 223
           Top = 180
           Width = 78
@@ -171,7 +174,7 @@ inherited ViewClientes: TViewClientes
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label6: TLabel
+        object Label6: TLabel [5]
           Left = 17
           Top = 180
           Width = 62
@@ -185,7 +188,7 @@ inherited ViewClientes: TViewClientes
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label7: TLabel
+        object Label7: TLabel [6]
           Left = 17
           Top = 236
           Width = 106
@@ -199,34 +202,14 @@ inherited ViewClientes: TViewClientes
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object pnlTituloCadCliente: TPanel
-          Left = 0
-          Top = 0
-          Width = 1022
-          Height = 80
-          Align = alTop
-          BevelOuter = bvNone
-          Color = 15461355
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 8816262
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentBackground = False
-          ParentFont = False
-          TabOrder = 0
-          object lblTituloCadastro: TLabel
-            Left = 17
-            Top = 16
-            Width = 241
-            Height = 37
-            Caption = 'Cadastro de Clientes'
-            Font.Charset = ANSI_CHARSET
-            Font.Color = 8816262
-            Font.Height = -27
-            Font.Name = 'Segoe UI Semilight'
-            Font.Style = []
-            ParentFont = False
+        inherited pnlTituloCadastro: TPanel
+          TabOrder = 7
+          inherited lblTituloCadastro: TLabel
+            Width = 230
+            Caption = 'Cadastro de Cliente'
+            ExplicitLeft = 3
+            ExplicitTop = 10
+            ExplicitWidth = 230
           end
         end
         object edtCodigo: TDBEdit
@@ -238,7 +221,7 @@ inherited ViewClientes: TViewClientes
           DataSource = dsDados
           Enabled = False
           ReadOnly = True
-          TabOrder = 1
+          TabOrder = 0
         end
         object edtRazaoSocial: TDBEdit
           Left = 253
@@ -248,7 +231,7 @@ inherited ViewClientes: TViewClientes
           CharCase = ecUpperCase
           DataField = 'RAZAO'
           DataSource = dsDados
-          TabOrder = 2
+          TabOrder = 1
         end
         object edtFantasia: TDBEdit
           Left = 661
@@ -258,7 +241,7 @@ inherited ViewClientes: TViewClientes
           CharCase = ecUpperCase
           DataField = 'FANTASIA'
           DataSource = dsDados
-          TabOrder = 3
+          TabOrder = 2
         end
         object edtCnpjCpf: TDBEdit
           Left = 98
@@ -268,7 +251,7 @@ inherited ViewClientes: TViewClientes
           CharCase = ecUpperCase
           DataField = 'CNPJCPF'
           DataSource = dsDados
-          TabOrder = 4
+          TabOrder = 3
         end
         object edtTelefone: TDBEdit
           Left = 223
@@ -278,7 +261,7 @@ inherited ViewClientes: TViewClientes
           CharCase = ecUpperCase
           DataField = 'TELEFONE'
           DataSource = dsDados
-          TabOrder = 5
+          TabOrder = 4
         end
         object edtIERG: TDBEdit
           Left = 17
@@ -288,7 +271,7 @@ inherited ViewClientes: TViewClientes
           CharCase = ecUpperCase
           DataField = 'IERG'
           DataSource = dsDados
-          TabOrder = 6
+          TabOrder = 5
         end
         object edtObservacao: TDBEdit
           Left = 17
@@ -298,7 +281,7 @@ inherited ViewClientes: TViewClientes
           CharCase = ecUpperCase
           DataField = 'OBSERVACAO'
           DataSource = dsDados
-          TabOrder = 7
+          TabOrder = 6
         end
       end
     end

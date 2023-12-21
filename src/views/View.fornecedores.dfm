@@ -3,10 +3,8 @@ inherited ViewFornecedores: TViewFornecedores
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
-      Width = 881
-      Height = 35
       Caption = 'Fornecedores'
-      ExplicitWidth = 881
+      ExplicitWidth = 142
     end
     inherited pnlIcone: TPanel
       inherited imgIcon: TImage
@@ -57,8 +55,11 @@ inherited ViewFornecedores: TViewFornecedores
   end
   inherited pnlBackground: TPanel
     inherited cpLista: TCardPanel
-      ActiveCard = card_cadastro
       inherited card_pesquisa: TCard
+        inherited pnlTituloPesquisa: TPanel
+          ExplicitLeft = 0
+          ExplicitTop = 0
+        end
         inherited dgbDados: TDBGrid
           Columns = <
             item
@@ -91,7 +92,7 @@ inherited ViewFornecedores: TViewFornecedores
         end
       end
       inherited card_cadastro: TCard
-        object Label1: TLabel
+        object Label1: TLabel [0]
           Left = 16
           Top = 124
           Width = 65
@@ -105,7 +106,7 @@ inherited ViewFornecedores: TViewFornecedores
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label4: TLabel
+        object Label4: TLabel [1]
           Left = 98
           Top = 124
           Width = 100
@@ -119,7 +120,7 @@ inherited ViewFornecedores: TViewFornecedores
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label2: TLabel
+        object Label2: TLabel [2]
           Left = 253
           Top = 124
           Width = 109
@@ -133,7 +134,7 @@ inherited ViewFornecedores: TViewFornecedores
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label3: TLabel
+        object Label3: TLabel [3]
           Left = 661
           Top = 124
           Width = 132
@@ -147,7 +148,7 @@ inherited ViewFornecedores: TViewFornecedores
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label6: TLabel
+        object Label6: TLabel [4]
           Left = 17
           Top = 180
           Width = 62
@@ -161,7 +162,7 @@ inherited ViewFornecedores: TViewFornecedores
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label5: TLabel
+        object Label5: TLabel [5]
           Left = 223
           Top = 180
           Width = 78
@@ -175,7 +176,7 @@ inherited ViewFornecedores: TViewFornecedores
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object Label7: TLabel
+        object Label7: TLabel [6]
           Left = 17
           Top = 236
           Width = 106
@@ -189,34 +190,14 @@ inherited ViewFornecedores: TViewFornecedores
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object pnlTituloCadCliente: TPanel
-          Left = 0
-          Top = 0
-          Width = 1022
-          Height = 80
-          Align = alTop
-          BevelOuter = bvNone
-          Color = 15461355
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 8816262
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentBackground = False
-          ParentFont = False
-          TabOrder = 0
-          object lblTituloCadastro: TLabel
-            Left = 17
-            Top = 16
-            Width = 306
-            Height = 37
-            Caption = 'Cadastro de Fornecedores'
-            Font.Charset = ANSI_CHARSET
-            Font.Color = 8816262
-            Font.Height = -27
-            Font.Name = 'Segoe UI Semilight'
-            Font.Style = []
-            ParentFont = False
+        inherited pnlTituloCadastro: TPanel
+          TabOrder = 7
+          inherited lblTituloCadastro: TLabel
+            Width = 281
+            Caption = 'Cadastro de Fornecedor'
+            ExplicitLeft = 3
+            ExplicitTop = 10
+            ExplicitWidth = 281
           end
         end
         object edtCodigo: TDBEdit
@@ -228,7 +209,7 @@ inherited ViewFornecedores: TViewFornecedores
           DataSource = dsDados
           Enabled = False
           ReadOnly = True
-          TabOrder = 1
+          TabOrder = 0
         end
         object edtCnpjCpf: TDBEdit
           Left = 98
@@ -238,7 +219,7 @@ inherited ViewFornecedores: TViewFornecedores
           CharCase = ecUpperCase
           DataField = 'CNPJCPF'
           DataSource = dsDados
-          TabOrder = 2
+          TabOrder = 1
         end
         object edtRazaoSocial: TDBEdit
           Left = 253
@@ -248,7 +229,7 @@ inherited ViewFornecedores: TViewFornecedores
           CharCase = ecUpperCase
           DataField = 'RAZAO'
           DataSource = dsDados
-          TabOrder = 3
+          TabOrder = 2
         end
         object edtFantasia: TDBEdit
           Left = 661
@@ -258,7 +239,7 @@ inherited ViewFornecedores: TViewFornecedores
           CharCase = ecUpperCase
           DataField = 'FANTASIA'
           DataSource = dsDados
-          TabOrder = 4
+          TabOrder = 3
         end
         object edtIERG: TDBEdit
           Left = 17
@@ -268,7 +249,7 @@ inherited ViewFornecedores: TViewFornecedores
           CharCase = ecUpperCase
           DataField = 'IERG'
           DataSource = dsDados
-          TabOrder = 5
+          TabOrder = 4
         end
         object edtTelefone: TDBEdit
           Left = 223
@@ -278,7 +259,7 @@ inherited ViewFornecedores: TViewFornecedores
           CharCase = ecUpperCase
           DataField = 'TELEFONE'
           DataSource = dsDados
-          TabOrder = 6
+          TabOrder = 5
         end
         object edtObservacao: TDBEdit
           Left = 17
@@ -288,7 +269,7 @@ inherited ViewFornecedores: TViewFornecedores
           CharCase = ecUpperCase
           DataField = 'OBSERVACAO'
           DataSource = dsDados
-          TabOrder = 7
+          TabOrder = 6
         end
       end
     end

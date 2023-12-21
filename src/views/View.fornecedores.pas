@@ -10,8 +10,6 @@ uses
 
 type
   TViewFornecedores = class(TViewBaseListas)
-    pnlTituloCadCliente: TPanel;
-    lblTituloCadastro: TLabel;
     Label1: TLabel;
     edtCodigo: TDBEdit;
     Label4: TLabel;

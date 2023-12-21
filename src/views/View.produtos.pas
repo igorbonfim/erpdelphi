@@ -13,8 +13,6 @@ type
     dsProdutoDetalhe: TDataSource;
     pnlDetalhe: TPanel;
     dgbDetalhe: TDBGrid;
-    pnlTituloCadProduto: TPanel;
-    lblTituloCadastroProduto: TLabel;
     Label1: TLabel;
     edtCodigoProduto: TDBEdit;
     Label2: TLabel;
