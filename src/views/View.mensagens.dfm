@@ -67,6 +67,7 @@ inherited ViewMensagens: TViewMensagens
         808C11808C11808C11808C11808C1180CC6F1F25AB7FFAD82509000000004945
         4E44AE426082}
       Visible = False
+      OnMouseDown = lblTituloMouseDown
       ExplicitLeft = 72
       ExplicitTop = 64
       ExplicitWidth = 105
@@ -186,6 +187,7 @@ inherited ViewMensagens: TViewMensagens
         04788C12011EA34480C72811E031FE057E8118ACFF7F20070000000049454E44
         AE426082}
       Visible = False
+      OnMouseDown = lblTituloMouseDown
       ExplicitLeft = 72
       ExplicitTop = 64
       ExplicitWidth = 105
@@ -302,10 +304,8 @@ inherited ViewMensagens: TViewMensagens
         E062A01C003E530E009F290780CF9403C067CA01E033E500F0997200F84CFF05
         DCEF38AC81E56E530000000049454E44AE426082}
       Visible = False
-      ExplicitLeft = 72
-      ExplicitTop = 64
-      ExplicitWidth = 105
-      ExplicitHeight = 105
+      OnMouseDown = lblTituloMouseDown
+      ExplicitLeft = -3
     end
   end
   object pnlConteudo: TPanel
@@ -318,10 +318,7 @@ inherited ViewMensagens: TViewMensagens
     Color = clWhite
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = 368
-    ExplicitTop = 32
-    ExplicitWidth = 185
-    ExplicitHeight = 41
+    OnMouseDown = lblTituloMouseDown
     object pnlTitulo: TPanel
       Left = 0
       Top = 0
@@ -330,9 +327,6 @@ inherited ViewMensagens: TViewMensagens
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitLeft = 136
-      ExplicitTop = 24
-      ExplicitWidth = 185
       object lblTitulo: TLabel
         AlignWithMargins = True
         Left = 3
@@ -342,13 +336,12 @@ inherited ViewMensagens: TViewMensagens
         Align = alClient
         Caption = 'Titulo'
         Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
+        Font.Color = 5395026
         Font.Height = -23
         Font.Name = 'Segoe UI Semibold'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitLeft = 0
-        ExplicitTop = 0
+        OnMouseDown = lblTituloMouseDown
         ExplicitWidth = 60
         ExplicitHeight = 31
       end
@@ -358,11 +351,11 @@ inherited ViewMensagens: TViewMensagens
       Top = 115
       Width = 632
       Height = 35
+      Cursor = crHandPoint
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitTop = 170
-      ExplicitWidth = 573
+      OnMouseDown = lblTituloMouseDown
       object btnOk: TSpeedButton
         Left = 555
         Top = 0
@@ -371,8 +364,9 @@ inherited ViewMensagens: TViewMensagens
         Cursor = crHandPoint
         Align = alRight
         Caption = 'OK'
+        Flat = True
         Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
+        Font.Color = 5395026
         Font.Height = -20
         Font.Name = 'Segoe UI Semibold'
         Font.Style = [fsBold]
@@ -390,8 +384,9 @@ inherited ViewMensagens: TViewMensagens
         Cursor = crHandPoint
         Align = alRight
         Caption = 'SIM'
+        Flat = True
         Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
+        Font.Color = 5395026
         Font.Height = -20
         Font.Name = 'Segoe UI Semibold'
         Font.Style = [fsBold]
@@ -410,8 +405,9 @@ inherited ViewMensagens: TViewMensagens
         Cursor = crHandPoint
         Align = alRight
         Caption = 'N'#195'O'
+        Flat = True
         Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
+        Font.Color = 5395026
         Font.Height = -20
         Font.Name = 'Segoe UI Semibold'
         Font.Style = [fsBold]
@@ -431,13 +427,18 @@ inherited ViewMensagens: TViewMensagens
       Align = alClient
       BevelInner = bvNone
       BorderStyle = bsNone
+      Enabled = False
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -23
+      Font.Name = 'Segoe UI Semilight'
+      Font.Style = []
       Lines.Strings = (
-        '')
+        'TESTE TESTE TESTE')
+      ParentFont = False
       TabOrder = 2
-      ExplicitLeft = 0
-      ExplicitTop = 41
-      ExplicitWidth = 573
-      ExplicitHeight = 123
+      OnMouseDown = lblTituloMouseDown
+      ExplicitLeft = 6
     end
   end
 end

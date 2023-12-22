@@ -27,6 +27,8 @@ type
     procedure btnSimClick(Sender: TObject);
     procedure btnNaoClick(Sender: TObject);
     procedure btnOkClick(Sender: TObject);
+    procedure lblTituloMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
   private
     { Private declarations }
   public
@@ -61,6 +63,16 @@ procedure TViewMensagens.btnSimClick(Sender: TObject);
 begin
   inherited;
   Self.ModalResult := mrYes;
+end;
+
+procedure TViewMensagens.lblTituloMouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+const
+  sc_DragMove = $f012;
+begin
+  inherited;
+  ReleaseCapture;
+  Perform(wm_SysCommand, sc_DragMove, 0);
 end;
 
 class function TViewMensagens.Mensagem(Texto, Titulo: String; Tipo: Char;

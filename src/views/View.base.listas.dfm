@@ -304,7 +304,7 @@ inherited ViewBaseListas: TViewBaseListas
       Margins.Right = 1
       Margins.Bottom = 0
       Align = alClient
-      ActiveCard = card_cadastro
+      ActiveCard = card_pesquisa
       BevelOuter = bvNone
       Caption = 'cpLista'
       Color = clWhite
@@ -335,8 +335,6 @@ inherited ViewBaseListas: TViewBaseListas
           ParentBackground = False
           ParentFont = False
           TabOrder = 0
-          ExplicitLeft = -1
-          ExplicitTop = -3
           object lblTituloPesquisa: TLabel
             Left = 5
             Top = 16
@@ -386,6 +384,7 @@ inherited ViewBaseListas: TViewBaseListas
           TitleFont.Height = -11
           TitleFont.Name = 'Tahoma'
           TitleFont.Style = []
+          OnDblClick = dgbDadosDblClick
         end
       end
       object card_cadastro: TCard
@@ -396,8 +395,6 @@ inherited ViewBaseListas: TViewBaseListas
         Caption = 'card_cadastro'
         CardIndex = 1
         TabOrder = 1
-        ExplicitLeft = -1
-        ExplicitTop = -3
         object pnlTituloCadastro: TPanel
           Left = 0
           Top = 0
@@ -414,8 +411,6 @@ inherited ViewBaseListas: TViewBaseListas
           ParentBackground = False
           ParentFont = False
           TabOrder = 0
-          ExplicitLeft = 4
-          ExplicitTop = 3
           object lblTituloCadastro: TLabel
             AlignWithMargins = True
             Left = 3
@@ -432,8 +427,6 @@ inherited ViewBaseListas: TViewBaseListas
             Font.Name = 'Segoe UI Semilight'
             Font.Style = []
             ParentFont = False
-            ExplicitLeft = 5
-            ExplicitTop = 16
             ExplicitHeight = 37
           end
           object btnVoltarPesquisa: TSpeedButton

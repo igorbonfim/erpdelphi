@@ -45,6 +45,7 @@ type
     procedure btnExcluirClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure btnVoltarPesquisaClick(Sender: TObject);
+    procedure dgbDadosDblClick(Sender: TObject);
   private
     FTela: TPCTelas;
     procedure GetMensagemInsercao;
@@ -131,6 +132,12 @@ begin
   end;
 end;
 
+procedure TViewBaseListas.dgbDadosDblClick(Sender: TObject);
+begin
+  inherited;
+  btnEditarClick(Sender);
+end;
+
 procedure TViewBaseListas.FormShow(Sender: TObject);
 begin
   inherited;
@@ -156,9 +163,9 @@ begin
     ServiceCadastro.QRY_pessoas.Post;
 
     case Self.Tag of
-      1: TViewMensagens.Mensagem('Cliente gravado com sucesso!', 'Salvar', 'I', [mbOk]);
-      2: TViewMensagens.Mensagem('Fornecedor gravado com sucesso!', 'Salvar', 'I', [mbOk]);
-      3: TViewMensagens.Mensagem('Funcionário gravado com sucesso!', 'Salvar', 'I', [mbOk]);
+      1: TViewMensagens.Mensagem('Cliente gravado com sucesso!', 'Sucesso', 'I', [mbOk]);
+      2: TViewMensagens.Mensagem('Fornecedor gravado com sucesso!', 'Sucesso', 'I', [mbOk]);
+      3: TViewMensagens.Mensagem('Funcionário gravado com sucesso!', 'Sucesso', 'I', [mbOk]);
     end;
   end;
   {
@@ -166,13 +173,14 @@ begin
     dsDados.DataSet.Post;
 
     case FTela of
-      tpProdutos: TViewMensagens.Mensagem('Produto gravado com sucesso!', 'Salvar', 'I', [mbOk]);
-      tpCaixa: TViewMensagens.Mensagem('Caixa gravado com sucesso!', 'Salvar', 'I', [mbOk]);
-      tpGrupo: TViewMensagens.Mensagem('Grupo gravado com sucesso!', 'Salvar', 'I', [mbOk]);
-      tpSubgrupo: TViewMensagens.Mensagem('Subgrupo gravado com sucesso!', 'Salvar', 'I', [mbOk]);
+      tpProdutos: TViewMensagens.Mensagem('Produto gravado com sucesso!', 'Sucesso', 'I', [mbOk]);
+      tpCaixa: TViewMensagens.Mensagem('Caixa gravado com sucesso!', 'Sucesso', 'I', [mbOk]);
+      tpGrupo: TViewMensagens.Mensagem('Grupo gravado com sucesso!', 'Sucesso', 'I', [mbOk]);
+      tpSubgrupo: TViewMensagens.Mensagem('Subgrupo gravado com sucesso!', 'Sucesso', 'I', [mbOk]);
     end;
 
-  end; }
+  end;
+  }
 end;
 
 procedure TViewBaseListas.GetMensagemExclusao;
