@@ -47,7 +47,8 @@ type
     btnSair: TSpeedButton;
     imgUserLaranja: TImage;
     imgBackground: TImage;
-    ImageList_36: TImageList;
+    btnVendas: TSpeedButton;
+    btnFuncionarios: TSpeedButton;
     procedure btnSairClick(Sender: TObject);
     procedure btnClientesClick(Sender: TObject);
     procedure btnCaixaClick(Sender: TObject);
@@ -62,6 +63,8 @@ type
     procedure pnlTopoMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure pnlTopoDblClick(Sender: TObject);
+    procedure btnVendasClick(Sender: TObject);
+    procedure btnFuncionariosClick(Sender: TObject);
   private
     procedure GetLineMenu(Sender: TObject);
     function CentralizaFormulario(aForm: TForm): Boolean;
@@ -120,6 +123,11 @@ begin
   end;
 end;
 
+procedure TViewPrincipal.btnFuncionariosClick(Sender: TObject);
+begin
+  GetLineMenu(Sender);
+end;
+
 procedure TViewPrincipal.btnProdutosClick(Sender: TObject);
 begin
   GetLineMenu(Sender);
@@ -138,6 +146,11 @@ end;
 procedure TViewPrincipal.btnSairClick(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TViewPrincipal.btnVendasClick(Sender: TObject);
+begin
+  GetLineMenu(Sender);
 end;
 
 procedure TViewPrincipal.FormShow(Sender: TObject);
