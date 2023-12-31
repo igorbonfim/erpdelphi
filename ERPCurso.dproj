@@ -146,6 +146,10 @@
             <Form>ViewFundo</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\views\View.funcionarios.pas">
+            <Form>ViewFuncionario</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

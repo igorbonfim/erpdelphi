@@ -23,8 +23,8 @@ inherited ViewBaseListas: TViewBaseListas
       AlignWithMargins = True
       Left = 40
       Top = 3
-      Width = 881
-      Height = 35
+      Width = 86
+      Height = 31
       Margins.Left = 5
       Align = alClient
       Caption = 'lblTitulo'
@@ -35,8 +35,6 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Style = [fsBold]
       ParentFont = False
       OnMouseDown = pnlTopoMouseDown
-      ExplicitWidth = 86
-      ExplicitHeight = 31
     end
     object pnlIcone: TPanel
       Left = 0
@@ -416,7 +414,7 @@ inherited ViewBaseListas: TViewBaseListas
             Left = 3
             Top = 10
             Width = 210
-            Height = 50
+            Height = 37
             Margins.Top = 10
             Margins.Bottom = 0
             Align = alLeft
@@ -427,7 +425,6 @@ inherited ViewBaseListas: TViewBaseListas
             Font.Name = 'Segoe UI Semilight'
             Font.Style = []
             ParentFont = False
-            ExplicitHeight = 37
           end
           object btnVoltarPesquisa: TSpeedButton
             AlignWithMargins = True

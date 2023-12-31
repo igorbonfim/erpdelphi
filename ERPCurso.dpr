@@ -13,7 +13,8 @@ uses
   Provider.conversao in 'src\providers\Provider.conversao.pas',
   View.produtos in 'src\views\View.produtos.pas' {ViewProdutos},
   View.mensagens in 'src\views\View.mensagens.pas' {ViewMensagens},
-  View.fundo in 'src\views\View.fundo.pas' {ViewFundo};
+  View.fundo in 'src\views\View.fundo.pas' {ViewFundo},
+  View.funcionarios in 'src\views\View.funcionarios.pas' {ViewFuncionario};
 
 {$R *.res}
 
@@ -26,5 +27,6 @@ begin
   Application.CreateForm(TViewProdutos, ViewProdutos);
   Application.CreateForm(TViewMensagens, ViewMensagens);
   Application.CreateForm(TViewFundo, ViewFundo);
+  Application.CreateForm(TViewFuncionario, ViewFuncionario);
   Application.Run;
 end.
