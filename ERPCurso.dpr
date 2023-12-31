@@ -14,7 +14,7 @@ uses
   View.produtos in 'src\views\View.produtos.pas' {ViewProdutos},
   View.mensagens in 'src\views\View.mensagens.pas' {ViewMensagens},
   View.fundo in 'src\views\View.fundo.pas' {ViewFundo},
-  View.funcionarios in 'src\views\View.funcionarios.pas' {ViewFuncionario};
+  View.funcionarios in 'src\views\View.funcionarios.pas' {ViewFuncionarios};
 
 {$R *.res}
 
@@ -27,6 +27,6 @@ begin
   Application.CreateForm(TViewProdutos, ViewProdutos);
   Application.CreateForm(TViewMensagens, ViewMensagens);
   Application.CreateForm(TViewFundo, ViewFundo);
-  Application.CreateForm(TViewFuncionario, ViewFuncionario);
+  Application.CreateForm(TViewFuncionarios, ViewFuncionarios);
   Application.Run;
 end.

@@ -3,8 +3,10 @@ inherited ViewClientes: TViewClientes
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
+      Width = 881
+      Height = 35
       Caption = 'Clientes'
-      ExplicitWidth = 81
+      ExplicitWidth = 881
     end
     inherited pnlIcone: TPanel
       inherited imgIcon: TImage
@@ -59,11 +61,8 @@ inherited ViewClientes: TViewClientes
   end
   inherited pnlBackground: TPanel
     inherited cpLista: TCardPanel
+      ActiveCard = card_cadastro
       inherited card_pesquisa: TCard
-        inherited pnlTituloPesquisa: TPanel
-          ExplicitLeft = 0
-          ExplicitTop = 0
-        end
         inherited dgbDados: TDBGrid
           Columns = <
             item
@@ -206,9 +205,8 @@ inherited ViewClientes: TViewClientes
           TabOrder = 7
           inherited lblTituloCadastro: TLabel
             Width = 230
+            Height = 50
             Caption = 'Cadastro de Cliente'
-            ExplicitLeft = 3
-            ExplicitTop = 10
             ExplicitWidth = 230
           end
         end
@@ -231,7 +229,7 @@ inherited ViewClientes: TViewClientes
           CharCase = ecUpperCase
           DataField = 'RAZAO'
           DataSource = dsDados
-          TabOrder = 1
+          TabOrder = 2
         end
         object edtFantasia: TDBEdit
           Left = 661
@@ -241,7 +239,7 @@ inherited ViewClientes: TViewClientes
           CharCase = ecUpperCase
           DataField = 'FANTASIA'
           DataSource = dsDados
-          TabOrder = 2
+          TabOrder = 3
         end
         object edtCnpjCpf: TDBEdit
           Left = 98
@@ -251,7 +249,7 @@ inherited ViewClientes: TViewClientes
           CharCase = ecUpperCase
           DataField = 'CNPJCPF'
           DataSource = dsDados
-          TabOrder = 3
+          TabOrder = 1
         end
         object edtTelefone: TDBEdit
           Left = 223
@@ -261,7 +259,7 @@ inherited ViewClientes: TViewClientes
           CharCase = ecUpperCase
           DataField = 'TELEFONE'
           DataSource = dsDados
-          TabOrder = 4
+          TabOrder = 5
         end
         object edtIERG: TDBEdit
           Left = 17
@@ -271,7 +269,7 @@ inherited ViewClientes: TViewClientes
           CharCase = ecUpperCase
           DataField = 'IERG'
           DataSource = dsDados
-          TabOrder = 5
+          TabOrder = 4
         end
         object edtObservacao: TDBEdit
           Left = 17

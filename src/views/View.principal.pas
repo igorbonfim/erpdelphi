@@ -81,7 +81,7 @@ implementation
 {$R *.dfm}
 
 uses Provider.constants, View.clientes, View.fornecedores, Provider.conversao,
-  View.produtos;
+  View.produtos, View.funcionarios;
 
 procedure TViewPrincipal.btnCaixaClick(Sender: TObject);
 begin
@@ -126,6 +126,16 @@ end;
 procedure TViewPrincipal.btnFuncionariosClick(Sender: TObject);
 begin
   GetLineMenu(Sender);
+
+  ViewFuncionarios := TViewFuncionarios.Create(Self);
+  try
+    CentralizaFormulario(ViewFuncionarios);
+
+    ViewFuncionarios.Tag := PessoasToInt(tpFuncionarios);
+    ViewFuncionarios.ShowModal;
+  finally
+    FreeAndNil(ViewFuncionarios);
+  end;
 end;
 
 procedure TViewPrincipal.btnProdutosClick(Sender: TObject);

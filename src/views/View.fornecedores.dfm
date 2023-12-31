@@ -3,6 +3,8 @@ inherited ViewFornecedores: TViewFornecedores
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
+      Width = 881
+      Height = 35
       Caption = 'Fornecedores'
       ExplicitWidth = 142
     end
@@ -56,10 +58,6 @@ inherited ViewFornecedores: TViewFornecedores
   inherited pnlBackground: TPanel
     inherited cpLista: TCardPanel
       inherited card_pesquisa: TCard
-        inherited pnlTituloPesquisa: TPanel
-          ExplicitLeft = 0
-          ExplicitTop = 0
-        end
         inherited dgbDados: TDBGrid
           Columns = <
             item
@@ -195,8 +193,6 @@ inherited ViewFornecedores: TViewFornecedores
           inherited lblTituloCadastro: TLabel
             Width = 281
             Caption = 'Cadastro de Fornecedor'
-            ExplicitLeft = 3
-            ExplicitTop = 10
             ExplicitWidth = 281
           end
         end

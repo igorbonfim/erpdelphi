@@ -1,4 +1,4 @@
-inherited ViewFuncionario: TViewFuncionario
+inherited ViewFuncionarios: TViewFuncionarios
   Caption = 'Funcion'#225'rios'
   TextHeight = 13
   inherited pnlTopo: TPanel
@@ -144,6 +144,7 @@ inherited ViewFuncionario: TViewFuncionario
           ParentFont = False
         end
         inherited pnlTituloCadastro: TPanel
+          TabOrder = 7
           inherited lblTituloCadastro: TLabel
             Width = 284
             Height = 50
@@ -160,7 +161,7 @@ inherited ViewFuncionario: TViewFuncionario
           DataSource = dsDados
           Enabled = False
           ReadOnly = True
-          TabOrder = 1
+          TabOrder = 0
         end
         object edtRazaoSocial: TDBEdit
           Left = 253
@@ -190,7 +191,7 @@ inherited ViewFuncionario: TViewFuncionario
           CharCase = ecUpperCase
           DataField = 'CNPJCPF'
           DataSource = dsDados
-          TabOrder = 4
+          TabOrder = 1
         end
         object edtTelefone: TDBEdit
           Left = 223
@@ -210,7 +211,7 @@ inherited ViewFuncionario: TViewFuncionario
           CharCase = ecUpperCase
           DataField = 'IERG'
           DataSource = dsDados
-          TabOrder = 6
+          TabOrder = 4
         end
         object edtObservacao: TDBEdit
           Left = 17
@@ -220,7 +221,7 @@ inherited ViewFuncionario: TViewFuncionario
           CharCase = ecUpperCase
           DataField = 'OBSERVACAO'
           DataSource = dsDados
-          TabOrder = 7
+          TabOrder = 6
         end
       end
     end

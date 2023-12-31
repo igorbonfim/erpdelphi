@@ -9,7 +9,7 @@ uses
   Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Mask, Vcl.DBCtrls;
 
 type
-  TViewFuncionario = class(TViewBaseListas)
+  TViewFuncionarios = class(TViewBaseListas)
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -31,7 +31,7 @@ type
   end;
 
 var
-  ViewFuncionario: TViewFuncionario;
+  ViewFuncionarios: TViewFuncionarios;
 
 implementation
 
