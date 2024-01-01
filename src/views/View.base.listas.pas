@@ -34,6 +34,7 @@ type
     pnlTituloCadastro: TPanel;
     lblTituloCadastro: TLabel;
     btnVoltarPesquisa: TSpeedButton;
+    pnlVoltar: TPanel;
     procedure btnSairClick(Sender: TObject);
     procedure pnlTopoMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);

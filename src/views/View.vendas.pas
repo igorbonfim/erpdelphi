@@ -12,6 +12,19 @@ type
   TViewVendas = class(TViewBaseListas)
     SearchBox1: TSearchBox;
     lblNomeVendedor: TLabel;
+    lblProdutos: TLabel;
+    edtProduto: TSearchBox;
+    edtQuantidade: TEdit;
+    lblQuantidade: TLabel;
+    Label1: TLabel;
+    edtVlrUnitario: TEdit;
+    edtSubtotal: TEdit;
+    lblSubtotal: TLabel;
+    btnSalvarProduto: TSpeedButton;
+    dbgItensVendas: TDBGrid;
+    pnlTotais: TPanel;
+    Label2: TLabel;
+    edtSubtotalPanelTotais: TEdit;
   private
     { Private declarations }
   public

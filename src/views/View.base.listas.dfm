@@ -23,8 +23,8 @@ inherited ViewBaseListas: TViewBaseListas
       AlignWithMargins = True
       Left = 40
       Top = 3
-      Width = 86
-      Height = 31
+      Width = 881
+      Height = 35
       Margins.Left = 5
       Align = alClient
       Caption = 'lblTitulo'
@@ -35,6 +35,8 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Style = [fsBold]
       ParentFont = False
       OnMouseDown = pnlTopoMouseDown
+      ExplicitWidth = 86
+      ExplicitHeight = 31
     end
     object pnlIcone: TPanel
       Left = 0
@@ -302,7 +304,7 @@ inherited ViewBaseListas: TViewBaseListas
       Margins.Right = 1
       Margins.Bottom = 0
       Align = alClient
-      ActiveCard = card_pesquisa
+      ActiveCard = card_cadastro
       BevelOuter = bvNone
       Caption = 'cpLista'
       Color = clWhite
@@ -414,7 +416,7 @@ inherited ViewBaseListas: TViewBaseListas
             Left = 3
             Top = 10
             Width = 210
-            Height = 37
+            Height = 50
             Margins.Top = 10
             Margins.Bottom = 0
             Align = alLeft
@@ -425,27 +427,41 @@ inherited ViewBaseListas: TViewBaseListas
             Font.Name = 'Segoe UI Semilight'
             Font.Style = []
             ParentFont = False
+            ExplicitHeight = 37
           end
-          object btnVoltarPesquisa: TSpeedButton
-            AlignWithMargins = True
-            Left = 922
-            Top = 3
-            Width = 97
-            Height = 54
-            Cursor = crHandPoint
+          object pnlVoltar: TPanel
+            Left = 837
+            Top = 0
+            Width = 185
+            Height = 60
             Align = alRight
-            Caption = 'Voltar'
-            Flat = True
-            Font.Charset = ANSI_CHARSET
-            Font.Color = 5395026
-            Font.Height = -20
-            Font.Name = 'Segoe UI Semibold'
-            Font.Style = [fsBold]
-            ParentFont = False
-            Visible = False
-            OnClick = btnVoltarPesquisaClick
-            ExplicitLeft = 704
-            ExplicitHeight = 34
+            BevelOuter = bvNone
+            TabOrder = 0
+            ExplicitLeft = 648
+            ExplicitTop = 8
+            ExplicitHeight = 41
+            object btnVoltarPesquisa: TSpeedButton
+              AlignWithMargins = True
+              Left = 3
+              Top = 3
+              Width = 179
+              Height = 54
+              Cursor = crHandPoint
+              Align = alClient
+              Caption = 'Voltar'
+              Flat = True
+              Font.Charset = ANSI_CHARSET
+              Font.Color = 5395026
+              Font.Height = -20
+              Font.Name = 'Segoe UI Semibold'
+              Font.Style = [fsBold]
+              ParentFont = False
+              Visible = False
+              OnClick = btnVoltarPesquisaClick
+              ExplicitLeft = 704
+              ExplicitWidth = 97
+              ExplicitHeight = 34
+            end
           end
         end
       end
