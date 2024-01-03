@@ -3,8 +3,29 @@ inherited ViewVendas: TViewVendas
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
+      Width = 881
+      Height = 35
       Caption = 'Vendas'
       ExplicitWidth = 75
+    end
+  end
+  inherited pnlRodape: TPanel
+    inherited btnCancelar: TSpeedButton
+      Left = 821
+    end
+    inherited btnEditar: TSpeedButton
+      Left = 718
+    end
+    inherited btnNovo: TSpeedButton
+      Left = 615
+    end
+    inherited btnSalvar: TSpeedButton
+      Left = 924
+    end
+    inherited btnExcluir: TSpeedButton
+      Left = -5000
+      Align = alNone
+      ExplicitLeft = -5000
     end
   end
   inherited pnlBackground: TPanel
@@ -12,7 +33,6 @@ inherited ViewVendas: TViewVendas
       inherited card_cadastro: TCard
         inherited pnlTituloCadastro: TPanel
           Height = 153
-          ExplicitTop = -3
           ExplicitHeight = 153
           inherited lblTituloCadastro: TLabel
             Left = 10
@@ -129,7 +149,7 @@ inherited ViewVendas: TViewVendas
             ExplicitLeft = 892
             ExplicitTop = 0
             ExplicitWidth = 130
-            ExplicitHeight = 227
+            ExplicitHeight = 153
             inherited btnVoltarPesquisa: TSpeedButton
               Width = 124
               Height = 61
@@ -139,7 +159,7 @@ inherited ViewVendas: TViewVendas
               ExplicitHeight = 61
             end
           end
-          object SearchBox1: TSearchBox
+          object edtCodigoVendedor: TSearchBox
             Left = 10
             Top = 39
             Width = 114
@@ -149,6 +169,7 @@ inherited ViewVendas: TViewVendas
             BorderStyle = bsNone
             NumbersOnly = True
             TabOrder = 0
+            OnExit = edtCodigoVendedorExit
           end
           object edtProduto: TSearchBox
             Left = 10
@@ -187,7 +208,7 @@ inherited ViewVendas: TViewVendas
           Left = 5
           Top = 158
           Width = 1012
-          Height = 221
+          Height = 220
           Margins.Left = 5
           Margins.Top = 5
           Margins.Right = 5
@@ -204,22 +225,27 @@ inherited ViewVendas: TViewVendas
           OnDblClick = dgbDadosDblClick
         end
         object pnlTotais: TPanel
+          AlignWithMargins = True
           Left = 0
-          Top = 384
+          Top = 383
           Width = 1022
           Height = 85
+          Margins.Left = 0
+          Margins.Top = 0
+          Margins.Right = 0
+          Margins.Bottom = 1
           Align = alBottom
           BevelOuter = bvNone
           Color = 7500402
           ParentBackground = False
           TabOrder = 2
-          ExplicitLeft = -1
+          ExplicitLeft = -2
           ExplicitTop = 381
           object Label2: TLabel
             AlignWithMargins = True
             Left = 923
             Top = 7
-            Width = 88
+            Width = 82
             Height = 31
             Margins.Top = 10
             Margins.Bottom = 0
@@ -228,23 +254,23 @@ inherited ViewVendas: TViewVendas
             Font.Charset = ANSI_CHARSET
             Font.Color = clWhite
             Font.Height = -23
-            Font.Name = 'Segoe UI Semibold'
-            Font.Style = [fsBold]
+            Font.Name = 'Segoe UI Semilight'
+            Font.Style = []
             ParentColor = False
             ParentFont = False
           end
           object edtSubtotalPanelTotais: TEdit
-            Left = 832
-            Top = 41
-            Width = 181
-            Height = 38
+            Left = 872
+            Top = 35
+            Width = 133
+            Height = 37
             Alignment = taRightJustify
             BorderStyle = bsNone
             Color = 7500402
-            Font.Charset = DEFAULT_CHARSET
+            Font.Charset = ANSI_CHARSET
             Font.Color = clWhite
-            Font.Height = -33
-            Font.Name = 'Tahoma'
+            Font.Height = -23
+            Font.Name = 'Segoe UI Semilight'
             Font.Style = []
             ParentFont = False
             ReadOnly = True

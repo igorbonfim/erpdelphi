@@ -6,14 +6,16 @@ procedure GetPessoas(iTipo: integer);
 procedure GetProdutos;
 procedure GetProdutoDetalhe(iCOD_Produto: integer); overload;
 procedure GetProdutoDetalhe(iCOD_Produto, iCOD_Filial: integer); overload;
+procedure GetVendedor(iCOD_Vendedor: integer);
 
 var
-  iCOD_FILIAL: Integer;
-  sRAZAO_FILIAL: String;
+  iCOD_FILIAL, iCOD_VENDEDOR: Integer;
+  sRAZAO_FILIAL, sNOME_VENDEDOR: String;
 
 implementation
 
-uses Service.cadastro, System.SysUtils, Vcl.Dialogs;
+uses Service.cadastro, System.SysUtils, Vcl.Dialogs, Provider.conversao,
+  View.mensagens;
 
 procedure GetPessoas(iTipo: integer);
 begin
@@ -64,6 +66,32 @@ begin
     ServiceCadastro.QRY_produto2.ParamByName('CODIGO').AsInteger := iCOD_Produto;
     ServiceCadastro.QRY_produto2.ParamByName('FILIAL').AsInteger := iCOD_Filial;
     ServiceCadastro.QRY_produto2.Open;
+  except on e:exception do
+    ShowMessage(e.Message);
+  end;
+end;
+
+procedure GetVendedor(iCOD_Vendedor: integer);
+begin
+  try
+    ServiceCadastro.QRY_pessoas.Close;
+    ServiceCadastro.QRY_pessoas.SQL.Clear;
+    ServiceCadastro.QRY_pessoas.SQL.Add('SELECT * FROM PESSOAS WHERE CODIGO = :CODIGO AND TIPOPESSOA = :TIPO');
+    ServiceCadastro.QRY_pessoas.ParamByName('CODIGO').AsInteger := iCOD_Vendedor;
+    ServiceCadastro.QRY_pessoas.ParamByName('TIPO').AsInteger := PessoasToInt(tpFuncionarios);
+    ServiceCadastro.QRY_pessoas.Open;
+
+    if ServiceCadastro.QRY_pessoas.RecordCount > 0 then
+    begin
+      iCOD_Vendedor   := 0;
+      sNOME_VENDEDOR  := '';
+
+      iCOD_Vendedor   := ServiceCadastro.QRY_pessoasCODIGO.AsInteger;
+      sNOME_VENDEDOR  := ServiceCadastro.QRY_pessoasRAZAO.AsString;
+    end
+    else
+      TViewMensagens.Mensagem('Vendedor não encontrado!', 'Informação', 'I', [mbOk]);
+
   except on e:exception do
     ShowMessage(e.Message);
   end;
