@@ -24,9 +24,11 @@ type
     dbgItensVendas: TDBGrid;
     pnlTotais: TPanel;
     Label2: TLabel;
-    edtSubtotalPanelTotais: TEdit;
+    edtTotalVenda: TEdit;
     dsItens: TDataSource;
     procedure edtCodigoVendedorExit(Sender: TObject);
+    procedure btnEditarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,6 +42,12 @@ implementation
 
 {$R *.dfm}
 
+procedure TViewVendas.btnEditarClick(Sender: TObject);
+begin
+  inherited;
+  edtTotalVenda.Text := FloatToStrF(TOTAL_VENDA, ffCurrency, 10,2);
+end;
+
 procedure TViewVendas.edtCodigoVendedorExit(Sender: TObject);
 begin
   inherited;
@@ -49,6 +57,12 @@ begin
     lblNomeVendedor.Caption := sNOME_VENDEDOR;
   end;
 
+end;
+
+procedure TViewVendas.FormShow(Sender: TObject);
+begin
+  inherited;
+  GetVendas;
 end;
 
 end.

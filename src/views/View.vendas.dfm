@@ -60,11 +60,13 @@ inherited ViewVendas: TViewVendas
             item
               Expanded = False
               FieldName = 'VALORDESCONTO'
+              Width = 64
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'VALORTOTAL'
+              Width = 64
               Visible = True
             end>
         end
@@ -186,7 +188,6 @@ inherited ViewVendas: TViewVendas
             Height = 153
             TabOrder = 1
             ExplicitLeft = 892
-            ExplicitTop = 0
             ExplicitWidth = 130
             ExplicitHeight = 153
             inherited btnVoltarPesquisa: TSpeedButton
@@ -267,31 +268,37 @@ inherited ViewVendas: TViewVendas
             item
               Expanded = False
               FieldName = 'CODIGO'
+              Width = 95
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'CODIGO_ITEM'
+              Width = 127
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'QUANTIDADE'
+              Width = 128
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'VALOR_UNITARIO'
+              Width = 96
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'VALOR_DESCONTO'
+              Width = 139
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'VALOR_TOTAL'
+              Width = 411
               Visible = True
             end>
         end
@@ -328,7 +335,7 @@ inherited ViewVendas: TViewVendas
             ParentColor = False
             ParentFont = False
           end
-          object edtSubtotalPanelTotais: TEdit
+          object edtTotalVenda: TEdit
             Left = 872
             Top = 35
             Width = 133
