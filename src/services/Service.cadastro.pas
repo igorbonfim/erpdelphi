@@ -62,6 +62,7 @@ type
     QRY_movestoque_itemVALOR_TOTAL: TFMTBCDField;
     QRY_movestoque_itemVALOR_DESCONTO: TFMTBCDField;
     procedure QRY_produto1AfterScroll(DataSet: TDataSet);
+    procedure QRY_movestoqueAfterScroll(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -78,6 +79,11 @@ implementation
 uses Service.conexao, Provider.constants;
 
 {$R *.dfm}
+
+procedure TServiceCadastro.QRY_movestoqueAfterScroll(DataSet: TDataSet);
+begin
+  GetVendaItem(ServiceCadastro.QRY_movestoqueCODIGO.AsInteger);
+end;
 
 procedure TServiceCadastro.QRY_produto1AfterScroll(DataSet: TDataSet);
 begin

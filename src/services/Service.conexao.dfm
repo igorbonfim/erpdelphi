@@ -22,7 +22,7 @@ object ServiceConexao: TServiceConexao
     Top = 20
   end
   object FBDriverLink: TFDPhysFBDriverLink
-    Left = 240
+    Left = 264
     Top = 20
   end
   object QRY_filial: TFDQuery

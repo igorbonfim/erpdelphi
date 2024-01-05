@@ -227,6 +227,7 @@ object ServiceCadastro: TServiceCadastro
     end
   end
   object QRY_movestoque: TFDQuery
+    AfterScroll = QRY_movestoqueAfterScroll
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'select * from movestoque where codigo = :codigo')

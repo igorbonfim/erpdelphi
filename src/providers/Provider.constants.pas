@@ -7,10 +7,13 @@ procedure GetProdutos;
 procedure GetProdutoDetalhe(iCOD_Produto: integer); overload;
 procedure GetProdutoDetalhe(iCOD_Produto, iCOD_Filial: integer); overload;
 procedure GetVendedor(iCOD_Vendedor: integer);
+procedure GetVendas;
+procedure GetVendaItem(iCOD_Venda: integer);
 
 var
   iCOD_FILIAL, iCOD_VENDEDOR: Integer;
   sRAZAO_FILIAL, sNOME_VENDEDOR: String;
+  TOTAL_VENDA: Double;
 
 implementation
 
@@ -95,6 +98,36 @@ begin
   except on e:exception do
     ShowMessage(e.Message);
   end;
+end;
+
+procedure GetVendas;
+begin
+  ServiceCadastro.QRY_movestoque.Close;
+  ServiceCadastro.QRY_movestoque.SQL.Clear;
+  ServiceCadastro.QRY_movestoque.SQL.Add('SELECT * FROM MOVESTOQUE ORDER BY 1');
+  ServiceCadastro.QRY_movestoque.Open;
+end;
+
+procedure GetVendaItem(iCOD_Venda: integer);
+begin
+  ServiceCadastro.QRY_movestoque_item.Close;
+  ServiceCadastro.QRY_movestoque_item.SQL.Clear;
+  ServiceCadastro.QRY_movestoque_item.SQL.Add('SELECT * FROM MOVESTOQUE_ITEM WHERE CODIGO_MOVIMENTO = :CODIGO');
+  ServiceCadastro.QRY_movestoque_item.ParamByName('CODIGO').AsInteger := iCOD_Venda;
+  ServiceCadastro.QRY_movestoque_item.Open;
+
+  TOTAL_VENDA := 0;
+
+  ServiceCadastro.QRY_movestoque_item.DisableControls;
+
+  ServiceCadastro.QRY_movestoque_item.First;
+  while not ServiceCadastro.QRY_movestoque_item.Eof do
+  begin
+    TOTAL_VENDA := TOTAL_VENDA + ServiceCadastro.QRY_movestoque_itemVALOR_TOTAL.AsFloat;
+    ServiceCadastro.QRY_movestoque_item.Next;
+  end;
+  ServiceCadastro.QRY_movestoque_item.EnableControls;
+
 end;
 
 end.
