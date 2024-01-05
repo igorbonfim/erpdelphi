@@ -1,12 +1,13 @@
 object ServiceCadastro: TServiceCadastro
-  Height = 257
-  Width = 293
+  Height = 368
+  Width = 742
+  PixelsPerInch = 120
   object QRY_pessoas: TFDQuery
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PESSOAS WHERE CODIGO = :CODIGO')
-    Left = 32
-    Top = 16
+    Left = 40
+    Top = 20
     ParamData = <
       item
         Name = 'CODIGO'
@@ -59,8 +60,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM ENDERECO WHERE CODIGO = :CODIGO')
-    Left = 152
-    Top = 16
+    Left = 190
+    Top = 20
     ParamData = <
       item
         Name = 'CODIGO'
@@ -112,8 +113,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PRODUTO WHERE CODIGO = :CODIGO')
-    Left = 32
-    Top = 109
+    Left = 40
+    Top = 136
     ParamData = <
       item
         Name = 'CODIGO'
@@ -169,8 +170,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PRODUTO_DETALHE WHERE CODIGO = :CODIGO')
-    Left = 147
-    Top = 109
+    Left = 184
+    Top = 136
     ParamData = <
       item
         Name = 'CODIGO'
@@ -221,6 +222,100 @@ object ServiceCadastro: TServiceCadastro
     object QRY_produto2ESTOQUE: TFMTBCDField
       FieldName = 'ESTOQUE'
       Origin = 'ESTOQUE'
+      Precision = 18
+      Size = 2
+    end
+  end
+  object QRY_movestoque: TFDQuery
+    Connection = ServiceConexao.FDConn
+    SQL.Strings = (
+      'select * from movestoque where codigo = :codigo')
+    Left = 344
+    Top = 16
+    ParamData = <
+      item
+        Name = 'CODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+    object QRY_movestoqueCODIGO: TIntegerField
+      FieldName = 'CODIGO'
+      Origin = 'CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QRY_movestoqueTIPOESTOQUE: TIntegerField
+      FieldName = 'TIPOESTOQUE'
+      Origin = 'TIPOESTOQUE'
+    end
+    object QRY_movestoqueDATA: TDateField
+      FieldName = 'DATA'
+      Origin = '"DATA"'
+    end
+    object QRY_movestoqueHORA: TTimeField
+      FieldName = 'HORA'
+      Origin = 'HORA'
+    end
+    object QRY_movestoqueVALORDESCONTO: TFMTBCDField
+      FieldName = 'VALORDESCONTO'
+      Origin = 'VALORDESCONTO'
+      Precision = 18
+      Size = 2
+    end
+    object QRY_movestoqueVALORTOTAL: TFMTBCDField
+      FieldName = 'VALORTOTAL'
+      Origin = 'VALORTOTAL'
+      Precision = 18
+      Size = 2
+    end
+  end
+  object QRY_movestoque_item: TFDQuery
+    Connection = ServiceConexao.FDConn
+    SQL.Strings = (
+      'select * from movestoque_item where codigo = :codigo')
+    Left = 344
+    Top = 136
+    ParamData = <
+      item
+        Name = 'CODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+    object QRY_movestoque_itemCODIGO: TIntegerField
+      FieldName = 'CODIGO'
+      Origin = 'CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QRY_movestoque_itemCODIGO_MOVIMENTO: TIntegerField
+      FieldName = 'CODIGO_MOVIMENTO'
+      Origin = 'CODIGO_MOVIMENTO'
+    end
+    object QRY_movestoque_itemCODIGO_ITEM: TIntegerField
+      FieldName = 'CODIGO_ITEM'
+      Origin = 'CODIGO_ITEM'
+    end
+    object QRY_movestoque_itemQUANTIDADE: TFMTBCDField
+      FieldName = 'QUANTIDADE'
+      Origin = 'QUANTIDADE'
+      Precision = 18
+      Size = 2
+    end
+    object QRY_movestoque_itemVALOR_UNITARIO: TFMTBCDField
+      FieldName = 'VALOR_UNITARIO'
+      Origin = 'VALOR_UNITARIO'
+      Precision = 18
+      Size = 2
+    end
+    object QRY_movestoque_itemVALOR_TOTAL: TFMTBCDField
+      FieldName = 'VALOR_TOTAL'
+      Origin = 'VALOR_TOTAL'
+      Precision = 18
+      Size = 2
+    end
+    object QRY_movestoque_itemVALOR_DESCONTO: TFMTBCDField
+      FieldName = 'VALOR_DESCONTO'
+      Origin = 'VALOR_DESCONTO'
       Precision = 18
       Size = 2
     end

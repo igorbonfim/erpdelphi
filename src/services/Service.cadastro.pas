@@ -46,6 +46,21 @@ type
     QRY_produto2SIT_TRIBUTARIA: TIntegerField;
     QRY_produto1NCM: TStringField;
     QRY_produto2ESTOQUE: TFMTBCDField;
+    QRY_movestoque: TFDQuery;
+    QRY_movestoque_item: TFDQuery;
+    QRY_movestoqueCODIGO: TIntegerField;
+    QRY_movestoqueTIPOESTOQUE: TIntegerField;
+    QRY_movestoqueDATA: TDateField;
+    QRY_movestoqueHORA: TTimeField;
+    QRY_movestoqueVALORDESCONTO: TFMTBCDField;
+    QRY_movestoqueVALORTOTAL: TFMTBCDField;
+    QRY_movestoque_itemCODIGO: TIntegerField;
+    QRY_movestoque_itemCODIGO_MOVIMENTO: TIntegerField;
+    QRY_movestoque_itemCODIGO_ITEM: TIntegerField;
+    QRY_movestoque_itemQUANTIDADE: TFMTBCDField;
+    QRY_movestoque_itemVALOR_UNITARIO: TFMTBCDField;
+    QRY_movestoque_itemVALOR_TOTAL: TFMTBCDField;
+    QRY_movestoque_itemVALOR_DESCONTO: TFMTBCDField;
     procedure QRY_produto1AfterScroll(DataSet: TDataSet);
   private
     { Private declarations }

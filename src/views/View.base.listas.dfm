@@ -437,9 +437,6 @@ inherited ViewBaseListas: TViewBaseListas
             Align = alRight
             BevelOuter = bvNone
             TabOrder = 0
-            ExplicitLeft = 648
-            ExplicitTop = 8
-            ExplicitHeight = 41
             object btnVoltarPesquisa: TSpeedButton
               AlignWithMargins = True
               Left = 3

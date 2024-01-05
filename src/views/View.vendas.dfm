@@ -12,15 +12,19 @@ inherited ViewVendas: TViewVendas
   inherited pnlRodape: TPanel
     inherited btnCancelar: TSpeedButton
       Left = 821
+      ExplicitLeft = 821
     end
     inherited btnEditar: TSpeedButton
       Left = 718
+      ExplicitLeft = 718
     end
     inherited btnNovo: TSpeedButton
       Left = 615
+      ExplicitLeft = 615
     end
     inherited btnSalvar: TSpeedButton
       Left = 924
+      ExplicitLeft = 924
     end
     inherited btnExcluir: TSpeedButton
       Left = -5000
@@ -30,6 +34,41 @@ inherited ViewVendas: TViewVendas
   end
   inherited pnlBackground: TPanel
     inherited cpLista: TCardPanel
+      inherited card_pesquisa: TCard
+        inherited dgbDados: TDBGrid
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'CODIGO'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'TIPOESTOQUE'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'DATA'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'HORA'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'VALORDESCONTO'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'VALORTOTAL'
+              Visible = True
+            end>
+        end
+      end
       inherited card_cadastro: TCard
         inherited pnlTituloCadastro: TPanel
           Height = 153
@@ -185,21 +224,21 @@ inherited ViewVendas: TViewVendas
             Left = 416
             Top = 108
             Width = 80
-            Height = 25
+            Height = 21
             TabOrder = 3
           end
           object edtVlrUnitario: TEdit
             Left = 502
             Top = 108
             Width = 121
-            Height = 25
+            Height = 21
             TabOrder = 4
           end
           object edtSubtotal: TEdit
             Left = 629
             Top = 108
             Width = 121
-            Height = 25
+            Height = 21
             TabOrder = 5
           end
         end
@@ -215,6 +254,7 @@ inherited ViewVendas: TViewVendas
           Margins.Bottom = 5
           Align = alClient
           BorderStyle = bsNone
+          DataSource = dsItens
           Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
           TabOrder = 1
           TitleFont.Charset = DEFAULT_CHARSET
@@ -223,6 +263,37 @@ inherited ViewVendas: TViewVendas
           TitleFont.Name = 'Tahoma'
           TitleFont.Style = []
           OnDblClick = dgbDadosDblClick
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'CODIGO'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'CODIGO_ITEM'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'QUANTIDADE'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'VALOR_UNITARIO'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'VALOR_DESCONTO'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'VALOR_TOTAL'
+              Visible = True
+            end>
         end
         object pnlTotais: TPanel
           AlignWithMargins = True
@@ -239,8 +310,6 @@ inherited ViewVendas: TViewVendas
           Color = 7500402
           ParentBackground = False
           TabOrder = 2
-          ExplicitLeft = -2
-          ExplicitTop = 381
           object Label2: TLabel
             AlignWithMargins = True
             Left = 923
@@ -282,7 +351,13 @@ inherited ViewVendas: TViewVendas
     end
   end
   inherited dsDados: TDataSource
+    DataSet = ServiceCadastro.QRY_movestoque
     Left = 521
+    Top = 49
+  end
+  object dsItens: TDataSource
+    DataSet = ServiceCadastro.QRY_movestoque_item
+    Left = 609
     Top = 49
   end
 end

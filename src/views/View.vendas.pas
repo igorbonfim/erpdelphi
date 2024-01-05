@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, View.base.listas, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.StdCtrls, Vcl.WinXCtrls, Vcl.WinXPanels, Vcl.Buttons,
-  Vcl.Imaging.pngimage, Vcl.ExtCtrls, Provider.constants;
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls, Provider.constants, Service.cadastro;
 
 type
   TViewVendas = class(TViewBaseListas)
@@ -25,6 +25,7 @@ type
     pnlTotais: TPanel;
     Label2: TLabel;
     edtSubtotalPanelTotais: TEdit;
+    dsItens: TDataSource;
     procedure edtCodigoVendedorExit(Sender: TObject);
   private
     { Private declarations }

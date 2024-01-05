@@ -144,6 +144,7 @@ begin
   inherited;
   cpLista.ActiveCard := card_pesquisa;
   GetPessoas(Self.Tag);
+  dsDados.DataSet.Open;
 end;
 
 procedure TViewBaseListas.pnlTopoMouseDown(Sender: TObject;
