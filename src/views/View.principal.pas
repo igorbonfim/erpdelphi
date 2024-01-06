@@ -67,10 +67,10 @@ type
     procedure btnFuncionariosClick(Sender: TObject);
   private
     procedure GetLineMenu(Sender: TObject);
-    function CentralizaFormulario(aForm: TForm): Boolean;
     { Private declarations }
   public
     { Public declarations }
+    function CentralizaFormulario(aForm: TForm): Boolean;
   end;
 
 var

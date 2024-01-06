@@ -178,9 +178,11 @@ inherited ViewBaseListas: TViewBaseListas
     Color = 7500402
     ParentBackground = False
     TabOrder = 1
+    ExplicitLeft = -1
+    ExplicitTop = 513
     object btnCancelar: TSpeedButton
       AlignWithMargins = True
-      Left = 718
+      Left = 558
       Top = 3
       Width = 97
       Height = 34
@@ -201,7 +203,7 @@ inherited ViewBaseListas: TViewBaseListas
     end
     object btnEditar: TSpeedButton
       AlignWithMargins = True
-      Left = 615
+      Left = 455
       Top = 3
       Width = 97
       Height = 34
@@ -222,7 +224,7 @@ inherited ViewBaseListas: TViewBaseListas
     end
     object btnNovo: TSpeedButton
       AlignWithMargins = True
-      Left = 512
+      Left = 352
       Top = 3
       Width = 97
       Height = 34
@@ -244,7 +246,7 @@ inherited ViewBaseListas: TViewBaseListas
     end
     object btnSalvar: TSpeedButton
       AlignWithMargins = True
-      Left = 821
+      Left = 661
       Top = 3
       Width = 97
       Height = 34
@@ -264,7 +266,7 @@ inherited ViewBaseListas: TViewBaseListas
     end
     object btnExcluir: TSpeedButton
       AlignWithMargins = True
-      Left = 924
+      Left = 764
       Top = 3
       Width = 97
       Height = 34
@@ -281,6 +283,37 @@ inherited ViewBaseListas: TViewBaseListas
       ParentFont = False
       OnClick = btnExcluirClick
       ExplicitLeft = 704
+    end
+    object pnlBotaoSelecionar: TPanel
+      Left = 864
+      Top = 0
+      Width = 160
+      Height = 40
+      Align = alRight
+      BevelOuter = bvNone
+      Color = 4359247
+      ParentBackground = False
+      TabOrder = 0
+      Visible = False
+      object SpeedButton1: TSpeedButton
+        Left = 0
+        Top = 0
+        Width = 160
+        Height = 40
+        Cursor = crHandPoint
+        Align = alClient
+        Caption = 'SELECIONAR'
+        Flat = True
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -20
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = SpeedButton1Click
+        ExplicitLeft = 32
+        ExplicitWidth = 169
+      end
     end
   end
   object pnlBackground: TPanel

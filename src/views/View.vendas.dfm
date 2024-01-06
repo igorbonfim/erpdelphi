@@ -3,33 +3,38 @@ inherited ViewVendas: TViewVendas
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
-      Width = 881
-      Height = 35
       Caption = 'Vendas'
       ExplicitWidth = 75
     end
   end
   inherited pnlRodape: TPanel
     inherited btnCancelar: TSpeedButton
-      Left = 821
+      Left = 611
       ExplicitLeft = 821
     end
     inherited btnEditar: TSpeedButton
-      Left = 718
+      Left = 508
       ExplicitLeft = 718
     end
     inherited btnNovo: TSpeedButton
-      Left = 615
+      Left = 405
       ExplicitLeft = 615
     end
     inherited btnSalvar: TSpeedButton
-      Left = 924
+      Left = 714
       ExplicitLeft = 924
     end
     inherited btnExcluir: TSpeedButton
       Left = -5000
       Align = alNone
       ExplicitLeft = -5000
+    end
+    inherited pnlBotaoSelecionar: TPanel
+      AlignWithMargins = True
+      Margins.Left = 50
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
     end
   end
   inherited pnlBackground: TPanel
@@ -220,6 +225,7 @@ inherited ViewVendas: TViewVendas
             BevelOuter = bvNone
             BorderStyle = bsNone
             TabOrder = 2
+            OnInvokeSearch = edtProdutoInvokeSearch
           end
           object edtQuantidade: TEdit
             Left = 416

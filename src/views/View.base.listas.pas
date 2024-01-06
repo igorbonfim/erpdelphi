@@ -35,6 +35,8 @@ type
     lblTituloCadastro: TLabel;
     btnVoltarPesquisa: TSpeedButton;
     pnlVoltar: TPanel;
+    pnlBotaoSelecionar: TPanel;
+    SpeedButton1: TSpeedButton;
     procedure btnSairClick(Sender: TObject);
     procedure pnlTopoMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
@@ -47,6 +49,7 @@ type
     procedure btnSalvarClick(Sender: TObject);
     procedure btnVoltarPesquisaClick(Sender: TObject);
     procedure dgbDadosDblClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     FTela: TPCTelas;
     procedure GetMensagemInsercao;
@@ -155,6 +158,12 @@ begin
   inherited;
   ReleaseCapture;
   Perform(wm_SysCommand, sc_DragMove, 0);
+end;
+
+procedure TViewBaseListas.SpeedButton1Click(Sender: TObject);
+begin
+  inherited;
+  Self.ModalResult := mrOk;
 end;
 
 procedure TViewBaseListas.GetMensagemInsercao;
