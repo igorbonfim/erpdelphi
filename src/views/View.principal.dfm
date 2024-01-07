@@ -2176,8 +2176,8 @@ object ViewPrincipal: TViewPrincipal
           AlignWithMargins = True
           Left = 3
           Top = 0
-          Width = 122
-          Height = 32
+          Width = 204
+          Height = 33
           Cursor = crHandPoint
           Margins.Top = 0
           Margins.Bottom = 0
@@ -2191,12 +2191,14 @@ object ViewPrincipal: TViewPrincipal
           ParentFont = False
           OnMouseEnter = lblTituloEmpresaMouseEnter
           OnMouseLeave = lblTituloEmpresaMouseLeave
+          ExplicitWidth = 122
+          ExplicitHeight = 32
         end
         object lblDescricaoEmpresa: TLabel
           AlignWithMargins = True
           Left = 3
           Top = 33
-          Width = 83
+          Width = 204
           Height = 25
           Margins.Top = 0
           Margins.Bottom = 10
@@ -2208,6 +2210,7 @@ object ViewPrincipal: TViewPrincipal
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
+          ExplicitWidth = 83
         end
       end
     end
@@ -2223,7 +2226,7 @@ object ViewPrincipal: TViewPrincipal
         AlignWithMargins = True
         Left = 3
         Top = 10
-        Width = 75
+        Width = 94
         Height = 21
         Margins.Top = 10
         Margins.Bottom = 0
@@ -2236,13 +2239,14 @@ object ViewPrincipal: TViewPrincipal
         Font.Name = 'Segoe UI Semilight'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 75
       end
       object Label1: TLabel
         AlignWithMargins = True
         Left = 3
         Top = 31
-        Width = 35
-        Height = 17
+        Width = 94
+        Height = 19
         Margins.Top = 0
         Margins.Bottom = 20
         Align = alClient
@@ -2254,6 +2258,8 @@ object ViewPrincipal: TViewPrincipal
         Font.Name = 'Segoe UI Light'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 35
+        ExplicitHeight = 17
       end
     end
     object pnlUsuario: TPanel
@@ -2391,10 +2397,10 @@ object ViewPrincipal: TViewPrincipal
         TabOrder = 2
         object lblUsuario: TLabel
           AlignWithMargins = True
-          Left = 27
+          Left = 3
           Top = 10
-          Width = 118
-          Height = 25
+          Width = 142
+          Height = 29
           Margins.Top = 10
           Margins.Bottom = 0
           Align = alClient
@@ -2406,12 +2412,15 @@ object ViewPrincipal: TViewPrincipal
           Font.Name = 'Segoe UI Semilight'
           Font.Style = []
           ParentFont = False
+          ExplicitLeft = 27
+          ExplicitWidth = 118
+          ExplicitHeight = 25
         end
         object lblPerfil: TLabel
           AlignWithMargins = True
-          Left = 51
+          Left = 3
           Top = 39
-          Width = 94
+          Width = 142
           Height = 21
           Margins.Top = 0
           Margins.Bottom = 10
@@ -2424,6 +2433,8 @@ object ViewPrincipal: TViewPrincipal
           Font.Name = 'Segoe UI Light'
           Font.Style = []
           ParentFont = False
+          ExplicitLeft = 51
+          ExplicitWidth = 94
         end
       end
     end
@@ -3869,10 +3880,10 @@ object ViewPrincipal: TViewPrincipal
           BevelOuter = bvNone
           TabOrder = 1
           object lblLicenciado: TLabel
-            Left = 162
+            Left = 0
             Top = 17
-            Width = 136
-            Height = 21
+            Width = 298
+            Height = 24
             Margins.Left = 0
             Margins.Top = 6
             Margins.Right = 5
@@ -3886,11 +3897,14 @@ object ViewPrincipal: TViewPrincipal
             Font.Name = 'Segoe UI Semilight'
             Font.Style = []
             ParentFont = False
+            ExplicitLeft = 162
+            ExplicitWidth = 136
+            ExplicitHeight = 21
           end
           object lblTituloLicenciado: TLabel
-            Left = 213
+            Left = 0
             Top = 0
-            Width = 85
+            Width = 298
             Height = 17
             Margins.Top = 0
             Margins.Bottom = 0
@@ -3903,6 +3917,8 @@ object ViewPrincipal: TViewPrincipal
             Font.Name = 'Segoe UI Light'
             Font.Style = []
             ParentFont = False
+            ExplicitLeft = 213
+            ExplicitWidth = 85
           end
         end
       end

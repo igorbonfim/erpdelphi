@@ -31,8 +31,10 @@ type
     procedure btnEditarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure edtProdutoInvokeSearch(Sender: TObject);
+    procedure edtQuantidadeExit(Sender: TObject);
   private
     { Private declarations }
+    procedure GetSubTotal;
   public
     { Public declarations }
   end;
@@ -75,17 +77,33 @@ begin
 
     if ViewProdutos.ModalResult = mrOk then
     begin
-      ShowMessage('ok');
+      edtProduto.Text     := ServiceCadastro.QRY_produto1NOMECOMPLETO.AsString;
+      edtVlrUnitario.Text := FloatToStr(ServiceCadastro.QRY_produto2VENDAVISTA.AsFloat);
+      edtQuantidade.SetFocus;
     end;
   finally
     FreeAndNil(ViewProdutos);
   end;
 end;
 
+procedure TViewVendas.edtQuantidadeExit(Sender: TObject);
+begin
+  inherited;
+  GetSubTotal;
+end;
+
 procedure TViewVendas.FormShow(Sender: TObject);
 begin
   inherited;
   GetVendas;
+end;
+
+procedure TViewVendas.GetSubTotal;
+begin
+  if StrToFloatDef(edtQuantidade.Text, 0) > 0 then
+  begin
+    edtSubtotal.Text := FloatToStr((StrToFloatDef(edtQuantidade.Text, 0)) * (StrToFloatDef(edtVlrUnitario.Text, 0)));
+  end;
 end;
 
 end.

@@ -3,11 +3,15 @@ inherited ViewVendas: TViewVendas
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
+      Width = 881
+      Height = 35
       Caption = 'Vendas'
       ExplicitWidth = 75
     end
   end
   inherited pnlRodape: TPanel
+    ExplicitLeft = 0
+    ExplicitTop = 510
     inherited btnCancelar: TSpeedButton
       Left = 611
       ExplicitLeft = 821
@@ -79,6 +83,7 @@ inherited ViewVendas: TViewVendas
       inherited card_cadastro: TCard
         inherited pnlTituloCadastro: TPanel
           Height = 153
+          BorderStyle = bsSingle
           ExplicitHeight = 153
           inherited lblTituloCadastro: TLabel
             Left = 10
@@ -188,13 +193,13 @@ inherited ViewVendas: TViewVendas
             ParentFont = False
           end
           inherited pnlVoltar: TPanel
-            Left = 892
+            Left = 888
             Width = 130
-            Height = 153
+            Height = 149
             TabOrder = 1
-            ExplicitLeft = 892
+            ExplicitLeft = 888
             ExplicitWidth = 130
-            ExplicitHeight = 153
+            ExplicitHeight = 149
             inherited btnVoltarPesquisa: TSpeedButton
               Width = 124
               Height = 61
@@ -208,10 +213,9 @@ inherited ViewVendas: TViewVendas
             Left = 10
             Top = 39
             Width = 114
-            Height = 25
+            Height = 21
             BevelInner = bvNone
             BevelOuter = bvNone
-            BorderStyle = bsNone
             NumbersOnly = True
             TabOrder = 0
             OnExit = edtCodigoVendedorExit
@@ -220,10 +224,9 @@ inherited ViewVendas: TViewVendas
             Left = 10
             Top = 108
             Width = 400
-            Height = 25
+            Height = 21
             BevelInner = bvNone
             BevelOuter = bvNone
-            BorderStyle = bsNone
             TabOrder = 2
             OnInvokeSearch = edtProdutoInvokeSearch
           end
@@ -232,20 +235,26 @@ inherited ViewVendas: TViewVendas
             Top = 108
             Width = 80
             Height = 21
+            NumbersOnly = True
             TabOrder = 3
+            OnExit = edtQuantidadeExit
           end
           object edtVlrUnitario: TEdit
             Left = 502
             Top = 108
             Width = 121
             Height = 21
+            NumbersOnly = True
             TabOrder = 4
+            OnExit = edtQuantidadeExit
           end
           object edtSubtotal: TEdit
             Left = 629
             Top = 108
             Width = 121
             Height = 21
+            NumbersOnly = True
+            ReadOnly = True
             TabOrder = 5
           end
         end
