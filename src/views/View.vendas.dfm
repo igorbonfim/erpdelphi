@@ -84,6 +84,7 @@ inherited ViewVendas: TViewVendas
         inherited pnlTituloCadastro: TPanel
           Height = 153
           BorderStyle = bsSingle
+          OnExit = edtQuantidadeExit
           ExplicitHeight = 153
           inherited lblTituloCadastro: TLabel
             Left = 10
@@ -191,6 +192,7 @@ inherited ViewVendas: TViewVendas
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
+            OnClick = btnSalvarProdutoClick
           end
           inherited pnlVoltar: TPanel
             Left = 888
@@ -381,5 +383,34 @@ inherited ViewVendas: TViewVendas
     DataSet = ServiceCadastro.QRY_movestoque_item
     Left = 609
     Top = 49
+  end
+  object TBL_ItensMemoria: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 729
+    Top = 49
+    object TBL_ItensMemoriaCOD_MOVESTOQUE: TIntegerField
+      FieldName = 'COD_MOVESTOQUE'
+    end
+    object TBL_ItensMemoriaCOD_ITEM: TIntegerField
+      FieldName = 'COD_ITEM'
+    end
+    object TBL_ItensMemoriaQTD_ITEM: TCurrencyField
+      FieldName = 'QTD_ITEM'
+    end
+    object TBL_ItensMemoriaVLR_UNITARIO: TCurrencyField
+      FieldName = 'VLR_UNITARIO'
+    end
+    object TBL_ItensMemoriaVLR_DESCONTO: TCurrencyField
+      FieldName = 'VLR_DESCONTO'
+    end
+    object TBL_ItensMemoriaVLR_SUBTOTAL: TCurrencyField
+      FieldName = 'VLR_SUBTOTAL'
+    end
   end
 end
