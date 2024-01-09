@@ -65,34 +65,47 @@ end;
 procedure TViewVendas.btnSalvarProdutoClick(Sender: TObject);
 begin
   inherited;
-  TBL_ItensMemoria.Edit;
-  TBL_ItensMemoriaVLR_UNITARIO.AsFloat  := StrToFloatDef(edtVlrUnitario.Text, 0);
-  TBL_ItensMemoriaQTD_ITEM.AsFloat      := StrToFloatDef(edtQuantidade.Text, 0);
-  TBL_ItensMemoriaVLR_DESCONTO.AsFloat  := 0;
-  TBL_ItensMemoriaVLR_SUBTOTAL.AsFloat  := StrToFloaTDef(edtSubtotal.Text, 0);
-  TBL_ItensMemoria.Post;
 
-  TBL_ItensMemoria.First;
-  while not TBL_ItensMemoria.Eof do
+  if not TBL_ItensMemoria.IsEmpty then
   begin
-    ServiceCadastro.QRY_movestoque_item.Close;
-    ServiceCadastro.QRY_movestoque_item.Open;
-    ServiceCadastro.QRY_movestoque_item.Insert;
-    ServiceCadastro.QRY_movestoque_itemCODIGO_MOVIMENTO.AsInteger :=  TBL_ItensMemoriaCOD_MOVESTOQUE.AsInteger;
-    ServiceCadastro.QRY_movestoque_itemCODIGO_ITEM.AsInteger      :=  TBL_ItensMemoriaCOD_ITEM.AsInteger;
-    ServiceCadastro.QRY_movestoque_itemQUANTIDADE.AsFloat         :=  TBL_ItensMemoriaQTD_ITEM.AsFloat;
-    ServiceCadastro.QRY_movestoque_itemVALOR_UNITARIO.AsFloat     :=  TBL_ItensMemoriaVLR_UNITARIO.AsFloat;
-    ServiceCadastro.QRY_movestoque_itemVALOR_TOTAL.AsFloat        :=  TBL_ItensMemoriaVLR_SUBTOTAL.AsFloat;
-    ServiceCadastro.QRY_movestoque_itemVALOR_DESCONTO.AsFloat     :=  TBL_ItensMemoriaVLR_DESCONTO.AsFloat;
-    ServiceCadastro.QRY_movestoque_item.Post;
+    TBL_ItensMemoria.Edit;
+    TBL_ItensMemoriaVLR_UNITARIO.AsFloat  := StrToFloatDef(edtVlrUnitario.Text, 0);
+    TBL_ItensMemoriaQTD_ITEM.AsFloat      := StrToFloatDef(edtQuantidade.Text, 0);
+    TBL_ItensMemoriaVLR_DESCONTO.AsFloat  := 0;
+    TBL_ItensMemoriaVLR_SUBTOTAL.AsFloat  := StrToFloaTDef(edtSubtotal.Text, 0);
+    TBL_ItensMemoria.Post;
 
-    TBL_ItensMemoria.Next;
+
+    TBL_ItensMemoria.First;
+    while not TBL_ItensMemoria.Eof do
+    begin
+      ServiceCadastro.QRY_movestoque_item.Close;
+      ServiceCadastro.QRY_movestoque_item.Open;
+      ServiceCadastro.QRY_movestoque_item.Insert;
+      ServiceCadastro.QRY_movestoque_itemCODIGO_MOVIMENTO.AsInteger :=  TBL_ItensMemoriaCOD_MOVESTOQUE.AsInteger;
+      ServiceCadastro.QRY_movestoque_itemCODIGO_ITEM.AsInteger      :=  TBL_ItensMemoriaCOD_ITEM.AsInteger;
+      ServiceCadastro.QRY_movestoque_itemQUANTIDADE.AsFloat         :=  TBL_ItensMemoriaQTD_ITEM.AsFloat;
+      ServiceCadastro.QRY_movestoque_itemVALOR_UNITARIO.AsFloat     :=  TBL_ItensMemoriaVLR_UNITARIO.AsFloat;
+      ServiceCadastro.QRY_movestoque_itemVALOR_TOTAL.AsFloat        :=  TBL_ItensMemoriaVLR_SUBTOTAL.AsFloat;
+      ServiceCadastro.QRY_movestoque_itemVALOR_DESCONTO.AsFloat     :=  TBL_ItensMemoriaVLR_DESCONTO.AsFloat;
+      ServiceCadastro.QRY_movestoque_item.Post;
+
+      TBL_ItensMemoria.Next;
+    end;
+
+    GetVendaItem(ServiceCadastro.QRY_movestoqueCODIGO.AsInteger);
+
+    edtTotalVenda.Text := 'R$ ' +FloatToStr(TOTAL_VENDA);
+
+    TBL_ItensMemoria.EmptyDataSet;
+
+    edtProduto.Clear;
+    edtQuantidade.Clear;
+    edtVlrUnitario.Clear;
+    edtSubtotal.Clear;
+
+    edtProduto.SetFocus;
   end;
-
-  GetVendaItem(ServiceCadastro.QRY_movestoqueCODIGO.AsInteger);
-
-  TBL_ItensMemoria.EmptyDataSet;
-  edtProduto.SetFocus;
 end;
 
 procedure TViewVendas.edtCodigoVendedorExit(Sender: TObject);

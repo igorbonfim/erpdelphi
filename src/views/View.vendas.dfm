@@ -313,7 +313,7 @@ inherited ViewVendas: TViewVendas
             item
               Expanded = False
               FieldName = 'VALOR_TOTAL'
-              Width = 411
+              Width = 210
               Visible = True
             end>
         end
