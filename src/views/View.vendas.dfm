@@ -6,12 +6,10 @@ inherited ViewVendas: TViewVendas
       Width = 881
       Height = 35
       Caption = 'Vendas'
-      ExplicitWidth = 75
+      ExplicitWidth = 881
     end
   end
   inherited pnlRodape: TPanel
-    ExplicitLeft = 0
-    ExplicitTop = 510
     inherited btnCancelar: TSpeedButton
       Left = 611
       ExplicitLeft = 821
@@ -43,6 +41,7 @@ inherited ViewVendas: TViewVendas
   end
   inherited pnlBackground: TPanel
     inherited cpLista: TCardPanel
+      ActiveCard = card_cadastro
       inherited card_pesquisa: TCard
         inherited dgbDados: TDBGrid
           Columns = <
@@ -180,12 +179,11 @@ inherited ViewVendas: TViewVendas
             ParentFont = False
           end
           object btnSalvarProduto: TSpeedButton [6]
-            Left = 755
-            Top = 108
+            Left = 756
+            Top = 105
             Width = 81
-            Height = 25
+            Height = 26
             Caption = 'Salvar'
-            Flat = True
             Font.Charset = ANSI_CHARSET
             Font.Color = clBlack
             Font.Height = -17
@@ -198,7 +196,7 @@ inherited ViewVendas: TViewVendas
             Left = 888
             Width = 130
             Height = 149
-            TabOrder = 1
+            TabOrder = 5
             ExplicitLeft = 888
             ExplicitWidth = 130
             ExplicitHeight = 149
@@ -213,7 +211,7 @@ inherited ViewVendas: TViewVendas
           end
           object edtCodigoVendedor: TSearchBox
             Left = 10
-            Top = 39
+            Top = 40
             Width = 114
             Height = 21
             BevelInner = bvNone
@@ -229,7 +227,7 @@ inherited ViewVendas: TViewVendas
             Height = 21
             BevelInner = bvNone
             BevelOuter = bvNone
-            TabOrder = 2
+            TabOrder = 1
             OnInvokeSearch = edtProdutoInvokeSearch
           end
           object edtQuantidade: TEdit
@@ -238,7 +236,7 @@ inherited ViewVendas: TViewVendas
             Width = 80
             Height = 21
             NumbersOnly = True
-            TabOrder = 3
+            TabOrder = 2
             OnExit = edtQuantidadeExit
           end
           object edtVlrUnitario: TEdit
@@ -247,7 +245,7 @@ inherited ViewVendas: TViewVendas
             Width = 121
             Height = 21
             NumbersOnly = True
-            TabOrder = 4
+            TabOrder = 3
             OnExit = edtQuantidadeExit
           end
           object edtSubtotal: TEdit
@@ -257,7 +255,7 @@ inherited ViewVendas: TViewVendas
             Height = 21
             NumbersOnly = True
             ReadOnly = True
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object dbgItensVendas: TDBGrid
@@ -385,6 +383,8 @@ inherited ViewVendas: TViewVendas
     Top = 49
   end
   object TBL_ItensMemoria: TFDMemTable
+    FieldDefs = <>
+    IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll
     ResourceOptions.AssignedValues = [rvSilentMode]
@@ -392,6 +392,7 @@ inherited ViewVendas: TViewVendas
     UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
+    StoreDefs = True
     Left = 729
     Top = 49
     object TBL_ItensMemoriaCOD_MOVESTOQUE: TIntegerField

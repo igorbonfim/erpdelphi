@@ -47,13 +47,13 @@ type
     QRY_produto1NCM: TStringField;
     QRY_produto2ESTOQUE: TFMTBCDField;
     QRY_movestoque: TFDQuery;
-    QRY_movestoque_item: TFDQuery;
     QRY_movestoqueCODIGO: TIntegerField;
     QRY_movestoqueTIPOESTOQUE: TIntegerField;
     QRY_movestoqueDATA: TDateField;
     QRY_movestoqueHORA: TTimeField;
     QRY_movestoqueVALORDESCONTO: TFMTBCDField;
     QRY_movestoqueVALORTOTAL: TFMTBCDField;
+    QRY_movestoque_item: TFDQuery;
     QRY_movestoque_itemCODIGO: TIntegerField;
     QRY_movestoque_itemCODIGO_MOVIMENTO: TIntegerField;
     QRY_movestoque_itemCODIGO_ITEM: TIntegerField;

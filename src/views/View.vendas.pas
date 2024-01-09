@@ -65,10 +65,11 @@ end;
 procedure TViewVendas.btnSalvarProdutoClick(Sender: TObject);
 begin
   inherited;
-  TBL_ItensMemoriaVLR_UNITARIO.AsFloat := StrToFloatDef(edtVlrUnitario.Text, 0);
-  TBL_ItensMemoriaQTD_ITEM.AsFloat := StrToFloatDef(edtQuantidade.Text, 0);
-  TBL_ItensMemoriaVLR_DESCONTO.AsFloat := 0;
-  TBL_ItensMemoriaVLR_SUBTOTAL.AsFloat := StrToFloaTDef(edtSubtotal.Text, 0);
+  TBL_ItensMemoria.Edit;
+  TBL_ItensMemoriaVLR_UNITARIO.AsFloat  := StrToFloatDef(edtVlrUnitario.Text, 0);
+  TBL_ItensMemoriaQTD_ITEM.AsFloat      := StrToFloatDef(edtQuantidade.Text, 0);
+  TBL_ItensMemoriaVLR_DESCONTO.AsFloat  := 0;
+  TBL_ItensMemoriaVLR_SUBTOTAL.AsFloat  := StrToFloaTDef(edtSubtotal.Text, 0);
   TBL_ItensMemoria.Post;
 
   TBL_ItensMemoria.First;
@@ -78,12 +79,13 @@ begin
     ServiceCadastro.QRY_movestoque_item.Open;
     ServiceCadastro.QRY_movestoque_item.Insert;
     ServiceCadastro.QRY_movestoque_itemCODIGO_MOVIMENTO.AsInteger :=  TBL_ItensMemoriaCOD_MOVESTOQUE.AsInteger;
-    ServiceCadastro.QRY_movestoque_itemCODIGO.AsInteger           :=  TBL_ItensMemoriaCOD_ITEM.AsInteger;
+    ServiceCadastro.QRY_movestoque_itemCODIGO_ITEM.AsInteger      :=  TBL_ItensMemoriaCOD_ITEM.AsInteger;
     ServiceCadastro.QRY_movestoque_itemQUANTIDADE.AsFloat         :=  TBL_ItensMemoriaQTD_ITEM.AsFloat;
     ServiceCadastro.QRY_movestoque_itemVALOR_UNITARIO.AsFloat     :=  TBL_ItensMemoriaVLR_UNITARIO.AsFloat;
     ServiceCadastro.QRY_movestoque_itemVALOR_TOTAL.AsFloat        :=  TBL_ItensMemoriaVLR_SUBTOTAL.AsFloat;
     ServiceCadastro.QRY_movestoque_itemVALOR_DESCONTO.AsFloat     :=  TBL_ItensMemoriaVLR_DESCONTO.AsFloat;
     ServiceCadastro.QRY_movestoque_item.Post;
+
     TBL_ItensMemoria.Next;
   end;
 
@@ -101,7 +103,6 @@ begin
     GetVendedor(StrToInt(edtCodigoVendedor.Text));
     lblNomeVendedor.Caption := sNOME_VENDEDOR;
   end;
-
 end;
 
 procedure TViewVendas.edtProdutoInvokeSearch(Sender: TObject);
@@ -124,8 +125,8 @@ begin
       TBL_ItensMemoria.Close;
       TBL_ItensMemoria.Open;
       TBL_ItensMemoria.Insert;
-      TBL_ItensMemoriaCOD_MOVESTOQUE.AsInteger := ServiceCadastro.QRY_movestoqueCODIGO.AsInteger;
-      TBL_ItensMemoriaCOD_ITEM.AsInteger := ServiceCadastro.QRY_produto1CODIGO.AsInteger;
+      TBL_ItensMemoriaCOD_MOVESTOQUE.AsInteger  := ServiceCadastro.QRY_movestoqueCODIGO.AsInteger;
+      TBL_ItensMemoriaCOD_ITEM.AsInteger        := ServiceCadastro.QRY_produto1CODIGO.AsInteger;
 
       edtQuantidade.SetFocus;
     end;

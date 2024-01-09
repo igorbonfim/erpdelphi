@@ -178,8 +178,6 @@ inherited ViewBaseListas: TViewBaseListas
     Color = 7500402
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = -1
-    ExplicitTop = 513
     object btnCancelar: TSpeedButton
       AlignWithMargins = True
       Left = 558
@@ -337,7 +335,7 @@ inherited ViewBaseListas: TViewBaseListas
       Margins.Right = 1
       Margins.Bottom = 0
       Align = alClient
-      ActiveCard = card_cadastro
+      ActiveCard = card_pesquisa
       BevelOuter = bvNone
       Caption = 'cpLista'
       Color = clWhite

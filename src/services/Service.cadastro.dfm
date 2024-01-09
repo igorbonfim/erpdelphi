@@ -232,7 +232,7 @@ object ServiceCadastro: TServiceCadastro
     SQL.Strings = (
       'select * from movestoque where codigo = :codigo')
     Left = 344
-    Top = 16
+    Top = 20
     ParamData = <
       item
         Name = 'CODIGO'
@@ -273,7 +273,7 @@ object ServiceCadastro: TServiceCadastro
   object QRY_movestoque_item: TFDQuery
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
-      'select * from movestoque_item where codigo = :codigo')
+      'SELECT * FROM MOVESTOQUE_ITEM WHERE CODIGO_MOVIMENTO = :CODIGO')
     Left = 344
     Top = 136
     ParamData = <
@@ -281,8 +281,10 @@ object ServiceCadastro: TServiceCadastro
         Name = 'CODIGO'
         DataType = ftInteger
         ParamType = ptInput
+        Value = Null
       end>
     object QRY_movestoque_itemCODIGO: TIntegerField
+      AutoGenerateValue = arAutoInc
       FieldName = 'CODIGO'
       Origin = 'CODIGO'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
