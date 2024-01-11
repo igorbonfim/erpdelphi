@@ -42,6 +42,7 @@ type
     procedure edtProdutoInvokeSearch(Sender: TObject);
     procedure edtQuantidadeExit(Sender: TObject);
     procedure btnSalvarProdutoClick(Sender: TObject);
+    procedure btnNovoClick(Sender: TObject);
   private
     { Private declarations }
     procedure GetSubTotal;
@@ -60,6 +61,14 @@ procedure TViewVendas.btnEditarClick(Sender: TObject);
 begin
   inherited;
   edtTotalVenda.Text := FloatToStrF(TOTAL_VENDA, ffCurrency, 10,2);
+end;
+
+procedure TViewVendas.btnNovoClick(Sender: TObject);
+begin
+  inherited;
+  ServiceCadastro.QRY_movestoqueTIPOESTOQUE.AsInteger := 1; // Tipo venda = 1
+  ServiceCadastro.QRY_movestoqueDATA.AsDateTime := Date;
+  ServiceCadastro.QRY_movestoqueHORA.AsDateTime := Time;
 end;
 
 procedure TViewVendas.btnSalvarProdutoClick(Sender: TObject);
@@ -115,6 +124,8 @@ begin
   begin
     GetVendedor(StrToInt(edtCodigoVendedor.Text));
     lblNomeVendedor.Caption := sNOME_VENDEDOR;
+    ServiceCadastro.QRY_movestoqueVENDEDOR.AsInteger := iCODIGO_VENDEDOR;
+    ServiceCadastro.QRY_movestoque.Post;
   end;
 end;
 

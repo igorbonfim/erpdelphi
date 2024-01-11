@@ -11,7 +11,7 @@ procedure GetVendas;
 procedure GetVendaItem(iCOD_Venda: integer);
 
 var
-  iCOD_FILIAL, iCOD_VENDEDOR: Integer;
+  iCOD_FILIAL, iCODIGO_VENDEDOR: Integer;
   sRAZAO_FILIAL, sNOME_VENDEDOR: String;
   TOTAL_VENDA: Double;
 
@@ -86,11 +86,11 @@ begin
 
     if ServiceCadastro.QRY_pessoas.RecordCount > 0 then
     begin
-      iCOD_Vendedor   := 0;
-      sNOME_VENDEDOR  := '';
+      iCODIGO_VENDEDOR    := 0;
+      sNOME_VENDEDOR      := '';
 
-      iCOD_Vendedor   := ServiceCadastro.QRY_pessoasCODIGO.AsInteger;
-      sNOME_VENDEDOR  := ServiceCadastro.QRY_pessoasRAZAO.AsString;
+      iCODIGO_VENDEDOR    := ServiceCadastro.QRY_pessoasCODIGO.AsInteger;
+      sNOME_VENDEDOR      := ServiceCadastro.QRY_pessoasRAZAO.AsString;
     end
     else
       TViewMensagens.Mensagem('Vendedor não encontrado!', 'Informação', 'I', [mbOk]);

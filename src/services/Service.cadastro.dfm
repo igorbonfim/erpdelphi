@@ -240,6 +240,7 @@ object ServiceCadastro: TServiceCadastro
         ParamType = ptInput
       end>
     object QRY_movestoqueCODIGO: TIntegerField
+      AutoGenerateValue = arAutoInc
       FieldName = 'CODIGO'
       Origin = 'CODIGO'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
@@ -268,6 +269,10 @@ object ServiceCadastro: TServiceCadastro
       Origin = 'VALORTOTAL'
       Precision = 18
       Size = 2
+    end
+    object QRY_movestoqueVENDEDOR: TIntegerField
+      FieldName = 'VENDEDOR'
+      Origin = 'VENDEDOR'
     end
   end
   object QRY_movestoque_item: TFDQuery

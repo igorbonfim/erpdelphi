@@ -61,6 +61,7 @@ type
     QRY_movestoque_itemVALOR_UNITARIO: TFMTBCDField;
     QRY_movestoque_itemVALOR_TOTAL: TFMTBCDField;
     QRY_movestoque_itemVALOR_DESCONTO: TFMTBCDField;
+    QRY_movestoqueVENDEDOR: TIntegerField;
     procedure QRY_produto1AfterScroll(DataSet: TDataSet);
     procedure QRY_movestoqueAfterScroll(DataSet: TDataSet);
   private
