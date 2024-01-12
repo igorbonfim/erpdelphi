@@ -1,13 +1,12 @@
 object ServiceCadastro: TServiceCadastro
-  Height = 368
-  Width = 742
-  PixelsPerInch = 120
+  Height = 294
+  Width = 594
   object QRY_pessoas: TFDQuery
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PESSOAS WHERE CODIGO = :CODIGO')
-    Left = 40
-    Top = 20
+    Left = 32
+    Top = 16
     ParamData = <
       item
         Name = 'CODIGO'
@@ -60,8 +59,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM ENDERECO WHERE CODIGO = :CODIGO')
-    Left = 190
-    Top = 20
+    Left = 152
+    Top = 16
     ParamData = <
       item
         Name = 'CODIGO'
@@ -113,8 +112,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PRODUTO WHERE CODIGO = :CODIGO')
-    Left = 40
-    Top = 136
+    Left = 32
+    Top = 109
     ParamData = <
       item
         Name = 'CODIGO'
@@ -170,8 +169,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PRODUTO_DETALHE WHERE CODIGO = :CODIGO')
-    Left = 184
-    Top = 136
+    Left = 147
+    Top = 109
     ParamData = <
       item
         Name = 'CODIGO'
@@ -231,8 +230,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'select * from movestoque where codigo = :codigo')
-    Left = 344
-    Top = 20
+    Left = 276
+    Top = 16
     ParamData = <
       item
         Name = 'CODIGO'
@@ -261,12 +260,14 @@ object ServiceCadastro: TServiceCadastro
     object QRY_movestoqueVALORDESCONTO: TFMTBCDField
       FieldName = 'VALORDESCONTO'
       Origin = 'VALORDESCONTO'
+      currency = True
       Precision = 18
       Size = 2
     end
     object QRY_movestoqueVALORTOTAL: TFMTBCDField
       FieldName = 'VALORTOTAL'
       Origin = 'VALORTOTAL'
+      currency = True
       Precision = 18
       Size = 2
     end
@@ -279,8 +280,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM MOVESTOQUE_ITEM WHERE CODIGO_MOVIMENTO = :CODIGO')
-    Left = 344
-    Top = 136
+    Left = 275
+    Top = 109
     ParamData = <
       item
         Name = 'CODIGO'
@@ -312,18 +313,21 @@ object ServiceCadastro: TServiceCadastro
     object QRY_movestoque_itemVALOR_UNITARIO: TFMTBCDField
       FieldName = 'VALOR_UNITARIO'
       Origin = 'VALOR_UNITARIO'
+      currency = True
       Precision = 18
       Size = 2
     end
     object QRY_movestoque_itemVALOR_TOTAL: TFMTBCDField
       FieldName = 'VALOR_TOTAL'
       Origin = 'VALOR_TOTAL'
+      currency = True
       Precision = 18
       Size = 2
     end
     object QRY_movestoque_itemVALOR_DESCONTO: TFMTBCDField
       FieldName = 'VALOR_DESCONTO'
       Origin = 'VALOR_DESCONTO'
+      currency = True
       Precision = 18
       Size = 2
     end

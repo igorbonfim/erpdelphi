@@ -3,8 +3,6 @@ inherited ViewVendas: TViewVendas
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
-      Width = 881
-      Height = 35
       Caption = 'Vendas'
       ExplicitWidth = 75
     end
@@ -351,9 +349,9 @@ inherited ViewVendas: TViewVendas
             ParentFont = False
           end
           object edtTotalVenda: TEdit
-            Left = 872
+            Left = 792
             Top = 35
-            Width = 133
+            Width = 213
             Height = 37
             Alignment = taRightJustify
             BorderStyle = bsNone
@@ -366,7 +364,7 @@ inherited ViewVendas: TViewVendas
             ParentFont = False
             ReadOnly = True
             TabOrder = 0
-            Text = 'R$ 150,00'
+            Text = '150,00'
           end
         end
       end

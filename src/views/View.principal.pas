@@ -165,8 +165,6 @@ begin
   ViewVendas := TViewVendas.Create(Self);
   try
     CentralizaFormulario(ViewVendas);
-
-    ViewVendas.Tag := PessoasToInt(tpCliente);
     ViewVendas.ShowModal;
   finally
     FreeAndNil(ViewVendas);

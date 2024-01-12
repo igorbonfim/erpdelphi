@@ -9,7 +9,7 @@ uses
   Vcl.Imaging.pngimage, Vcl.ExtCtrls, Provider.constants, Service.cadastro,
   View.produtos, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, View.mensagens;
 
 type
   TViewVendas = class(TViewBaseListas)
@@ -43,6 +43,7 @@ type
     procedure edtQuantidadeExit(Sender: TObject);
     procedure btnSalvarProdutoClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
   private
     { Private declarations }
     procedure GetSubTotal;
@@ -69,6 +70,18 @@ begin
   ServiceCadastro.QRY_movestoqueTIPOESTOQUE.AsInteger := 1; // Tipo venda = 1
   ServiceCadastro.QRY_movestoqueDATA.AsDateTime := Date;
   ServiceCadastro.QRY_movestoqueHORA.AsDateTime := Time;
+end;
+
+procedure TViewVendas.btnSalvarClick(Sender: TObject);
+begin
+  ServiceCadastro.QRY_movestoque.Edit;
+  ServiceCadastro.QRY_movestoqueVALORDESCONTO.AsFloat := 0;
+  ServiceCadastro.QRY_movestoqueVALORTOTAL.AsFloat := TOTAL_VENDA;
+  ServiceCadastro.QRY_movestoque.Post;
+  TViewMensagens.Mensagem('Venda gravada com sucesso!', 'Sucesso', 'I', [mbOk]);
+  cpLista.ActiveCard := card_pesquisa;
+  ServiceCadastro.QRY_movestoque.Close;
+  ServiceCadastro.QRY_movestoque.Open;
 end;
 
 procedure TViewVendas.btnSalvarProdutoClick(Sender: TObject);
@@ -104,7 +117,7 @@ begin
 
     GetVendaItem(ServiceCadastro.QRY_movestoqueCODIGO.AsInteger);
 
-    edtTotalVenda.Text := 'R$ ' +FloatToStr(TOTAL_VENDA);
+    edtTotalVenda.Text := FloatToStr(TOTAL_VENDA);
 
     TBL_ItensMemoria.EmptyDataSet;
 

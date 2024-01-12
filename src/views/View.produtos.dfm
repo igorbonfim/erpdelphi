@@ -81,10 +81,6 @@ inherited ViewProdutos: TViewProdutos
   inherited pnlBackground: TPanel
     inherited cpLista: TCardPanel
       inherited card_pesquisa: TCard
-        inherited pnlTituloPesquisa: TPanel
-          ExplicitLeft = 0
-          ExplicitTop = 0
-        end
         inherited dgbDados: TDBGrid
           Height = 196
           Columns = <
@@ -206,8 +202,6 @@ inherited ViewProdutos: TViewProdutos
         end
       end
       inherited card_cadastro: TCard
-        ExplicitLeft = 0
-        ExplicitTop = 0
         object Label1: TLabel [0]
           Left = 16
           Top = 96
@@ -369,8 +363,6 @@ inherited ViewProdutos: TViewProdutos
           inherited lblTituloCadastro: TLabel
             Width = 243
             Caption = 'Cadastro de Produto'
-            ExplicitLeft = 3
-            ExplicitTop = 10
             ExplicitWidth = 243
           end
         end
