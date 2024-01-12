@@ -496,6 +496,7 @@ inherited ViewBaseListas: TViewBaseListas
     end
   end
   object dsDados: TDataSource
+    OnStateChange = dsDadosStateChange
     Left = 289
     Top = 233
   end

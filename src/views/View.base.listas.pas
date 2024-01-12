@@ -50,6 +50,7 @@ type
     procedure btnVoltarPesquisaClick(Sender: TObject);
     procedure dgbDadosDblClick(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
+    procedure dsDadosStateChange(Sender: TObject);
   private
     FTela: TPCTelas;
     procedure GetMensagemInsercao;
@@ -140,6 +141,16 @@ procedure TViewBaseListas.dgbDadosDblClick(Sender: TObject);
 begin
   inherited;
   btnEditarClick(Sender);
+end;
+
+procedure TViewBaseListas.dsDadosStateChange(Sender: TObject);
+begin
+  inherited;
+  btnNovo.Enabled     := not(dsDados.State in [dsEdit, dsInsert]);
+  btnEditar.Enabled   := btnNovo.Enabled and (dsDados.DataSet.RecordCount > 0);
+  btnSalvar.Enabled   := dsDados.State in [dsEdit, dsInsert];
+  btnCancelar.Enabled := btnSalvar.Enabled;
+  btnExcluir.Enabled  := btnEditar.Enabled;
 end;
 
 procedure TViewBaseListas.FormShow(Sender: TObject);
