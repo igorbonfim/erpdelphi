@@ -81,6 +81,8 @@ begin
   TViewMensagens.Mensagem('Venda gravada com sucesso!', 'Sucesso', 'I', [mbOk]);
 
   cpLista.ActiveCard := card_pesquisa;
+
+  SalvarCaixa('E', 'VENDA N.' + IntToStr(ServiceCadastro.QRY_movestoqueCODIGO.AsInteger), ServiceCadastro.QRY_movestoqueVALORTOTAL.AsFloat);
 end;
 
 procedure TViewVendas.btnSalvarProdutoClick(Sender: TObject);

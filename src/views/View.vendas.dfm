@@ -3,8 +3,6 @@ inherited ViewVendas: TViewVendas
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
-      Width = 881
-      Height = 35
       Caption = 'Vendas'
       ExplicitWidth = 881
     end
@@ -276,7 +274,6 @@ inherited ViewVendas: TViewVendas
           TitleFont.Height = -11
           TitleFont.Name = 'Tahoma'
           TitleFont.Style = []
-          OnDblClick = dgbDadosDblClick
           Columns = <
             item
               Expanded = False
