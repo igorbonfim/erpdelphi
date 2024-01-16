@@ -9,6 +9,7 @@ procedure GetProdutoDetalhe(iCOD_Produto, iCOD_Filial: integer); overload;
 procedure GetVendedor(iCOD_Vendedor: integer);
 procedure GetVendas;
 procedure GetVendaItem(iCOD_Venda: integer);
+procedure SalvarCaixa(tipo, descricao: string; valor: double);
 
 var
   iCOD_FILIAL, iCODIGO_VENDEDOR: Integer;
@@ -128,6 +129,18 @@ begin
   end;
   ServiceCadastro.QRY_movestoque_item.EnableControls;
 
+end;
+
+procedure SalvarCaixa(tipo, descricao: string; valor: double);
+begin
+  ServiceCadastro.QRY_cadcaixa.Close;
+  ServiceCadastro.QRY_cadcaixa.Open;
+  ServiceCadastro.QRY_cadcaixa.Insert;
+  ServiceCadastro.QRY_cadcaixaDATAHORA.AsDateTime := now;
+  ServiceCadastro.QRY_cadcaixaTIPO.AsString       := tipo;
+  ServiceCadastro.QRY_cadcaixaVALOR.AsFloat       := valor;
+  ServiceCadastro.QRY_cadcaixaDESCRICAO.AsString  := descricao;
+  ServiceCadastro.QRY_cadcaixa.Post;
 end;
 
 end.

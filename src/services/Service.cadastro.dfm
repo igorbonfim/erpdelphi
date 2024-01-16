@@ -1,12 +1,13 @@
 object ServiceCadastro: TServiceCadastro
-  Height = 294
-  Width = 594
+  Height = 368
+  Width = 743
+  PixelsPerInch = 120
   object QRY_pessoas: TFDQuery
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PESSOAS WHERE CODIGO = :CODIGO')
-    Left = 32
-    Top = 16
+    Left = 40
+    Top = 20
     ParamData = <
       item
         Name = 'CODIGO'
@@ -59,8 +60,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM ENDERECO WHERE CODIGO = :CODIGO')
-    Left = 152
-    Top = 16
+    Left = 190
+    Top = 20
     ParamData = <
       item
         Name = 'CODIGO'
@@ -112,8 +113,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PRODUTO WHERE CODIGO = :CODIGO')
-    Left = 32
-    Top = 109
+    Left = 40
+    Top = 136
     ParamData = <
       item
         Name = 'CODIGO'
@@ -169,8 +170,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PRODUTO_DETALHE WHERE CODIGO = :CODIGO')
-    Left = 147
-    Top = 109
+    Left = 184
+    Top = 136
     ParamData = <
       item
         Name = 'CODIGO'
@@ -230,8 +231,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'select * from movestoque where codigo = :codigo')
-    Left = 276
-    Top = 16
+    Left = 345
+    Top = 20
     ParamData = <
       item
         Name = 'CODIGO'
@@ -280,8 +281,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM MOVESTOQUE_ITEM WHERE CODIGO_MOVIMENTO = :CODIGO')
-    Left = 275
-    Top = 109
+    Left = 344
+    Top = 136
     ParamData = <
       item
         Name = 'CODIGO'
@@ -330,6 +331,47 @@ object ServiceCadastro: TServiceCadastro
       currency = True
       Precision = 18
       Size = 2
+    end
+  end
+  object QRY_cadcaixa: TFDQuery
+    Connection = ServiceConexao.FDConn
+    SQL.Strings = (
+      'SELECT * FROM CAIXA WHERE CODIGO = :CODIGO')
+    Left = 504
+    Top = 16
+    ParamData = <
+      item
+        Name = 'CODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+    object QRY_cadcaixaCODIGO: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'CODIGO'
+      Origin = 'CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QRY_cadcaixaDATAHORA: TSQLTimeStampField
+      FieldName = 'DATAHORA'
+      Origin = 'DATAHORA'
+    end
+    object QRY_cadcaixaTIPO: TStringField
+      FieldName = 'TIPO'
+      Origin = 'TIPO'
+      Size = 1
+    end
+    object QRY_cadcaixaVALOR: TFMTBCDField
+      FieldName = 'VALOR'
+      Origin = 'VALOR'
+      currency = True
+      Precision = 18
+      Size = 2
+    end
+    object QRY_cadcaixaDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Origin = 'DESCRICAO'
+      Size = 200
     end
   end
 end

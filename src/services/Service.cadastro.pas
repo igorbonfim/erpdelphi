@@ -62,6 +62,12 @@ type
     QRY_movestoque_itemVALOR_TOTAL: TFMTBCDField;
     QRY_movestoque_itemVALOR_DESCONTO: TFMTBCDField;
     QRY_movestoqueVENDEDOR: TIntegerField;
+    QRY_cadcaixa: TFDQuery;
+    QRY_cadcaixaCODIGO: TIntegerField;
+    QRY_cadcaixaDATAHORA: TSQLTimeStampField;
+    QRY_cadcaixaTIPO: TStringField;
+    QRY_cadcaixaVALOR: TFMTBCDField;
+    QRY_cadcaixaDESCRICAO: TStringField;
     procedure QRY_produto1AfterScroll(DataSet: TDataSet);
     procedure QRY_movestoqueAfterScroll(DataSet: TDataSet);
   private
