@@ -1,13 +1,12 @@
 object ServiceCadastro: TServiceCadastro
-  Height = 368
-  Width = 743
-  PixelsPerInch = 120
+  Height = 294
+  Width = 594
   object QRY_pessoas: TFDQuery
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PESSOAS WHERE CODIGO = :CODIGO')
-    Left = 40
-    Top = 20
+    Left = 32
+    Top = 16
     ParamData = <
       item
         Name = 'CODIGO'
@@ -60,8 +59,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM ENDERECO WHERE CODIGO = :CODIGO')
-    Left = 190
-    Top = 20
+    Left = 152
+    Top = 16
     ParamData = <
       item
         Name = 'CODIGO'
@@ -113,8 +112,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PRODUTO WHERE CODIGO = :CODIGO')
-    Left = 40
-    Top = 136
+    Left = 32
+    Top = 109
     ParamData = <
       item
         Name = 'CODIGO'
@@ -170,8 +169,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PRODUTO_DETALHE WHERE CODIGO = :CODIGO')
-    Left = 184
-    Top = 136
+    Left = 147
+    Top = 109
     ParamData = <
       item
         Name = 'CODIGO'
@@ -231,8 +230,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'select * from movestoque where codigo = :codigo')
-    Left = 345
-    Top = 20
+    Left = 276
+    Top = 16
     ParamData = <
       item
         Name = 'CODIGO'
@@ -281,8 +280,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM MOVESTOQUE_ITEM WHERE CODIGO_MOVIMENTO = :CODIGO')
-    Left = 344
-    Top = 136
+    Left = 275
+    Top = 109
     ParamData = <
       item
         Name = 'CODIGO'
@@ -337,8 +336,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM CAIXA WHERE CODIGO = :CODIGO')
-    Left = 504
-    Top = 16
+    Left = 403
+    Top = 13
     ParamData = <
       item
         Name = 'CODIGO'

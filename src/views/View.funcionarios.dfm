@@ -6,7 +6,7 @@ inherited ViewFuncionarios: TViewFuncionarios
       Width = 881
       Height = 35
       Caption = 'Funcion'#225'rio'
-      ExplicitWidth = 123
+      ExplicitWidth = 881
     end
   end
   inherited pnlBackground: TPanel

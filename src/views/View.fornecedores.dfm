@@ -6,7 +6,7 @@ inherited ViewFornecedores: TViewFornecedores
       Width = 881
       Height = 35
       Caption = 'Fornecedores'
-      ExplicitWidth = 142
+      ExplicitWidth = 881
     end
     inherited pnlIcone: TPanel
       inherited imgIcon: TImage

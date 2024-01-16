@@ -79,9 +79,8 @@ begin
   ServiceCadastro.QRY_movestoqueVALORTOTAL.AsFloat := TOTAL_VENDA;
   ServiceCadastro.QRY_movestoque.Post;
   TViewMensagens.Mensagem('Venda gravada com sucesso!', 'Sucesso', 'I', [mbOk]);
+
   cpLista.ActiveCard := card_pesquisa;
-  ServiceCadastro.QRY_movestoque.Close;
-  ServiceCadastro.QRY_movestoque.Open;
 end;
 
 procedure TViewVendas.btnSalvarProdutoClick(Sender: TObject);
@@ -114,6 +113,8 @@ begin
 
       TBL_ItensMemoria.Next;
     end;
+
+    ServiceCadastro.QRY_movestoque.Edit;
 
     GetVendaItem(ServiceCadastro.QRY_movestoqueCODIGO.AsInteger);
 

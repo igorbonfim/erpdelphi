@@ -3,8 +3,10 @@ inherited ViewProdutos: TViewProdutos
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
+      Width = 881
+      Height = 35
       Caption = 'Produtos'
-      ExplicitWidth = 95
+      ExplicitWidth = 881
     end
     inherited pnlIcone: TPanel
       inherited imgIcon: TImage
