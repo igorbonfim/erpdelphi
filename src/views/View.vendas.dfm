@@ -3,8 +3,10 @@ inherited ViewVendas: TViewVendas
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
+      Width = 881
+      Height = 35
       Caption = 'Vendas'
-      ExplicitWidth = 881
+      ExplicitWidth = 75
     end
   end
   inherited pnlRodape: TPanel
@@ -66,11 +68,13 @@ inherited ViewVendas: TViewVendas
             item
               Expanded = False
               FieldName = 'VALORDESCONTO'
+              Width = 64
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'VALORTOTAL'
+              Width = 64
               Visible = True
             end>
         end
@@ -278,36 +282,42 @@ inherited ViewVendas: TViewVendas
             item
               Expanded = False
               FieldName = 'CODIGO'
+              Title.Caption = 'C'#243'digo'
               Width = 95
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'CODIGO_ITEM'
+              Title.Caption = 'C'#243'd. Item'
               Width = 127
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'QUANTIDADE'
+              Title.Caption = 'Quantidade'
               Width = 128
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'VALOR_UNITARIO'
+              Title.Caption = 'Valor'
               Width = 96
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'VALOR_DESCONTO'
+              Title.Caption = 'Desconto'
               Width = 139
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'VALOR_TOTAL'
+              Title.Caption = 'Total'
               Width = 210
               Visible = True
             end>
