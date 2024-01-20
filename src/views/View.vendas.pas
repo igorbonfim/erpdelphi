@@ -82,7 +82,8 @@ begin
 
   cpLista.ActiveCard := card_pesquisa;
 
-  SalvarCaixa('E', 'VENDA N.' + IntToStr(ServiceCadastro.QRY_movestoqueCODIGO.AsInteger), ServiceCadastro.QRY_movestoqueVALORTOTAL.AsFloat);
+  if ServiceCadastro.QRY_cadcaixa.State = dsInsert then
+    SalvarCaixa('E', 'VENDA N.' + IntToStr(ServiceCadastro.QRY_movestoqueCODIGO.AsInteger), ServiceCadastro.QRY_movestoqueVALORTOTAL.AsFloat);
 end;
 
 procedure TViewVendas.btnSalvarProdutoClick(Sender: TObject);
@@ -97,7 +98,6 @@ begin
     TBL_ItensMemoriaVLR_DESCONTO.AsFloat  := 0;
     TBL_ItensMemoriaVLR_SUBTOTAL.AsFloat  := StrToFloaTDef(edtSubtotal.Text, 0);
     TBL_ItensMemoria.Post;
-
 
     TBL_ItensMemoria.First;
     while not TBL_ItensMemoria.Eof do

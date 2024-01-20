@@ -230,8 +230,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'select * from movestoque where codigo = :codigo')
-    Left = 276
-    Top = 16
+    Left = 284
+    Top = 24
     ParamData = <
       item
         Name = 'CODIGO'
@@ -277,10 +277,11 @@ object ServiceCadastro: TServiceCadastro
     end
   end
   object QRY_movestoque_item: TFDQuery
+    ConstraintsEnabled = True
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM MOVESTOQUE_ITEM WHERE CODIGO_MOVIMENTO = :CODIGO')
-    Left = 275
+    Left = 283
     Top = 109
     ParamData = <
       item
@@ -336,8 +337,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM CAIXA WHERE CODIGO = :CODIGO')
-    Left = 403
-    Top = 13
+    Left = 419
+    Top = 17
     ParamData = <
       item
         Name = 'CODIGO'

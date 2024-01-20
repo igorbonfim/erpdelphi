@@ -281,13 +281,6 @@ inherited ViewVendas: TViewVendas
           Columns = <
             item
               Expanded = False
-              FieldName = 'CODIGO'
-              Title.Caption = 'C'#243'digo'
-              Width = 95
-              Visible = True
-            end
-            item
-              Expanded = False
               FieldName = 'CODIGO_ITEM'
               Title.Caption = 'C'#243'd. Item'
               Width = 127
