@@ -6,7 +6,7 @@ inherited ViewVendas: TViewVendas
       Width = 881
       Height = 35
       Caption = 'Vendas'
-      ExplicitWidth = 75
+      ExplicitWidth = 881
     end
   end
   inherited pnlRodape: TPanel
@@ -48,32 +48,37 @@ inherited ViewVendas: TViewVendas
             item
               Expanded = False
               FieldName = 'CODIGO'
+              Title.Caption = 'C'#243'digo'
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'TIPOESTOQUE'
+              Title.Caption = 'Tipo'
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'DATA'
+              Title.Caption = 'Data'
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'HORA'
+              Title.Caption = 'Hora'
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'VALORDESCONTO'
-              Width = 64
+              Title.Caption = 'Vlr Desconto'
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'VALORTOTAL'
+              Title.Caption = 'Vlr Total'
               Width = 64
               Visible = True
             end>
@@ -382,9 +387,11 @@ inherited ViewVendas: TViewVendas
   end
   object TBL_ItensMemoria: TFDMemTable
     FieldDefs = <>
+    CachedUpdates = True
     IndexDefs = <>
-    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.AssignedValues = [evMode, evDetailCascade]
     FetchOptions.Mode = fmAll
+    FetchOptions.DetailCascade = True
     ResourceOptions.AssignedValues = [rvSilentMode]
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]

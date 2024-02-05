@@ -47,13 +47,20 @@ type
     QRY_produto1NCM: TStringField;
     QRY_produto2ESTOQUE: TFMTBCDField;
     QRY_movestoque: TFDQuery;
+    QRY_movestoque_item: TFDQuery;
+    QRY_cadcaixa: TFDQuery;
+    QRY_cadcaixaCODIGO: TIntegerField;
+    QRY_cadcaixaDATAHORA: TSQLTimeStampField;
+    QRY_cadcaixaTIPO: TStringField;
+    QRY_cadcaixaVALOR: TFMTBCDField;
+    QRY_cadcaixaDESCRICAO: TStringField;
     QRY_movestoqueCODIGO: TIntegerField;
     QRY_movestoqueTIPOESTOQUE: TIntegerField;
     QRY_movestoqueDATA: TDateField;
     QRY_movestoqueHORA: TTimeField;
     QRY_movestoqueVALORDESCONTO: TFMTBCDField;
     QRY_movestoqueVALORTOTAL: TFMTBCDField;
-    QRY_movestoque_item: TFDQuery;
+    QRY_movestoqueVENDEDOR: TIntegerField;
     QRY_movestoque_itemCODIGO: TIntegerField;
     QRY_movestoque_itemCODIGO_MOVIMENTO: TIntegerField;
     QRY_movestoque_itemCODIGO_ITEM: TIntegerField;
@@ -61,13 +68,7 @@ type
     QRY_movestoque_itemVALOR_UNITARIO: TFMTBCDField;
     QRY_movestoque_itemVALOR_TOTAL: TFMTBCDField;
     QRY_movestoque_itemVALOR_DESCONTO: TFMTBCDField;
-    QRY_movestoqueVENDEDOR: TIntegerField;
-    QRY_cadcaixa: TFDQuery;
-    QRY_cadcaixaCODIGO: TIntegerField;
-    QRY_cadcaixaDATAHORA: TSQLTimeStampField;
-    QRY_cadcaixaTIPO: TStringField;
-    QRY_cadcaixaVALOR: TFMTBCDField;
-    QRY_cadcaixaDESCRICAO: TStringField;
+    FDSchemaAdapter: TFDSchemaAdapter;
     procedure QRY_produto1AfterScroll(DataSet: TDataSet);
     procedure QRY_movestoqueAfterScroll(DataSet: TDataSet);
   private

@@ -1,12 +1,13 @@
 object ServiceCadastro: TServiceCadastro
-  Height = 294
-  Width = 594
+  Height = 368
+  Width = 743
+  PixelsPerInch = 120
   object QRY_pessoas: TFDQuery
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PESSOAS WHERE CODIGO = :CODIGO')
-    Left = 32
-    Top = 16
+    Left = 40
+    Top = 20
     ParamData = <
       item
         Name = 'CODIGO'
@@ -59,8 +60,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM ENDERECO WHERE CODIGO = :CODIGO')
-    Left = 152
-    Top = 16
+    Left = 190
+    Top = 20
     ParamData = <
       item
         Name = 'CODIGO'
@@ -112,8 +113,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PRODUTO WHERE CODIGO = :CODIGO')
-    Left = 32
-    Top = 109
+    Left = 40
+    Top = 136
     ParamData = <
       item
         Name = 'CODIGO'
@@ -169,8 +170,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM PRODUTO_DETALHE WHERE CODIGO = :CODIGO')
-    Left = 147
-    Top = 109
+    Left = 184
+    Top = 136
     ParamData = <
       item
         Name = 'CODIGO'
@@ -227,11 +228,13 @@ object ServiceCadastro: TServiceCadastro
   end
   object QRY_movestoque: TFDQuery
     AfterScroll = QRY_movestoqueAfterScroll
+    CachedUpdates = True
     Connection = ServiceConexao.FDConn
+    SchemaAdapter = FDSchemaAdapter
     SQL.Strings = (
       'select * from movestoque where codigo = :codigo')
-    Left = 284
-    Top = 24
+    Left = 355
+    Top = 22
     ParamData = <
       item
         Name = 'CODIGO'
@@ -243,7 +246,6 @@ object ServiceCadastro: TServiceCadastro
       FieldName = 'CODIGO'
       Origin = 'CODIGO'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QRY_movestoqueTIPOESTOQUE: TIntegerField
       FieldName = 'TIPOESTOQUE'
@@ -260,14 +262,12 @@ object ServiceCadastro: TServiceCadastro
     object QRY_movestoqueVALORDESCONTO: TFMTBCDField
       FieldName = 'VALORDESCONTO'
       Origin = 'VALORDESCONTO'
-      currency = True
       Precision = 18
       Size = 2
     end
     object QRY_movestoqueVALORTOTAL: TFMTBCDField
       FieldName = 'VALORTOTAL'
       Origin = 'VALORTOTAL'
-      currency = True
       Precision = 18
       Size = 2
     end
@@ -277,12 +277,16 @@ object ServiceCadastro: TServiceCadastro
     end
   end
   object QRY_movestoque_item: TFDQuery
+    CachedUpdates = True
     ConstraintsEnabled = True
     Connection = ServiceConexao.FDConn
+    SchemaAdapter = FDSchemaAdapter
+    FetchOptions.AssignedValues = [evDetailCascade]
+    FetchOptions.DetailCascade = True
     SQL.Strings = (
       'SELECT * FROM MOVESTOQUE_ITEM WHERE CODIGO_MOVIMENTO = :CODIGO')
-    Left = 283
-    Top = 109
+    Left = 354
+    Top = 136
     ParamData = <
       item
         Name = 'CODIGO'
@@ -295,7 +299,6 @@ object ServiceCadastro: TServiceCadastro
       FieldName = 'CODIGO'
       Origin = 'CODIGO'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object QRY_movestoque_itemCODIGO_MOVIMENTO: TIntegerField
       FieldName = 'CODIGO_MOVIMENTO'
@@ -314,21 +317,18 @@ object ServiceCadastro: TServiceCadastro
     object QRY_movestoque_itemVALOR_UNITARIO: TFMTBCDField
       FieldName = 'VALOR_UNITARIO'
       Origin = 'VALOR_UNITARIO'
-      currency = True
       Precision = 18
       Size = 2
     end
     object QRY_movestoque_itemVALOR_TOTAL: TFMTBCDField
       FieldName = 'VALOR_TOTAL'
       Origin = 'VALOR_TOTAL'
-      currency = True
       Precision = 18
       Size = 2
     end
     object QRY_movestoque_itemVALOR_DESCONTO: TFMTBCDField
       FieldName = 'VALOR_DESCONTO'
       Origin = 'VALOR_DESCONTO'
-      currency = True
       Precision = 18
       Size = 2
     end
@@ -337,8 +337,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConn
     SQL.Strings = (
       'SELECT * FROM CAIXA WHERE CODIGO = :CODIGO')
-    Left = 419
-    Top = 17
+    Left = 524
+    Top = 21
     ParamData = <
       item
         Name = 'CODIGO'
@@ -373,5 +373,9 @@ object ServiceCadastro: TServiceCadastro
       Origin = 'DESCRICAO'
       Size = 200
     end
+  end
+  object FDSchemaAdapter: TFDSchemaAdapter
+    Left = 528
+    Top = 136
   end
 end

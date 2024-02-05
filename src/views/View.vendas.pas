@@ -116,8 +116,6 @@ begin
       TBL_ItensMemoria.Next;
     end;
 
-    ServiceCadastro.QRY_movestoque.Edit;
-
     GetVendaItem(ServiceCadastro.QRY_movestoqueCODIGO.AsInteger);
 
     edtTotalVenda.Text := FloatToStr(TOTAL_VENDA);
@@ -168,6 +166,8 @@ begin
       TBL_ItensMemoriaCOD_MOVESTOQUE.AsInteger  := ServiceCadastro.QRY_movestoqueCODIGO.AsInteger;
       TBL_ItensMemoriaCOD_ITEM.AsInteger        := ServiceCadastro.QRY_produto1CODIGO.AsInteger;
 
+      edtQuantidade.Text := IntToStr(1);
+      edtSubtotal.Text := FloatToStr(ServiceCadastro.QRY_produto2VENDAVISTA.AsFloat);
       edtQuantidade.SetFocus;
     end;
   finally
