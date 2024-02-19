@@ -113,8 +113,8 @@ procedure GetVendaItem(iCOD_Venda: integer);
 begin
   ServiceCadastro.QRY_movestoque_item.Close;
   ServiceCadastro.QRY_movestoque_item.SQL.Clear;
-  ServiceCadastro.QRY_movestoque_item.SQL.Add('SELECT * FROM MOVESTOQUE_ITEM WHERE CODIGO_MOVIMENTO = :CODIGO');
-  ServiceCadastro.QRY_movestoque_item.ParamByName('CODIGO').AsInteger := iCOD_Venda;
+  ServiceCadastro.QRY_movestoque_item.SQL.Add('SELECT * FROM MOVESTOQUE_ITEM WHERE CODIGO_MOVIMENTO = :CODIGOVENDA');
+  ServiceCadastro.QRY_movestoque_item.ParamByName('CODIGOVENDA').AsInteger := iCOD_Venda;
   ServiceCadastro.QRY_movestoque_item.Open;
 
   TOTAL_VENDA := 0;

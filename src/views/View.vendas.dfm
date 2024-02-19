@@ -6,7 +6,7 @@ inherited ViewVendas: TViewVendas
       Width = 881
       Height = 35
       Caption = 'Vendas'
-      ExplicitWidth = 881
+      ExplicitWidth = 75
     end
   end
   inherited pnlRodape: TPanel
@@ -387,7 +387,6 @@ inherited ViewVendas: TViewVendas
   end
   object TBL_ItensMemoria: TFDMemTable
     FieldDefs = <>
-    CachedUpdates = True
     IndexDefs = <>
     FetchOptions.AssignedValues = [evMode, evDetailCascade]
     FetchOptions.Mode = fmAll

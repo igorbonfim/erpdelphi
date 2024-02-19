@@ -70,6 +70,7 @@ begin
   ServiceCadastro.QRY_movestoqueTIPOESTOQUE.AsInteger := 1; // Tipo venda = 1
   ServiceCadastro.QRY_movestoqueDATA.AsDateTime := Date;
   ServiceCadastro.QRY_movestoqueHORA.AsDateTime := Time;
+  ServiceCadastro.QRY_movestoque.ApplyUpdates(0);
 end;
 
 procedure TViewVendas.btnSalvarClick(Sender: TObject);
@@ -116,6 +117,8 @@ begin
       TBL_ItensMemoria.Next;
     end;
 
+    ServiceCadastro.QRY_movestoque_item.ApplyUpdates(0);
+
     GetVendaItem(ServiceCadastro.QRY_movestoqueCODIGO.AsInteger);
 
     edtTotalVenda.Text := FloatToStr(TOTAL_VENDA);
@@ -129,6 +132,7 @@ begin
 
     edtProduto.SetFocus;
   end;
+
 end;
 
 procedure TViewVendas.edtCodigoVendedorExit(Sender: TObject);
