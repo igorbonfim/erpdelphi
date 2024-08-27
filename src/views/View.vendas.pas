@@ -9,7 +9,7 @@ uses
   Vcl.Imaging.pngimage, Vcl.ExtCtrls, Provider.constants, Service.cadastro,
   View.produtos, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, View.mensagens;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, View.mensagens, View.funcionarios;
 
 type
   TViewVendas = class(TViewBaseListas)
@@ -44,6 +44,7 @@ type
     procedure btnSalvarProdutoClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
+    procedure edtCodigoVendedorInvokeSearch(Sender: TObject);
   private
     { Private declarations }
     procedure GetSubTotal;
@@ -138,12 +139,39 @@ end;
 procedure TViewVendas.edtCodigoVendedorExit(Sender: TObject);
 begin
   inherited;
+  try
   if StrToIntDef(edtCodigoVendedor.Text, 0) > 0 then
   begin
     GetVendedor(StrToInt(edtCodigoVendedor.Text));
     lblNomeVendedor.Caption := sNOME_VENDEDOR;
     ServiceCadastro.QRY_movestoqueVENDEDOR.AsInteger := iCODIGO_VENDEDOR;
-    ServiceCadastro.QRY_movestoque.Post;
+  end;
+  except on ex:exception do
+    raise Exception.Create(ex.Message);
+  end;
+end;
+
+procedure TViewVendas.edtCodigoVendedorInvokeSearch(Sender: TObject);
+begin
+  inherited;
+
+  ViewFuncionarios := TViewFuncionarios.Create(Self);
+  try
+    ViewFuncionarios.Top := ViewFuncionarios.Top;
+    ViewFuncionarios.Left := ViewFuncionarios.Left;
+    ViewFuncionarios.pnlBotaoSelecionar.Visible := true;
+
+    ViewFuncionarios.ShowModal;
+
+    if ViewFuncionarios.ModalResult = mrOk then
+    begin
+      edtCodigoVendedorExit(Sender);
+      ServiceCadastro.QRY_pessoas.Close;
+      ServiceCadastro.QRY_pessoas.Open;
+      ServiceCadastro.QRY_pessoas.Insert;
+    end;
+  finally
+    FreeAndNil(ViewFuncionarios);
   end;
 end;
 

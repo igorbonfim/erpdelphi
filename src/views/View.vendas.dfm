@@ -224,6 +224,7 @@ inherited ViewVendas: TViewVendas
             NumbersOnly = True
             TabOrder = 0
             OnExit = edtCodigoVendedorExit
+            OnInvokeSearch = edtCodigoVendedorInvokeSearch
           end
           object edtProduto: TSearchBox
             Left = 10
