@@ -438,7 +438,6 @@ inherited ViewMensagens: TViewMensagens
       ParentFont = False
       TabOrder = 2
       OnMouseDown = lblTituloMouseDown
-      ExplicitLeft = 6
     end
   end
 end

@@ -25,12 +25,7 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TViewPrincipal, ViewPrincipal);
   Application.CreateForm(TServiceConexao, ServiceConexao);
-  Application.CreateForm(TServiceCadastro, ServiceCadastro);
-  Application.CreateForm(TViewProdutos, ViewProdutos);
-  Application.CreateForm(TViewMensagens, ViewMensagens);
-  Application.CreateForm(TViewFundo, ViewFundo);
-  Application.CreateForm(TViewFuncionarios, ViewFuncionarios);
-  Application.CreateForm(TViewVendas, ViewVendas);
   Application.CreateForm(TViewLogin, ViewLogin);
+  Application.CreateForm(TServiceCadastro, ServiceCadastro);
   Application.Run;
 end.

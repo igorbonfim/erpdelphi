@@ -79,7 +79,6 @@ inherited ViewVendas: TViewVendas
               Expanded = False
               FieldName = 'VALORTOTAL'
               Title.Caption = 'Vlr Total'
-              Width = 64
               Visible = True
             end>
         end
