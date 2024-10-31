@@ -82,6 +82,7 @@ var
   view: TViewMensagens;
 begin
   view := TViewMensagens.Create(nil);
+  ViewFundo := TViewFundo.Create(nil);
   try
     view.lblTitulo.Caption := Titulo;
     view.mmoTexto.Text := Texto;
@@ -135,8 +136,9 @@ begin
   finally
     if view <> nil then
     begin
-      ViewFundo.Hide;
+      //ViewFundo.Hide;
       FreeAndNil(view);
+      FreeAndNil(ViewFundo);
     end;
   end;
 end;

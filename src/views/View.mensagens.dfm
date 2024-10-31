@@ -331,8 +331,8 @@ inherited ViewMensagens: TViewMensagens
         AlignWithMargins = True
         Left = 3
         Top = 3
-        Width = 626
-        Height = 35
+        Width = 60
+        Height = 31
         Align = alClient
         Caption = 'Titulo'
         Font.Charset = ANSI_CHARSET
@@ -342,8 +342,6 @@ inherited ViewMensagens: TViewMensagens
         Font.Style = [fsBold]
         ParentFont = False
         OnMouseDown = lblTituloMouseDown
-        ExplicitWidth = 60
-        ExplicitHeight = 31
       end
     end
     object pnlBotoes: TPanel
